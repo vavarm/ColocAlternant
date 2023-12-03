@@ -8,12 +8,12 @@ public class DAOSQLiteFactory extends DAOFactory {
     private DAOSQLiteFactory() {
     }
 
-    private static class DAOSQliteFactoryHolder {
+    private static class DAOSQLiteFactoryHolder {
         private final static DAOSQLiteFactory instance = new DAOSQLiteFactory();
     }
 
     public static DAOSQLiteFactory getInstance() {
-        return DAOSQliteFactoryHolder.instance;
+        return DAOSQLiteFactoryHolder.instance;
     }
 
     public UserDAO getUserDAO() {
