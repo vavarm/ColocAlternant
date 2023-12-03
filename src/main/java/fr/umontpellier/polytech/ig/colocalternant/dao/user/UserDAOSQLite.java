@@ -1,7 +1,9 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao.user;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
-import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.*;
+import java.sql.*;
 
 public class UserDAOSQLite extends UserDAO {
 
@@ -17,8 +19,26 @@ public class UserDAOSQLite extends UserDAO {
     }
 
     public User getUser(String email, String password) throws CredentialException {
-        return new User(1, "John", "Doe", 21, email, password,
-                "https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Fso%2Fprofile&psig=AOvVaw06nRk09YyDMIfh1K51s08j&ust=1701708080137000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPCzzd7a84IDFQAAAAAdAAAAABAE");
-        // get user from database using JDBC
+        try {
+            Connection connection = DAOSQLiteFactory.getInstance().connect();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Users WHERE email LIKE ?;");
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            if (resultSet.next()) {
+                if (resultSet.getString("password").equals(password)) {
+                    return new User(resultSet.getInt("id"), resultSet.getString("firstname"), resultSet.getString("lastname"), resultSet.getInt("age"), resultSet.getString("email"), resultSet.getString("password"), resultSet.getString("photo"));
+                } else {
+                    CredentialException credentialException = new CredentialException(CredentialExceptionType.INVALID_PASSWORD);
+                    throw new CredentialException(CredentialExceptionType.INVALID_PASSWORD);
+                }
+            } else {
+                throw new CredentialException(CredentialExceptionType.INVALID_EMAIL);
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            return null;
+        } catch (CredentialException credentialException) {
+            throw credentialException;
+        }
     }
 }

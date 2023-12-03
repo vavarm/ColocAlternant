@@ -22,6 +22,8 @@ public class HelloApplication extends Application {
 
     public static void main(String[] args) {
         System.out.println(UserFacade.getInstance().login("john.doe@test.com", "password"));
+        System.out.println(UserFacade.getInstance().login("john.doe@test.com", "wrongpassword"));
+        System.out.println(UserFacade.getInstance().login("john.doe@doesnotexist.com", "password"));
         launch();
     }
 }
