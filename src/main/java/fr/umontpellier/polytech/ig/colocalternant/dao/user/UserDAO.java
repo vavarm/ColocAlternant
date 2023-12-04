@@ -40,8 +40,6 @@ public abstract class UserDAO {
         } catch (NullPointerException nullPointerException) {
             nullPointerException.printStackTrace();
             return null;
-        } catch (CredentialException credentialException) {
-            throw credentialException;
         } finally {
             DbUtils.closeConnection(connection, preparedStatement, resultSet);
         }
