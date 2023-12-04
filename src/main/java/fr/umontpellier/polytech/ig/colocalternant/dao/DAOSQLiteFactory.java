@@ -9,14 +9,7 @@ public class DAOSQLiteFactory extends DAOFactory {
     private String dbPath = "src/main/resources/db/coloc.db";
 
     private DAOSQLiteFactory() {
-        Connection connection = null;
-        try {
-            connection = this.connect();
-            this.setup(connection);
-            connection.close();
-        } catch (SQLException sqlException) {
-            sqlException.printStackTrace();
-        }
+        super();
     }
 
     protected void setup(Connection connection) {
