@@ -25,7 +25,8 @@ public class UserFacade {
         try {
             this.currentUser = daoFactory.getUserDAO().getUser(email, password);
         } catch (CredentialException credentialException) {
-            System.err.println(credentialException);
+            //System.err.println(credentialException);
+            this.currentUser = null;
             // TODO: handle exception in the view (display error message)
         }
         return this.currentUser;
