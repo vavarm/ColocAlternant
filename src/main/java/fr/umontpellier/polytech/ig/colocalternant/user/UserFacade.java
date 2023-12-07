@@ -13,10 +13,6 @@ public class UserFacade {
         this.daoFactory = DAOSQLiteFactory.getInstance();
     }
 
-    private static class UserFacadeHolder {
-        private final static UserFacade instance = new UserFacade();
-    }
-
     public static UserFacade getInstance() {
         return UserFacadeHolder.instance;
     }
@@ -39,12 +35,7 @@ public class UserFacade {
         return this.currentUser;
     }
 
-    public void setCurrentUser(User user) {
-        this.currentUser = user;
-    }
-
-    public void display() {
-        // Controller.display(currentUser);
-        // in the controller: public void display(Object object){...}
+    private static class UserFacadeHolder {
+        private final static UserFacade instance = new UserFacade();
     }
 }
