@@ -8,11 +8,11 @@ public class UserDAOSQLite extends UserDAO {
         this.daoFactory = DAOSQLiteFactory.getInstance();
     }
 
-    private static class UserDAOSQLiteHolder {
-        private final static UserDAOSQLite instance = new UserDAOSQLite();
-    }
-
     public static UserDAOSQLite getInstance() {
         return UserDAOSQLiteHolder.instance;
+    }
+
+    private static class UserDAOSQLiteHolder {
+        private final static UserDAOSQLite instance = new UserDAOSQLite();
     }
 }
