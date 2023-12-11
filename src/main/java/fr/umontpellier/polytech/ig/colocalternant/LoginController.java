@@ -1,5 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
+import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -29,9 +31,10 @@ public class LoginController {
     /**
      * The email field
      */
-    // TODO: change the label to email
     @FXML
-    public TextField pseudo;
+    public TextField email;
+
+
 
     /**
      * Method called when the login button is clicked. Call the login method of the user facade.
@@ -41,9 +44,12 @@ public class LoginController {
      */
     @FXML
     public void login(ActionEvent actionEvent) {
-        if (pseudo.getText().equals("admin") && password.getText().equals("admin")) {
+        try {
+            UserFacade.getInstance().login(email.getText(), password.getText());
             errorLabel.setText("Login success");
-        } else {
+            //TODO: redirect to main page
+        } catch(CredentialException c) {
+            c.printStackTrace();
             errorLabel.setText("Login failed");
         }
         errorLabel.setVisible(true);
