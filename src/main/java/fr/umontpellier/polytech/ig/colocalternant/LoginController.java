@@ -6,15 +6,41 @@ import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
+import javafx.fxml.FXML;
 
+/**
+ * Controller of the login window
+ */
 public class LoginController {
+    /**
+     * The label of the error message
+     */
+    @FXML
     public Label errorLabel;
+    /**
+     * The login button
+     */
+    @FXML
     public Button loginButton;
+    /**
+     * The password field
+     */
+    @FXML
     public PasswordField password;
+    /**
+     * The email field
+     */
     public TextField email;
 
 
+
+    /**
+     * Method called when the login button is clicked. Call the login method of the user facade.
+     * if the login is successful, open the main window
+     * else display an error message
+     * @param actionEvent the event of the click
+     */
+    @FXML
     public void login(ActionEvent actionEvent) {
         if ( UserFacade.getInstance().login(email.getText(), password.getText()) != null) {
             errorLabel.setText("Login success");

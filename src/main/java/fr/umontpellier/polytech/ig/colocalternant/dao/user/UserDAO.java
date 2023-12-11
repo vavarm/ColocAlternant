@@ -10,9 +10,22 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+/**
+ * DAO of the user
+ */
 public abstract class UserDAO {
+    /**
+     * The DAO factory
+     */
     protected DAOFactory daoFactory;
 
+    /**
+     * Retrieves the user with the given email and password from the database.
+     * @param email The email of the user.
+     * @param password The password of the user.
+     * @return The user if the login is successful, null otherwise.
+     * @throws CredentialException if the email or the password is incorrect.
+     */
     public User getUser(String email, String password) throws CredentialException {
         try {
             Connection connection = this.daoFactory.getConnection();
@@ -34,9 +47,6 @@ public abstract class UserDAO {
             }
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
-            return null;
-        } catch (NullPointerException nullPointerException) {
-            nullPointerException.printStackTrace();
             return null;
         }
     }
