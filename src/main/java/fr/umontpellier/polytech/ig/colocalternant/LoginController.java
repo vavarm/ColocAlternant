@@ -1,5 +1,6 @@
 package fr.umontpellier.polytech.ig.colocalternant;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
@@ -42,10 +43,12 @@ public class LoginController {
      */
     @FXML
     public void login(ActionEvent actionEvent) {
-        if ( UserFacade.getInstance().login(email.getText(), password.getText()) != null) {
+        try {
+            UserFacade.getInstance().login(email.getText(), password.getText());
             errorLabel.setText("Login success");
             //TODO: redirect to main page
-        } else {
+        } catch(CredentialException c) {
+            c.printStackTrace();
             errorLabel.setText("Login failed");
         }
         errorLabel.setVisible(true);
