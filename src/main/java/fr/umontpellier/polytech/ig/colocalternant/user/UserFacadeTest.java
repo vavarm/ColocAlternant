@@ -1,15 +1,16 @@
 package fr.umontpellier.polytech.ig.colocalternant.user;
 
 import org.junit.Test;
-//import org.junit.jupiter.api.Test;
-//import static org.junit.jupiter.api.Assertions.*;
-import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 
-import static org.testng.Assert.assertThrows;
 import static org.testng.AssertJUnit.*;
 
+/**
+ * Test class of the user facade
+ */
 public class UserFacadeTest {
+    /**
+     * Test the singleton pattern of the user facade
+     */
     @Test
     public void getInstance() {
         UserFacade instance1 = UserFacade.getInstance();
@@ -17,6 +18,9 @@ public class UserFacadeTest {
         assertSame(instance1, instance2);
     }
 
+    /**
+     * Test the login method of the user facade
+     */
     @Test
     public void login() {
         UserFacade userFacade = UserFacade.getInstance();
@@ -31,6 +35,9 @@ public class UserFacadeTest {
         assertNull(user);
     }
 
+    /**
+     * Test the getCurrentUser method of the user facade
+     */
     @Test
     public void getCurrentUser() {
         UserFacade userFacade = UserFacade.getInstance();

@@ -1,3 +1,6 @@
+/**
+ * Module info for the application.
+ */
 module fr.umontpellier.polytech.ig.colocalternant {
     requires javafx.controls;
     requires javafx.fxml;

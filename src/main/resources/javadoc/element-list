@@ -1,0 +1,6 @@
+module:fr.umontpellier.polytech.ig.colocalternant
+fr.umontpellier.polytech.ig.colocalternant
+fr.umontpellier.polytech.ig.colocalternant.dao
+fr.umontpellier.polytech.ig.colocalternant.dao.user
+fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions
+fr.umontpellier.polytech.ig.colocalternant.user
