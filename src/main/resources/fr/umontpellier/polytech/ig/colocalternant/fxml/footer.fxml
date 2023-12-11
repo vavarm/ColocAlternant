@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<StackPane xmlns="http://javafx.com/javafx"
+           style="-fx-background-color: #FFFCE5;">
+
+    <Text style="-fx-fill: #7b7b7b;"
+          text="Credits: Suzanne R., Valentin R--M., Christradja B., Nicolas Ge."
+          textAlignment="JUSTIFY"/>
+
+</StackPane>
