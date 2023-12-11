@@ -16,6 +16,7 @@ public class HelloController {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
 
+    @FXML
     public void login(ActionEvent actionEvent) {
         LoginApplication loginApplication = new LoginApplication();
         try {

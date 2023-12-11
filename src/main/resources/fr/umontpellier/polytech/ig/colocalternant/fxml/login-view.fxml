@@ -15,12 +15,7 @@
       fx:controller="fr.umontpellier.polytech.ig.colocalternant.LoginController"
       style="-fx-background-color: #f5f5f5;">
 
-    <!-- StackPane at the top -->
-    <StackPane style="-fx-background-color: #FFFCE5;">
-        <ImageView fitHeight="100.0" fitWidth="100.0" pickOnBounds="true" preserveRatio="true">
-            <Image fx:id="primaryLogo" url="@../images/PrimaryLogo.png"/>
-        </ImageView>
-    </StackPane>
+    <fx:include source="header.fxml"/>
 
     <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
         <VBox spacing="30" alignment="CENTER">
@@ -35,10 +30,7 @@
 
         </VBox>
     </HBox>
-    <StackPane style="-fx-background-color: #FFFCE5;">
-        <Text style="-fx-fill: #7b7b7b; -fx-background-color: #FFFCE5;"
-              text="Credits: Suzanne R., Valentin R--M., Christradja B., Nicolas Ge."
-              textAlignment="JUSTIFY"/>
-    </StackPane>
+
+    <fx:include source="footer.fxml"/>
 
 </VBox>
