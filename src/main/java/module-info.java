@@ -15,4 +15,6 @@ module fr.umontpellier.polytech.ig.colocalternant {
     opens fr.umontpellier.polytech.ig.colocalternant to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant;
     exports fr.umontpellier.polytech.ig.colocalternant.user;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller;
+    opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
 }

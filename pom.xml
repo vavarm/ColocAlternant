@@ -107,7 +107,7 @@
                         <id>default-cli</id>
                         <configuration>
                             <mainClass>
-                                fr.umontpellier.polytech.ig.colocalternant/fr.umontpellier.polytech.ig.colocalternant.HelloApplication
+                                fr.umontpellier.polytech.ig.colocalternant/fr.umontpellier.polytech.ig.colocalternant.App
                             </mainClass>
                             <launcher>app</launcher>
                             <jlinkZipName>app</jlinkZipName>

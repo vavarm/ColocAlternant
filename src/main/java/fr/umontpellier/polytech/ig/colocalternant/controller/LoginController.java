@@ -1,11 +1,10 @@
-package fr.umontpellier.polytech.ig.colocalternant;
+package fr.umontpellier.polytech.ig.colocalternant.controller;
 
+import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialExceptionType;
-import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -80,13 +79,13 @@ public class LoginController {
             }
             errorLabel.setVisible(true);
             System.out.println("CredentialException is : " + credentialException.getMessage());
+            return;
         }
         // redirect to main page
         try {
-            MainApplication mainApplication = new MainApplication();
-            mainApplication.start(new Stage());
-        } catch (Exception e) {
-            System.out.println("Exception is : " + e.getMessage());
+            FXRouter.goTo("main");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
