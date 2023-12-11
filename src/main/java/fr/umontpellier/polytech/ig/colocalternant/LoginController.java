@@ -1,5 +1,6 @@
 package fr.umontpellier.polytech.ig.colocalternant;
 
+import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -11,12 +12,13 @@ public class LoginController {
     public Label errorLabel;
     public Button loginButton;
     public PasswordField password;
-    public TextField pseudo;
-    public Image primaryLogo;
+    public TextField email;
+
 
     public void login(ActionEvent actionEvent) {
-        if (pseudo.getText().equals("admin") && password.getText().equals("admin")) {
+        if ( UserFacade.getInstance().login(email.getText(), password.getText()) != null) {
             errorLabel.setText("Login success");
+            //TODO: redirect to main page
         } else {
             errorLabel.setText("Login failed");
         }
