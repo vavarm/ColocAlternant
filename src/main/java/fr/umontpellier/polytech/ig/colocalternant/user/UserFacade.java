@@ -42,11 +42,10 @@ public class UserFacade {
     public User login(String email, String password) throws CredentialException {
         try {
             this.currentUser = daoFactory.getUserDAO().getUser(email, password);
+            return this.currentUser;
         } catch (CredentialException credentialException) {
             this.currentUser = null;
             throw new CredentialException(credentialException.getType());
-        } finally {
-            return this.currentUser;
         }
     }
 

@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="$CONTROLLER_NAME$"
-            prefHeight="400.0" prefWidth="600.0" >
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.MainController"
+      prefHeight="400.0" prefWidth="600.0">
+    <fx:include source="header.fxml"/>
 
-</AnchorPane>
+    <HBox>
+        <Text fx:id="firstName"/>
+    </HBox>
+
+    <fx:include source="footer.fxml"/>
+</VBox>
