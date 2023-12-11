@@ -31,6 +31,7 @@ public class LoginController {
     /**
      * The email field
      */
+    @FXML
     public TextField email;
 
 
