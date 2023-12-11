@@ -43,7 +43,7 @@ public class UserFacade {
         try {
             this.currentUser = daoFactory.getUserDAO().getUser(email, password);
         } catch (CredentialException credentialException) {
-            System.err.println(credentialException);
+            System.err.println("UserFacade: " + credentialException);
             this.currentUser = null;
         }
         return this.currentUser;
@@ -56,7 +56,7 @@ public class UserFacade {
      */
     public User getCurrentUser() throws NullPointerException {
         if (this.currentUser == null) {
-            throw new NullPointerException("No user is currently logged in.");
+            throw new NullPointerException("UserFacade: No user is currently logged in.");
         }
         return this.currentUser;
     }

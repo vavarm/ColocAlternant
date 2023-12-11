@@ -71,7 +71,7 @@ public abstract class DAOFactory {
             statement.executeUpdate("INSERT INTO Users (firstName, lastName, age, email, password, photo) VALUES ('John', 'Doe', 42, 'john.doe@test.com', 'password', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Fso%2Fprofile&psig=AOvVaw06nRk09YyDMIfh1K51s08j&ust=1701708080137000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPCzzd7a84IDFQAAAAAdAAAAABAE')");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
-                System.err.println("User already exists");
+                System.err.println("DAOFactory: User already exists");
             } else {
                 e.printStackTrace();
             }
