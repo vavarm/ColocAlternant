@@ -4,20 +4,27 @@ import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
+/**
+ * Main class of the application
+ */
 public class HelloApplication extends Application {
+    /**
+     * Main method of the application. Launches the javafx application.
+     * @param args arguments of the application
+     */
     public static void main(String[] args) {
-        System.out.println(UserFacade.getInstance().login("john.doe@test.com", "password"));
-        System.out.println(UserFacade.getInstance().login("john.doe@test.com", "wrongpassword"));
-        System.out.println(UserFacade.getInstance().login("john.doe@doesnotexist.com", "password"));
         launch();
     }
 
+    /**
+     * Starts the javafx application
+     * @param stage the stage of the application
+     * @throws IOException if the fxml file is not found
+     */
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("fxml/hello-view.fxml"));
