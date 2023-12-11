@@ -39,14 +39,15 @@ public class UserFacade {
      * @param password The password of the user.
      * @return The user if the login is successful, null otherwise.
      */
-    public User login(String email, String password) {
+    public User login(String email, String password) throws CredentialException {
         try {
             this.currentUser = daoFactory.getUserDAO().getUser(email, password);
         } catch (CredentialException credentialException) {
-            System.err.println("UserFacade: " + credentialException);
             this.currentUser = null;
+            throw new CredentialException(credentialException.getType());
+        } finally {
+            return this.currentUser;
         }
-        return this.currentUser;
     }
 
     /**
