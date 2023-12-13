@@ -19,7 +19,7 @@
               <shadedArtifactAttached>true</shadedArtifactAttached>
               <transformers>
                 <transformer>
-                  <mainClass>fr.umontpellier.polytech.ig.colocalternant.HelloApplication</mainClass>
+                  <mainClass>fr.umontpellier.polytech.ig.colocalternant.Main</mainClass>
                 </transformer>
               </transformers>
             </configuration>
