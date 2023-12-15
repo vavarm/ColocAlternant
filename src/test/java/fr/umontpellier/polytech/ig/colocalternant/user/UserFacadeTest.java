@@ -23,9 +23,8 @@ public class UserFacadeTest {
      * Test the login method of the user facade
      */
     @Test
-    public void login() {
+    public void succesLogin() {
         UserFacade userFacade = UserFacade.getInstance();
-
         User user = null;
 
         // Test successful login
@@ -34,8 +33,12 @@ public class UserFacadeTest {
         } catch (CredentialException credentialException) {
             fail("UserFacade: login: CredentialException thrown.");
         }
-
         assertEquals(user, userFacade.getCurrentUser());
+    }
+    @Test
+    public void failedLogin() {
+        UserFacade userFacade = UserFacade.getInstance();
+        User user = null;
 
         // Test login with incorrect credentials
         try {
