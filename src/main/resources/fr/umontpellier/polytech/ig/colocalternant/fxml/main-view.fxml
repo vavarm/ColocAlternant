@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.text.Text?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.MainController"
+      prefHeight="400.0" prefWidth="600.0">
+    <fx:include source="header.fxml"/>
+
+    <HBox>
+        <Text fx:id="firstName"/>
+    </HBox>
+
+    <fx:include source="footer.fxml"/>
+</VBox>

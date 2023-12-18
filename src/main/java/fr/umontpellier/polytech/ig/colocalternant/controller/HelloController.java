@@ -1,9 +1,9 @@
-package fr.umontpellier.polytech.ig.colocalternant;
+package fr.umontpellier.polytech.ig.colocalternant.controller;
 
+import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.stage.Stage;
 
 import java.io.IOException;
 
@@ -31,11 +31,10 @@ public class HelloController {
      */
     @FXML
     public void login(ActionEvent actionEvent) {
-        LoginApplication loginApplication = new LoginApplication();
         try {
-            loginApplication.start(new Stage());
-        } catch (IOException ioException) {
-            ioException.printStackTrace();
+            FXRouter.goTo("login");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
