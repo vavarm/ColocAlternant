@@ -47,7 +47,6 @@ public class UserFacade {
             this.currentUser = null;
             throw new CredentialException(credentialException.getType());
         }
-        return this.currentUser;
     }
 
     /**
