@@ -12,4 +12,8 @@ public enum CredentialExceptionType {
      * The password is invalid.
      */
     INVALID_PASSWORD,
+    /*
+     * The email is already used.
+     */
+    EMAIL_ALREADY_USED,
 }

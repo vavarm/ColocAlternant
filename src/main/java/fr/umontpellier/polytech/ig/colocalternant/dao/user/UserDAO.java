@@ -50,4 +50,34 @@ public abstract class UserDAO {
             return null;
         }
     }
+
+    /**
+     * Inserts the given user into the database.
+     * @param newUser The user to insert.
+     * @throws CredentialException if the email is already used.
+     */
+    public void insertUser(User newUser) throws CredentialException {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Users (firstname, lastname, age, email, password, photo) VALUES (?, ?, ?, ?, ?, ?);")) {
+                preparedStatement.setString(1, newUser.getFirstName());
+                preparedStatement.setString(2, newUser.getLastName());
+                preparedStatement.setInt(3, newUser.getAge());
+                preparedStatement.setString(4, newUser.getEmail());
+                preparedStatement.setString(5, newUser.getPassword());
+                preparedStatement.setString(6, newUser.getPhoto());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new CredentialException(CredentialExceptionType.EMAIL_ALREADY_USED);
+                }
+                connection.commit();
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
 }

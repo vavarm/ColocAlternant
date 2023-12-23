@@ -4,6 +4,7 @@ import javafx.application.Application;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.lang.*;
 
 /**
  * Main class of the application
@@ -28,6 +29,7 @@ public class App extends Application {
         FXRouter.when("hello", "fxml/hello-view.fxml");
         FXRouter.when("login", "fxml/login-view.fxml");
         FXRouter.when("main", "fxml/main-view.fxml");
+        FXRouter.when("register", "fxml/register-view.fxml");
 
         FXRouter.goTo("hello");
     }

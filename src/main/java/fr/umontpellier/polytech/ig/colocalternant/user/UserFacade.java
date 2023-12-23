@@ -2,6 +2,8 @@ package fr.umontpellier.polytech.ig.colocalternant.user;
 
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
 
 /**
@@ -59,6 +61,26 @@ public class UserFacade {
             throw new NullPointerException("UserFacade: No user is currently logged in.");
         }
         return this.currentUser;
+    }
+
+    /**
+     * Registers a new user.
+     * @param firstName The first name of the user.
+     * @param lastName The last name of the user.
+     * @param age The age of the user.
+     * @param email The email of the user.
+     * @param password The password of the user.
+     * @param photo The photo of the user.
+     * @throws CredentialException if the email or the password is incorrect.
+     */
+    public void register(String firstName, String lastName, int age, String email, String password, String photo) throws CredentialException {
+        try {
+            User newUser = new User(-1, firstName, lastName, age, email, password, photo);
+            daoFactory.getUserDAO().insertUser(newUser);
+        } catch (CredentialException credentialException) {
+            this.currentUser = null;
+            throw new CredentialException(credentialException.getType());
+        }
     }
 
     /**

@@ -37,4 +37,13 @@ public class HelloController {
             throw new RuntimeException(e);
         }
     }
+
+    @FXML
+    public void register(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("register");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
