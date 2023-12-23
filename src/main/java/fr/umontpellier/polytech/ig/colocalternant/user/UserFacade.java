@@ -83,6 +83,11 @@ public class UserFacade {
         }
     }
 
+    public void changePassword(String newPwd) {
+        User current = getCurrentUser();
+        daoFactory.getUserDAO().changePassword(current, newPwd);
+    }
+
     /**
      * Holder of the unique instance of the user facade
      */

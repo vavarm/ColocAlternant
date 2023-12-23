@@ -80,4 +80,32 @@ public abstract class UserDAO {
             sqlException.printStackTrace();
         }
     }
+
+    /**
+     * Updates the password's given user in the database.
+     * @param currentUser The user to update.
+     * @param newPwd The new password of the user.
+     */
+    public void changePassword(User currentUser, String newPwd) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET password = ? WHERE id = ?;")) {
+                preparedStatement.setString(1, newPwd);
+                preparedStatement.setInt(2, currentUser.getId());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new Exception("No rows were affected, indicating a problem");
+                }
+                connection.commit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

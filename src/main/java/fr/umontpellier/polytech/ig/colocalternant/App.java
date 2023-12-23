@@ -30,6 +30,7 @@ public class App extends Application {
         FXRouter.when("login", "fxml/login-view.fxml");
         FXRouter.when("main", "fxml/main-view.fxml");
         FXRouter.when("register", "fxml/register-view.fxml");
+        FXRouter.when("settings", "fxml/settings-view.fxml");
 
         FXRouter.goTo("hello");
     }

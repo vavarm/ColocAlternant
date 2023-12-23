@@ -3,6 +3,7 @@
 <?import javafx.scene.layout.*?>
 
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.Button?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.MainController"
@@ -11,6 +12,7 @@
 
     <HBox>
         <Text fx:id="firstName"/>
+        <Button fx:id="settingsButton" text="Settings" onAction="#settings"/>
     </HBox>
 
     <fx:include source="footer.fxml"/>
