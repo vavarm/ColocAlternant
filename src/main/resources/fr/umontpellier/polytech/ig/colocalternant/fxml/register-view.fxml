@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.RegisterController">
+<VBox xmlns:fx="http://javafx.com/fxml"
+      xmlns="http://javafx.com/javafx"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.RegisterController"
+      style="-fx-background-color: #f5f5f5;">
 
     <fx:include source="header.fxml"/>
 
-    <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
-        <VBox spacing="30" alignment="CENTER">
+    <HBox spacing="10" VBox.vgrow="ALWAYS" alignment="CENTER">
+        <VBox spacing="10" alignment="CENTER">
 
             <Label text="Register"/>
             <Label text="First Name"/>
@@ -31,10 +29,10 @@
             <Button mnemonicParsing="false" onAction="#register" text="Register"/>
             <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
 
-        </VBox>
 
+        </VBox>
     </HBox>
 
     <fx:include source="footer.fxml"/>
 
-</AnchorPane>
+</VBox>

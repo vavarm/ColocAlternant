@@ -14,18 +14,39 @@ import java.io.IOException;
 
 public class RegisterController {
 
+    /**
+     * The first name of the user
+     */
     @FXML
     private TextField firstName;
+    /**
+     * The last name of the user
+     */
     @FXML
     private TextField lastName;
+    /**
+     * The age of the user
+     */
     @FXML
     private TextField age;
+    /**
+     * The email of the user
+     */
     @FXML
     private TextField email;
+    /**
+     * The password of the user
+     */
     @FXML
     private PasswordField password;
+    /**
+     * The photo of the user
+     */
     @FXML
     private TextField photo;
+    /**
+     * The label of the error message
+     */
     @FXML
     private Label errorLabel;
 
