@@ -1,6 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -30,9 +31,15 @@ public abstract class DAOFactory {
 
     /**
      * Retrieves the unique instance of the DAO factory.
-     * @return The DAO factory.
+     * @return The User DAO.
      */
     public abstract UserDAO getUserDAO();
+
+    /**
+     * Retrieves the unique instance of the DAO factory.
+     * @return The Chat DAO.
+     */
+    public abstract ChatDAO getChatDAO();
 
     /**
      * Initializes the database. Creates the tables and seeds them.
