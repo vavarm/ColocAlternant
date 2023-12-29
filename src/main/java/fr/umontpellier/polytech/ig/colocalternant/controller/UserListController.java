@@ -7,12 +7,14 @@ import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.util.ArrayList;
@@ -85,16 +87,71 @@ public class UserListController {
             return new SimpleObjectProperty<>(imageView);
         });
 
+        TableColumn<User, Boolean> isBannedColumn = new TableColumn<>("IsBanned");
+        emailColumn.setCellValueFactory(new PropertyValueFactory<>("isBanned"));
+
+        TableColumn<User, VBox> actionsButtonColumn = new TableColumn<>("Actions");
+        actionsButtonColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(createButtonContainer(cellData.getValue())));
+
         // Set column widths
         firstNameColumn.setMinWidth(200);
         lastNameColumn.setMinWidth(200);
         ageColumn.setMinWidth(50);
         emailColumn.setMinWidth(150);
         photoColumn.setMinWidth(150);
+        isBannedColumn.setMinWidth(50);
+
+        actionsButtonColumn.setMinWidth(100);
 
         // Add columns to TableView
-        tableView.getColumns().addAll(firstNameColumn, lastNameColumn, ageColumn, emailColumn, photoColumn);
+        tableView.getColumns().addAll(firstNameColumn, lastNameColumn, ageColumn, emailColumn, photoColumn, isBannedColumn, actionsButtonColumn);
 
         box.getChildren().add(tableView);
+    }
+
+
+    /**
+     * Create a VBox to list the actions for the given user.
+     * @param user The user.
+     * @return The VBox.
+     */
+    private VBox createButtonContainer(User user) {
+        Button banButton = createBanButton(user);
+        Button unbanButton = createUnBanButton(user);
+
+        VBox buttonContainer = new VBox(banButton, unbanButton);
+        buttonContainer.setSpacing(5); // Optional: Set the spacing between buttons
+
+        return buttonContainer;
+    }
+
+    /**
+     * Create a button to ban the given user.
+     * @param user The user.
+     * @return The button.
+     */
+    private Button createBanButton(User user) {
+        Button button = new Button("Ban");
+
+        button.setOnAction(event -> {
+            UserFacade.getInstance().banUser(user);
+        });
+
+        return button;
+    }
+
+    /**
+     * Create a button to unban the given user.
+     * @param user The user.
+     * @return The button.
+     */
+    private Button createUnBanButton(User user) {
+        Button button = new Button("UnBan");
+
+        button.setOnAction(event -> {
+            UserFacade.getInstance().unBanUser(user);
+        });
+
+        return button;
     }
 }

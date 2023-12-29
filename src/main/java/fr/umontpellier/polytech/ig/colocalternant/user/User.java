@@ -1,5 +1,9 @@
 package fr.umontpellier.polytech.ig.colocalternant.user;
 
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
+
+import java.util.ArrayList;
+
 /**
  * User class
  */
@@ -32,6 +36,10 @@ public class User {
      * The photo of the user
      */
     private String photo;
+    /**
+     * The ban status of the user
+     */
+    private boolean isBanned;
 
     /**
      * Constructor of the user
@@ -163,6 +171,22 @@ public class User {
      */
     public void setPhoto(String photo) {
         this.photo = photo;
+    }
+
+    /**
+     * Retrieves the ban status of the user.
+     * @return The user's ban status.
+     */
+    public boolean getIsBanned() {
+        return this.isBanned;
+    }
+
+    /**
+     * Defines the ban status of the user.
+     * @param isBanned The user's ban status.
+     */
+    public void setIsBanned(boolean isBanned) {
+        this.isBanned = isBanned;
     }
 
     /**

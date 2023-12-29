@@ -5,6 +5,8 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialExceptionType;
+import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 
 import java.util.ArrayList;
 
@@ -92,6 +94,28 @@ public class UserFacade {
 
     public ArrayList<User> getAllUsers() {
         return daoFactory.getUserDAO().getAllUsers();
+    }
+
+    /**
+     * Ban the given user.
+     * @param user The user.
+     */
+    public void banUser(User user) {
+        if (user == null) throw new NullPointerException("User is null");
+        if (ProfileFacade.getInstance().isAdmin(this.currentUser)) {
+            daoFactory.getUserDAO().banUser(user);
+        }
+    }
+
+    /**
+     * Unban the given user.
+     * @param user The user.
+     */
+    public void unBanUser(User user) {
+        if (user == null) throw new NullPointerException("User is null");
+        if (ProfileFacade.getInstance().isAdmin(this.currentUser)) {
+            daoFactory.getUserDAO().unBanUser(user);
+        }
     }
 
     /**

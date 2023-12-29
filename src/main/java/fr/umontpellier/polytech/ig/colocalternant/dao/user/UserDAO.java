@@ -133,4 +133,52 @@ try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE U
             return null;
         }
     }
+
+    /**
+     * Ban the user.
+     * @param user The user to ban.
+     */
+    public void banUser(User user) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET banned = true WHERE id = ?;")) {
+                preparedStatement.setInt(1, user.getId());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new Exception("No rows were affected, indicating a problem");
+                }
+                connection.commit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void unBanUser(User user) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET banned = false WHERE id = ?;")) {
+                preparedStatement.setInt(1, user.getId());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new Exception("No rows were affected, indicating a problem");
+                }
+                connection.commit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
