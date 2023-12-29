@@ -1,5 +1,6 @@
 package fr.umontpellier.polytech.ig.colocalternant.user;
 
+import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
@@ -116,6 +117,13 @@ public class UserFacade {
         if (ProfileFacade.getInstance().isAdmin(this.currentUser)) {
             daoFactory.getUserDAO().unBanUser(user);
         }
+    }
+
+    /**
+     * Logs out the current user.
+     */
+    public void logout() {
+        this.currentUser = null;
     }
 
     /**
