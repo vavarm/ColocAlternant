@@ -65,7 +65,6 @@ public class ChatFacade {
      */
     public void send(String message, User current, User dest) {
         daoFactory.getChatDAO().send(message, current, dest);
-        // TODO catch exception
     }
 
     /**
@@ -75,6 +74,5 @@ public class ChatFacade {
      */
     public void delete(Chat chat) {
         daoFactory.getChatDAO().delete(chat);
-        // TODO catch exception
     }
 }
