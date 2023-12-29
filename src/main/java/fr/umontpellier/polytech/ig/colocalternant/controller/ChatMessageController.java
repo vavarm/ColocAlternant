@@ -9,6 +9,9 @@ import java.util.List;
  * The controller of the list of chats
  */
 public class ChatMessageController {
+
+    public static User personToChatWith;
+
     /**
      * Deletes a chat
      * @param chat

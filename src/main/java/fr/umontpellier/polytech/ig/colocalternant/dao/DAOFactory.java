@@ -4,6 +4,7 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
 import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -48,6 +49,7 @@ public abstract class DAOFactory {
     protected void setup(Connection connection) {
         this.CreateTables(connection);
         this.SeedTables(connection);
+        this.printAllInfo(connection);
     }
 
     /**
@@ -95,6 +97,15 @@ public abstract class DAOFactory {
                 e.printStackTrace();
             }
         }
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO Users (firstName, lastName, age, email, password, photo) VALUES ('Jane', 'Doe', 42, 'jane.doe@test.com', 'password', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Fso%2Fprofile&psig=AOvVaw06nRk09YyDMIfh1K51s08j&ust=1701708080137000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPCzzd7a84IDFQAAAAAdAAAAABAE')");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: User already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
     }
 
     /**
@@ -103,7 +114,7 @@ public abstract class DAOFactory {
      */
     private void SeedChatTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (1, 2, 'Hello', '2020-01-01 00:00:00', 0)");
+            statement.executeUpdate("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (1, 2, 'Hello', '2007-12-03T10:15:30', 0)");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: Chat already exists");
@@ -129,5 +140,29 @@ public abstract class DAOFactory {
     protected void SeedTables(Connection connection) {
         SeedUserTable(connection);
         SeedChatTable(connection);
+    }
+
+    protected void printAllInfo(Connection connection){
+        //print the ids and email of all users
+        System.out.println("Users:");
+        try(Statement statement = connection.createStatement()){
+            ResultSet resultSet = statement.executeQuery("SELECT id, email FROM Users");
+            while(resultSet.next()){
+                System.out.println("id: " + resultSet.getInt("id") + " email: " + resultSet.getString("email"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+System.out.println();
+        //print the ids and messages of all chats
+        System.out.println("Chats:");
+        try(Statement statement = connection.createStatement()){
+            ResultSet resultSet = statement.executeQuery("SELECT id, message FROM Chats");
+            while(resultSet.next()){
+                System.out.println("id: " + resultSet.getInt("id") + " message: " + resultSet.getString("message"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
     }
 }

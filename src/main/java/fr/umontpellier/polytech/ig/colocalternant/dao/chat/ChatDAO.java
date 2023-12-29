@@ -30,17 +30,17 @@ public abstract class ChatDAO {
             List<Chat> chats = new ArrayList<>();
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
             Connection connection = this.daoFactory.getConnection();
-            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Chats WHERE user1 LIKE ? OR user2 LIKE ?;")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Chats WHERE idSender LIKE ? OR idDest LIKE ?;")) {
                 preparedStatement.setInt(1, user.getId());
                 preparedStatement.setInt(2, user.getId());
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
                         // get the user1
-                        User user1_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("user1"));
+                        User user1_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("idSender"));
                         // get the user2
-                        User user2_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("user2"));
+                        User user2_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("idDest"));
                         // convert the field "date" to LocalDateTime
-                        String date = resultSet.getString("date");
+                        String date = resultSet.getString("timestamp");
                         LocalDateTime localDateTime = LocalDateTime.parse(date);
                         // add the chat to the list
                         chats.add(new Chat(resultSet.getInt("id"), user1_, user2_, resultSet.getString("message"), localDateTime, resultSet.getBoolean("isDeleted")));
@@ -66,7 +66,7 @@ public abstract class ChatDAO {
             List<Chat> chats = new ArrayList<>();
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
             Connection connection = this.daoFactory.getConnection();
-            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Chats WHERE (user1 LIKE ? AND user2 LIKE ?) OR (user1 LIKE ? AND user2 LIKE ?);")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Chats WHERE (idSender LIKE ? AND idDest LIKE ?) OR (idSender LIKE ? AND idDest LIKE ?);")) {
                 preparedStatement.setInt(1, user1.getId());
                 preparedStatement.setInt(2, user2.getId());
                 preparedStatement.setInt(3, user2.getId());
@@ -74,11 +74,11 @@ public abstract class ChatDAO {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     while (resultSet.next()) {
                         // get the user1
-                        User user1_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("user1"));
+                        User user1_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("idSender"));
                         // get the user2
-                        User user2_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("user2"));
+                        User user2_ = this.daoFactory.getUserDAO().getUserById(resultSet.getInt("idDest"));
                         // convert the field "date" to LocalDateTime
-                        String date = resultSet.getString("date");
+                        String date = resultSet.getString("timestamp");
                         LocalDateTime localDateTime = LocalDateTime.parse(date);
                         // add the chat to the list
                         chats.add(new Chat(resultSet.getInt("id"), user1_, user2_, resultSet.getString("message"), localDateTime, resultSet.getBoolean("isDeleted")));
@@ -103,7 +103,7 @@ public abstract class ChatDAO {
         try{
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
             Connection connection = this.daoFactory.getConnection();
-            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (user1, user2, message, date, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
                 preparedStatement.setInt(1, current.getId());
                 preparedStatement.setInt(2, dest.getId());
                 preparedStatement.setString(3, message);
