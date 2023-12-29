@@ -9,6 +9,9 @@ import javafx.scene.control.Label;
 
 import java.io.IOException;
 
+/**
+ * Controller of the options view.
+ */
 public class OptionsController {
     /**
      * The logout button

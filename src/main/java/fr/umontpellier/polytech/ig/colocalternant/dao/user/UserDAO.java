@@ -92,7 +92,7 @@ public abstract class UserDAO {
         try {
             connection = this.daoFactory.getConnection();
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
-try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET password = ? WHERE id = ?;")) {
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET password = ? WHERE id = ?;")) {
                 preparedStatement.setString(1, newPwd);
                 preparedStatement.setInt(2, currentUser.getId());
                 System.out.println("SQL Query: " + preparedStatement.toString());
@@ -160,6 +160,10 @@ try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE U
         }
     }
 
+    /**
+     * Unban the user.
+     * @param user The user to unban.
+     */
     public void unBanUser(User user) {
         Connection connection = null;
         try {

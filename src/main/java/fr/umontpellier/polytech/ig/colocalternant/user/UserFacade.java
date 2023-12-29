@@ -88,11 +88,19 @@ public class UserFacade {
         }
     }
 
+    /**
+     * Changes the password of the current user.
+     * @param newPwd The new password.
+     */
     public void changePassword(String newPwd) {
         User current = getCurrentUser();
         daoFactory.getUserDAO().changePassword(current, newPwd);
     }
 
+    /**
+     * Retrieves all the users.
+     * @return The list of all users.
+     */
     public ArrayList<User> getAllUsers() {
         return daoFactory.getUserDAO().getAllUsers();
     }

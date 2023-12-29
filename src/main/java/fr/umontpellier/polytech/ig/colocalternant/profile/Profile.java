@@ -1,5 +1,8 @@
 package fr.umontpellier.polytech.ig.colocalternant.profile;
 
+/**
+ * Profile class
+ */
 public class Profile {
     /**
      * The id of the user

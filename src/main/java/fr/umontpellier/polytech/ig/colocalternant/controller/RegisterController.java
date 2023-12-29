@@ -12,6 +12,9 @@ import javafx.scene.control.TextField;
 
 import java.io.IOException;
 
+/**
+ * Controller of the register view.
+ */
 public class RegisterController {
 
     /**
