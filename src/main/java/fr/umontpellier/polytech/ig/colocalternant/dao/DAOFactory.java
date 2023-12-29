@@ -70,6 +70,18 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Creates the tables related to the chat in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateChatTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Chats (id INTEGER PRIMARY KEY AUTOINCREMENT, idSender INTEGER, idDest INTEGER, message TEXT, timestamp TEXT, isDeleted INTEGER)");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Seeds the tables related to the user in the database.
      * @param connection The connection to the database.
      */
@@ -86,11 +98,28 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Seeds the tables related to the chat in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedChatTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (1, 2, 'Hello', '2020-01-01 00:00:00', 0)");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Chat already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
      * Creates the tables in the database.
      * @param connection The connection to the database.
      */
     protected void CreateTables(Connection connection) {
         CreateUserTable(connection);
+        CreateChatTable(connection);
     }
 
     /**
@@ -99,5 +128,6 @@ public abstract class DAOFactory {
      */
     protected void SeedTables(Connection connection) {
         SeedUserTable(connection);
+        SeedChatTable(connection);
     }
 }
