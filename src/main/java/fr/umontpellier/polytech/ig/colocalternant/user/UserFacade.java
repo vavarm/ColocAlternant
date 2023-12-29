@@ -6,6 +6,8 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
 
+import java.util.ArrayList;
+
 /**
  * Facade of the CRUD operations available on the user.
  */
@@ -86,6 +88,10 @@ public class UserFacade {
     public void changePassword(String newPwd) {
         User current = getCurrentUser();
         daoFactory.getUserDAO().changePassword(current, newPwd);
+    }
+
+    public ArrayList<User> getAllUsers() {
+        return daoFactory.getUserDAO().getAllUsers();
     }
 
     /**

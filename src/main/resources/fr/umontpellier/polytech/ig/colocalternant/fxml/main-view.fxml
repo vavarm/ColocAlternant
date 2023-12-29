@@ -13,6 +13,7 @@
     <HBox>
         <Text fx:id="firstName"/>
         <Button fx:id="settingsButton" text="Settings" onAction="#settings"/>
+        <Button fx:id="userListButton" text="UserList" onAction="#userList"/>
     </HBox>
 
     <fx:include source="footer.fxml"/>

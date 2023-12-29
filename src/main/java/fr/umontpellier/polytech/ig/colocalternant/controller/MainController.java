@@ -16,6 +16,9 @@ public class MainController {
     @FXML
     public Button settingsButton;
 
+    @FXML
+    public Button userListButton;
+
     public void initialize() {
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
     }
@@ -23,6 +26,14 @@ public class MainController {
     public void settings(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("settings");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void userList(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("userList");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * DAO of the user
@@ -106,6 +107,30 @@ try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE U
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Retrieves all the users from the database.
+     * @return The list of all the users.
+     */
+    public ArrayList<User> getAllUsers() {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Users;")) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    ArrayList<User> users = new ArrayList<>();
+                    while (resultSet.next()) {
+                        users.add(new User(resultSet.getInt("id"), resultSet.getString("firstname"), resultSet.getString("lastname"), resultSet.getInt("age"), resultSet.getString("email"), resultSet.getString("password"), resultSet.getString("photo")));
+                    }
+                    return users;
+                }
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            return null;
         }
     }
 }
