@@ -28,8 +28,8 @@ public class ProfileFacade {
     }
 
     /**
-     * Retrieves the current profile.
-     * @return The current profile.
+     * Retrieves the current profile and check is the user is admin
+     * @return true if the user is admin
      */
     public boolean isAdmin(User user){
         for (Profile profile : getAllProfiles()) {
@@ -50,7 +50,7 @@ public class ProfileFacade {
     }
 
     /**
-     * Retrieves the unique instance of the user facade.
+     * Retrieves the unique instance of the profile facade.
      * @return The profile facade.
      */
     public static ProfileFacade getInstance() {

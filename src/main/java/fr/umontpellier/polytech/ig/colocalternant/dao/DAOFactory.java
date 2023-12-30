@@ -80,7 +80,7 @@ public abstract class DAOFactory {
     }
 
     /**
-     * Creates the tables related to the user in the database.
+     * Creates the tables related to the profile in the database.
      * @param connection The connection to the database.
      */
     private void CreateProfileTable(Connection connection) {
@@ -92,7 +92,7 @@ public abstract class DAOFactory {
     }
 
     /**
-     * Seeds the tables related to the user in the database.
+     * Seeds the tables related to the profile in the database.
      * @param connection The connection to the database.
      */
     private void SeedProfileTable(Connection connection) {

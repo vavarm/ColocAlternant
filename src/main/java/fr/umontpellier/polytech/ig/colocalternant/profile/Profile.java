@@ -48,7 +48,7 @@ public class Profile {
     }
 
     /**
-     * Defines the first name of the profile.
+     * Defines the role of the profile.
      * @param role The profile's first name.
      */
     public void setRole(Role role) {

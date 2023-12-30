@@ -83,7 +83,7 @@ public abstract class UserDAO {
     }
 
     /**
-     * Updates the password's given user in the database.
+     * Updates the password's given user’s password in the database.
      * @param currentUser The user to update.
      * @param newPwd The new password of the user.
      */
