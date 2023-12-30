@@ -36,6 +36,7 @@ public class CredentialException extends Exception {
         return switch (this.type) {
             case INVALID_EMAIL -> "Invalid email";
             case INVALID_PASSWORD -> "Invalid password";
+            case EMAIL_ALREADY_USED -> "Email already used";
         };
     }
 }

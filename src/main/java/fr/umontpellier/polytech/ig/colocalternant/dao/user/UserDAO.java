@@ -9,6 +9,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * DAO of the user
@@ -48,6 +49,140 @@ public abstract class UserDAO {
         } catch (SQLException sqlException) {
             sqlException.printStackTrace();
             return null;
+        }
+    }
+
+    /**
+     * Inserts the given user into the database.
+     * @param newUser The user to insert.
+     * @throws CredentialException if the email is already used.
+     */
+    public void insertUser(User newUser) throws CredentialException {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Users (firstname, lastname, age, email, password, photo) VALUES (?, ?, ?, ?, ?, ?);")) {
+                preparedStatement.setString(1, newUser.getFirstName());
+                preparedStatement.setString(2, newUser.getLastName());
+                preparedStatement.setInt(3, newUser.getAge());
+                preparedStatement.setString(4, newUser.getEmail());
+                preparedStatement.setString(5, newUser.getPassword());
+                preparedStatement.setString(6, newUser.getPhoto());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new CredentialException(CredentialExceptionType.EMAIL_ALREADY_USED);
+                }
+                connection.commit();
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+        }
+    }
+
+    /**
+     * Updates the password's given user’s password in the database.
+     * @param currentUser The user to update.
+     * @param newPwd The new password of the user.
+     */
+    public void changePassword(User currentUser, String newPwd) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET password = ? WHERE id = ?;")) {
+                preparedStatement.setString(1, newPwd);
+                preparedStatement.setInt(2, currentUser.getId());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new Exception("No rows were affected, indicating a problem");
+                }
+                connection.commit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Retrieves all the users from the database.
+     * @return The list of all the users.
+     */
+    public ArrayList<User> getAllUsers() {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Users;")) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    ArrayList<User> users = new ArrayList<>();
+                    while (resultSet.next()) {
+                        users.add(new User(resultSet.getInt("id"), resultSet.getString("firstname"), resultSet.getString("lastname"), resultSet.getInt("age"), resultSet.getString("email"), resultSet.getString("password"), resultSet.getString("photo")));
+                    }
+                    return users;
+                }
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            return null;
+        }
+    }
+
+    /**
+     * Ban the user.
+     * @param user The user to ban.
+     */
+    public void banUser(User user) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET banned = true WHERE id = ?;")) {
+                preparedStatement.setInt(1, user.getId());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new Exception("No rows were affected, indicating a problem");
+                }
+                connection.commit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Unban the user.
+     * @param user The user to unban.
+     */
+    public void unBanUser(User user) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Users SET banned = false WHERE id = ?;")) {
+                preparedStatement.setInt(1, user.getId());
+                System.out.println("SQL Query: " + preparedStatement.toString());
+                int rowsAffected = preparedStatement.executeUpdate();
+                if (rowsAffected == 0) {
+                    // No rows were affected, indicating a problem
+                    throw new Exception("No rows were affected, indicating a problem");
+                }
+                connection.commit();
+            } catch (Exception e) {
+                throw new RuntimeException(e);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 }
