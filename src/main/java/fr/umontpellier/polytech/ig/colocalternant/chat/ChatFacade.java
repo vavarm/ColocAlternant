@@ -53,7 +53,8 @@ public class ChatFacade {
      * @return a list of chats
      */
     public List<Chat> getChatsWith(User user1, User user2) {
-        return daoFactory.getChatDAO().getChatsWith(user1, user2);
+        List<Chat> chats = daoFactory.getChatDAO().getChatsWith(user1, user2);
+        return chats;
     }
 
     /**

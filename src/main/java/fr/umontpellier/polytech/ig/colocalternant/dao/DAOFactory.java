@@ -3,10 +3,8 @@ package fr.umontpellier.polytech.ig.colocalternant.dao;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
+import java.time.LocalDateTime;
 
 /**
  * DAO factory
@@ -113,8 +111,33 @@ public abstract class DAOFactory {
      * @param connection The connection to the database.
      */
     private void SeedChatTable(Connection connection) {
+        // remove all chats
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (1, 2, 'Hello', '2007-12-03T10:15:30', 0)");
+            statement.executeUpdate("DELETE FROM Chats");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
+            preparedStatement.setInt(1, 1);
+            preparedStatement.setInt(2, 2);
+            preparedStatement.setString(3, "Hello");
+            preparedStatement.setString(4, LocalDateTime.now().toString());
+            preparedStatement.setBoolean(5, false);
+            preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Chat already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+        try(PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
+            preparedStatement.setInt(1, 2);
+            preparedStatement.setInt(2, 1);
+            preparedStatement.setString(3, "Hi");
+            preparedStatement.setString(4, LocalDateTime.now().toString());
+            preparedStatement.setBoolean(5, false);
+            preparedStatement.executeUpdate();
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: Chat already exists");

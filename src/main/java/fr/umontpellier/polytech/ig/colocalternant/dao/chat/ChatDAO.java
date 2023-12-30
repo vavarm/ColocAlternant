@@ -122,6 +122,7 @@ public abstract class ChatDAO {
      * @param chat
      */
     public void delete(Chat chat) {
+        System.out.println("ChatDAO.delete: " + chat.getId());
         try{
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
             Connection connection = this.daoFactory.getConnection();

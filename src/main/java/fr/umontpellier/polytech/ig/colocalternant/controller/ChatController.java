@@ -35,7 +35,7 @@ public class ChatController {
     }
 
     /**
-     * Create the TableView and add it to the VBox.
+     * Create the TableView and the columns.
      * Shows the list of all users who talk with the current user.
      */
     public void onCreation() {

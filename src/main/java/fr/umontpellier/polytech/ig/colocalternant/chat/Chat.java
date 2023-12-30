@@ -39,6 +39,7 @@ public class Chat {
      * @param isDeleted
      */
     public Chat(int id, User sender, User dest, String message, LocalDateTime timestamp, boolean isDeleted) {
+        this.id = id;
         this.sender = sender;
         this.dest = dest;
         this.message = message;
