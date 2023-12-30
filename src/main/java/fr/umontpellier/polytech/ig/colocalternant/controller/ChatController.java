@@ -19,11 +19,12 @@ import javafx.scene.layout.*;
  * The controller of the list of users who talk to each other
  */
 public class ChatController {
+
     /**
-     * The VBox containing the table
+     * The table that contains all the existent chats with the user
      */
     @FXML
-    VBox box;
+    TableView<User> tableView;
 
     /**
      * Handles when the user loads the view.
@@ -68,7 +69,6 @@ public class ChatController {
             System.out.println(user.getFirstName());
         }
         // Create TableView
-        TableView<User> tableView = new TableView<>();
         tableView.setItems(FXCollections.observableArrayList(users));
         // Create columns
         TableColumn<User, String> firstNameColumn = new TableColumn<>("First name");
@@ -90,9 +90,6 @@ public class ChatController {
 
         // Add columns to the table
         tableView.getColumns().addAll(firstNameColumn, lastNameColumn, emailColumn, goToChatColumn);
-
-        // Add the table to the VBox
-        box.getChildren().add(tableView);
     }
 
     private Button createChatMessageButton(User user) {
