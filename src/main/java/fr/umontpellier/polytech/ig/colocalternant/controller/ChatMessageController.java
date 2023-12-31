@@ -1,14 +1,18 @@
 package fr.umontpellier.polytech.ig.colocalternant.controller;
 
+import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.chat.Chat;
 import fr.umontpellier.polytech.ig.colocalternant.chat.ChatFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.application.Platform;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.geometry.Pos;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,6 +31,18 @@ public class ChatMessageController {
 
     @FXML
     VBox chatBox;
+
+    @FXML
+    TextField messageField;
+
+    @FXML
+    Button sendButton;
+
+    @FXML
+    Button refreshButton;
+
+    @FXML
+    Button backButton;
 
     /**
      * Deletes a chat
@@ -71,6 +87,8 @@ public class ChatMessageController {
      * Shows the list messages between the current user and the person to chat with.
      */
     private void onCreation() {
+        // set the title
+        title.setText("Chat with " + personToChatWith.getFirstName() + " " + personToChatWith.getLastName());
         updateChatBox();
     }
 
@@ -109,23 +127,66 @@ public class ChatMessageController {
             hBox.setStyle("-fx-background-color: #add8e6");
         }
         // add the message and the timestamp
-        Label msg = new Label("Message: " + chat.getMessage());
-        // create a separator between the message and the timestamp
-        Separator separator = new Separator();
-        separator.setPrefWidth(10);
-        separator.setPrefHeight(10);
+        Label msg = new Label(chat.getMessage());
         String date = chat.getTimestamp().toString();
-        Label timestamp = new Label("Date: " + date);
+        // convert the date to dd/MM/yyyy HH:mm:ss
+        date = date.substring(8, 10) + "/" + date.substring(5, 7) + "/" + date.substring(0, 4) + " " + date.substring(11, 19);
+        Label timestamp = new Label(date);
+        // put the date in italic
+        timestamp.setStyle("-fx-font-style: italic");
         // add a button to delete the message
         Button deleteButton = new Button("Delete");
         deleteButton.setOnAction(event -> {
             delete(chat);
         });
-        hBox.getChildren().addAll(msg, separator, timestamp, deleteButton);
-        // make the children of the HBox grow to fill the space
-        HBox.setHgrow(msg, Priority.ALWAYS);
+        // create a new HBox with the timestamp and the delete button
+        HBox hBox2 = new HBox();
+        hBox2.getChildren().addAll(timestamp, deleteButton);
+        // add the children to the HBox
+        hBox.getChildren().addAll(msg, hBox2);
         // make the HBox take all the width available
         hBox.setMaxWidth(Double.MAX_VALUE);
+        // convert the hBox to a flexbox with a space between the elements
+        HBox.setHgrow(msg, Priority.ALWAYS);
+        HBox.setHgrow(hBox2, Priority.ALWAYS);
+        hBox.setAlignment(Pos.CENTER_LEFT);
+        hBox2.setAlignment(Pos.CENTER_RIGHT);
         return hBox;
     }
+
+    /**
+     * Handles when the user clicks on the send button.
+     */
+    public void onSend() {
+        // get the message
+        String message = messageField.getText();
+        if (message.isEmpty()) return;
+        // send the message
+        this.send(message, UserFacade.getInstance().getCurrentUser(), personToChatWith);
+        // clear the message field
+        messageField.setText("");
+        // update the chat box
+        updateChatBox();
+    }
+
+    /**
+     * Handles when the user clicks on the refresh button.
+     */
+        public void onRefresh(ActionEvent actionEvent) {
+        // update the chat box
+        updateChatBox();
+    }
+
+    /**
+     * Handles when the user clicks on the back button.
+     */
+    public void onBack(ActionEvent actionEvent) {
+        // go back to the list of chats
+        try{
+            FXRouter.goTo("chat");
+        } catch (IOException e){
+            System.out.println("Error while going back to the list of chats");
+        }
+    }
+
 }

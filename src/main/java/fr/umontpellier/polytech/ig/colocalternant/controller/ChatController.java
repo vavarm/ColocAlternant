@@ -100,7 +100,7 @@ public class ChatController {
             try {
                 FXRouter.goTo("chat-message");
             } catch (Exception e) {
-                throw new RuntimeException(e);
+                e.printStackTrace();
             }
         });
         return button;

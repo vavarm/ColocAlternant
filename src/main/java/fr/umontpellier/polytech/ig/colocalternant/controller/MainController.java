@@ -23,7 +23,7 @@ public class MainController {
         try {
             FXRouter.goTo("chat");
         } catch (Exception e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
     }
 }

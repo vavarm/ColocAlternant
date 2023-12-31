@@ -13,6 +13,8 @@
 
     <fx:include source="header.fxml"/>
 
+    <Button fx:id="backButton" text="Back" onAction="#onBack"/>
+
     <VBox spacing="30" alignment="CENTER">
         <Label fx:id="title" text="Your conversation with:..."/>
         <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true">
@@ -20,6 +22,11 @@
                 <VBox fx:id="chatBox" fillWidth="true"/>
             </content>
         </ScrollPane>
+        <HBox spacing="10" alignment="CENTER">
+            <TextField fx:id="messageField" promptText="Type your message here..." prefWidth="300"/>
+            <Button fx:id="sendButton" text="Send" onAction="#onSend"/>
+            <Button fx:id="RefreshButton" text="Refresh" onAction="#onRefresh"/>
+        </HBox>
     </VBox>
 
     <fx:include source="footer.fxml"/>
