@@ -52,6 +52,25 @@ public abstract class UserDAO {
         }
     }
 
+    public User getUserById(Integer id){
+        try {
+            Connection connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Users WHERE id LIKE ?;")) {
+                preparedStatement.setInt(1, id);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        return new User(resultSet.getInt("id"), resultSet.getString("firstname"), resultSet.getString("lastname"), resultSet.getInt("age"), resultSet.getString("email"), resultSet.getString("password"), resultSet.getString("photo"));
+                }
+            }
+                return null;
+            }
+        } catch (SQLException sqlException) {
+            sqlException.printStackTrace();
+            return null;
+        }
+    }
+
     /**
      * Inserts the given user into the database.
      * @param newUser The user to insert.

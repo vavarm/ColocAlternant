@@ -34,6 +34,9 @@ public class App extends Application {
         FXRouter.when("userList", "fxml/userList-view.fxml");
         FXRouter.when("options", "fxml/options-view.fxml");
 
+        FXRouter.when("chat", "fxml/chat-view.fxml");
+        FXRouter.when("chat-message", "fxml/chat-message-view.fxml");
+
         FXRouter.goTo("hello");
     }
 }

@@ -4,6 +4,8 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAOSQLite;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -61,13 +63,20 @@ public class DAOSQLiteFactory extends DAOFactory {
     }
 
     /**
-     * Retrieves the profile DAO.
-     * @return The profile DAO.
+     * Retrieves the chat DAO.
+     * @return The chat DAO.
+     */
+    public ChatDAO getChatDAO() {
+        return ChatDAOSQLite.getInstance();
+    }
+
+     /**
+      * Retrieves the profile DAO.
+      * @return The profile DAO.
      */
     public ProfileDAO getProfileDAO() {
         return ProfileDAOSQLite.getInstance();
     }
-
 
     /**
      * Holder of the unique instance of the DAO factory
