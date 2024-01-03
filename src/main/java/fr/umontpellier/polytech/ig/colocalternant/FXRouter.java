@@ -225,8 +225,10 @@ public final class FXRouter {
         // set FXRouter current route reference
         currentRoute = route;
 
-        // add package name to scene path
-        route.scenePath = "/" + pathRef.replace(".", "/") + "/" + route.scenePath;
+        // if the scene path is not absolute
+        if(!route.scenePath.startsWith("/"))
+            // add package name to scene path
+            route.scenePath = "/" + pathRef.replace(".", "/") + "/" + route.scenePath;
 
         URL ressource = mainRef.getClass().getResource(currentRoute.scenePath);
 
