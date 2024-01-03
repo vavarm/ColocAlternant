@@ -1,5 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
@@ -66,6 +68,14 @@ public class DAOSQLiteFactory extends DAOFactory {
      */
     public ChatDAO getChatDAO() {
         return ChatDAOSQLite.getInstance();
+    }
+
+     /**
+      * Retrieves the profile DAO.
+      * @return The profile DAO.
+     */
+    public ProfileDAO getProfileDAO() {
+        return ProfileDAOSQLite.getInstance();
     }
 
     /**

@@ -1,5 +1,6 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
@@ -63,7 +64,7 @@ public abstract class DAOFactory {
      */
     private void CreateUserTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT, lastName TEXT, age INTEGER, email TEXT UNIQUE, password TEXT, photo TEXT)");
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Users (id INTEGER PRIMARY KEY AUTOINCREMENT, firstName TEXT, lastName TEXT, age INTEGER, email TEXT UNIQUE, password TEXT, photo TEXT, isBanned BOOLEAN DEFAULT FALSE)");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -148,12 +149,41 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Creates the tables related to the profile in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateProfileTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Profiles (user_id INTEGER, role TEXT, FOREIGN KEY(user_id) REFERENCES Users(id), PRIMARY KEY(user_id, role))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Seeds the tables related to the profile in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedProfileTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO Profiles (user_id, role) VALUES (1, 'ADMIN')");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Profile already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
      * Creates the tables in the database.
      * @param connection The connection to the database.
      */
     protected void CreateTables(Connection connection) {
         CreateUserTable(connection);
         CreateChatTable(connection);
+        CreateProfileTable(connection);
     }
 
     /**
@@ -163,6 +193,7 @@ public abstract class DAOFactory {
     protected void SeedTables(Connection connection) {
         SeedUserTable(connection);
         SeedChatTable(connection);
+        SeedProfileTable(connection);
     }
 
     protected void printAllInfo(Connection connection){
@@ -176,7 +207,7 @@ public abstract class DAOFactory {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-System.out.println();
+        System.out.println();
         //print the ids and messages of all chats
         System.out.println("Chats:");
         try(Statement statement = connection.createStatement()){
@@ -188,4 +219,10 @@ System.out.println();
             e.printStackTrace();
         }
     }
+
+    /**
+     * Retrieves the unique instance of the DAO factory.
+     * @return The DAO factory.
+     */
+    public abstract ProfileDAO getProfileDAO();
 }
