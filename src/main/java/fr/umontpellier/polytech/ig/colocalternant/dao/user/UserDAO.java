@@ -3,12 +3,15 @@ package fr.umontpellier.polytech.ig.colocalternant.dao.user;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialExceptionType;
+import fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole;
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 /**
  * DAO of the user
@@ -49,5 +52,59 @@ public abstract class UserDAO {
             sqlException.printStackTrace();
             return null;
         }
+    }
+
+    public ArrayList<User> getAllUsers() {
+        ArrayList<User> users = new ArrayList<>();
+        Connection connection = null;
+        try {
+            connection = daoFactory.getConnection();
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Users")) {
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    while (resultSet.next()) {
+                        User user = new User(
+                                resultSet.getInt("id"),
+                                resultSet.getString("firstName"),
+                                resultSet.getString("lastName"),
+                                resultSet.getInt("age"),
+                                resultSet.getString("email"),
+                                resultSet.getString("password"),
+                                resultSet.getString("photo")
+                        );
+                        users.add(user);
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
+    }
+
+    public User getUserByID(int id) {
+        User user = null;
+        Connection connection = null;
+        try {
+            connection = daoFactory.getConnection();
+            try (PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM Users WHERE id = ?")) {
+                preparedStatement.setInt(1, id);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        user = new User(
+                                resultSet.getInt("id"),
+                                resultSet.getString("firstName"),
+                                resultSet.getString("lastName"),
+                                resultSet.getInt("age"),
+                                resultSet.getString("email"),
+                                resultSet.getString("password"),
+                                resultSet.getString("photo")
+                        );
+                    }
+                }
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return user;
     }
 }

@@ -83,7 +83,7 @@ public class LoginController {
         }
         // redirect to main page
         try {
-            FXRouter.goTo("main");
+            FXRouter.goTo("createProfile");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

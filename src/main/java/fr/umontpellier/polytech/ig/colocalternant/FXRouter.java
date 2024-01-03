@@ -72,6 +72,7 @@ public final class FXRouter {
         private double sceneHeight;
         // route data passed from goTo()
         private Object data;
+        private Object data2;
 
         private RouteScene(String scenePath) {
             this(scenePath, getWindowTitle(), getWindowWidth(), getWindowHeight());
@@ -117,6 +118,7 @@ public final class FXRouter {
                     ", sceneWidth=" + sceneWidth +
                     ", sceneHeight=" + sceneHeight +
                     ", data=" + data +
+                    ", data2=" + data2 +
                     '}';
         }
     }
@@ -198,7 +200,26 @@ public final class FXRouter {
     public static void goTo(String routeLabel) throws IOException {
         // get corresponding route
         RouteScene route = routes.get(routeLabel);
-        loadNewRoute(route);
+        if (route.scenePath.substring(0, 3).equals("/fr")) {
+            goToOld(routeLabel);
+        }
+        else {
+            loadNewRoute(route);
+        }
+    }
+
+    public static void goTo(String routeLabel, int id, boolean cond) throws IOException {
+        // get corresponding route
+        RouteScene route = routes.get(routeLabel);
+        if (route.scenePath.substring(0, 3).equals("/fr")) {
+            goToOld(routeLabel, id, cond);
+        }
+        else {
+            // set route data
+            route.data = id;
+            route.data2 = cond;
+            loadNewRoute(route);
+        }
     }
 
     /** Switch between FXRouter route and show corresponding scenes
@@ -207,11 +228,14 @@ public final class FXRouter {
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
     public static void goTo(String routeLabel, Object data) throws IOException {
-        // get corresponding route
         RouteScene route = routes.get(routeLabel);
-        // set route data
-        route.data = data;
-        loadNewRoute(route);
+        if (route.scenePath.substring(0, 3).equals("/fr")) {
+            goToOld(routeLabel);
+        }
+        else {
+            route.data = data;
+            loadNewRoute(route);
+        }
     }
 
     /** Helper method of goTo() which load and show new scene
@@ -292,5 +316,48 @@ public final class FXRouter {
     public static Object getData() {
         return currentRoute.data;
     }
+    public static Object getData2() {
+        return currentRoute.data2;
+    }
+
+
+    public static void goToOld(String routeLabel) throws IOException {
+        RouteScene route = routes.get(routeLabel);
+
+        if (route != null) {
+            Parent resource = routeAnimation(route.scenePath);
+            window.setTitle(route.windowTitle);
+            window.setScene(new Scene(resource, route.sceneWidth, route.sceneHeight));
+            window.show();
+            routeAnimation(resource);
+        }
+        else {
+            System.out.println("Route not found: " + routeLabel);
+        }
+    }
+    public static void goToOld(String routeLabel, int id, boolean cond) throws IOException {
+        RouteScene route = routes.get(routeLabel);
+
+        if (route != null) {
+            route.data = id;
+            route.data2 = cond;
+            currentRoute = route;
+            Parent resource = routeAnimation(currentRoute.scenePath);
+            window.setTitle(currentRoute.windowTitle);
+            window.setScene(new Scene(resource, currentRoute.sceneWidth, currentRoute.sceneHeight));
+            window.show();
+            routeAnimation(resource);
+        }
+        else {
+            System.out.println("Route not found: " + routeLabel);
+        }
+    }
+
+    private static Parent routeAnimation(String scenePath) {
+        URL resource = mainRef.getClass().getResource(scenePath);
+        try { return FXMLLoader.load(resource); }
+        catch (IOException e) { throw new RuntimeException("Failed to load route: " + e.getMessage()); }
+    }
+
 
 }
