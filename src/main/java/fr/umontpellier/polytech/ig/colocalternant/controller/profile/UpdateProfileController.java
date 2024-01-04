@@ -77,9 +77,16 @@ public class UpdateProfileController {
         else { choice = false; }
         updateProfile(profileID, choice, description);
 
-        System.out.println("Redirecting to ownProfile-view");
-        try { FXRouter.goTo("ownProfile", profileID, false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        if (getCond() == false) {
+            System.out.println("Redirecting to ownProfile-view");
+            try { FXRouter.goTo("ownProfile", profileID, false); }
+            catch (IOException e) { throw new RuntimeException(e); }
+        }
+        else {
+            System.out.println("Redirecting to ownProfile-view");
+            try { FXRouter.goTo("main"); }
+            catch (IOException e) { throw new RuntimeException(e); }
+        }
     }
 
     /**
