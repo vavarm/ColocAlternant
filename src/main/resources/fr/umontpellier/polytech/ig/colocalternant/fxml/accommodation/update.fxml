@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.accommodation.UpdateController"
+            prefHeight="400.0" prefWidth="600.0">
+
+    <fx:include source="../header.fxml"/>
+    <TextField fx:id="newTitle" layoutX="150.0" layoutY="30.0" promptText="New Title"/>
+    <TextField fx:id="newLocation" layoutX="150.0" layoutY="75.0" promptText="New Location"/>
+    <TextField fx:id="newDescription" layoutX="150.0" layoutY="120.0" promptText="New Description"/>
+    <TextField fx:id="newPrice" layoutX="150.0" layoutY="165.0" promptText="New Price"/>
+    <TextField fx:id="newSF" layoutX="150.0" layoutY="210.0" promptText="New Special Functionalities"/>
+    <TextField fx:id="newER" layoutX="150.0" layoutY="255.0" promptText="New Energetic Report"/>
+    <TextField fx:id="newPhotos" layoutX="150.0" layoutY="300.0" promptText="New Photos"/>
+    <Button fx:id="update" layoutX="150.0" layoutY="265.0" onAction="#updateAccommodation" text="Update"/>
+    <Button fx:id="back"/>
+
+    <fx:include source="../footer.fxml"/>
+
+
+</VBox>

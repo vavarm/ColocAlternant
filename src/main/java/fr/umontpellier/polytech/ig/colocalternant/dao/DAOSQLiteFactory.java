@@ -1,7 +1,12 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -57,6 +62,24 @@ public class DAOSQLiteFactory extends DAOFactory {
     public UserDAO getUserDAO() {
         return UserDAOSQLite.getInstance();
     }
+
+
+    /**
+     * Retrieves the accommodation DAO.
+     * @return The accommodation DAO.
+     */
+    public AccommodationDAO getAccommodationDAO() {
+        return AccommodationDAOSQLite.getInstance();
+    }
+
+    /**
+     * Retrieves the profile DAO.
+     * @return The profile DAO.
+     */
+    public ProfileDAO getProfileDAO() {
+        return ProfileDAOSQLite.getInstance();
+    }
+
 
     /**
      * Holder of the unique instance of the DAO factory
