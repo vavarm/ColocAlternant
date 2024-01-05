@@ -64,3 +64,4 @@ public class ProfileFacade {
         private final static ProfileFacade instance = new ProfileFacade();
     }
 }
+

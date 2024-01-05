@@ -15,6 +15,7 @@
     <Label fx:id="welcomeText"/>
     <Button text="Hello!" onAction="#onHelloButtonClick"/>
     <Button text="Login" onAction="#login"/>
+    <Button text="Register" onAction="#register"/>
 
     <fx:include source="footer.fxml"/>
 </VBox>

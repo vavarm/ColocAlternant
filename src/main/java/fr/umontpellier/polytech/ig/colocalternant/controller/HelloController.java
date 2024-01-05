@@ -37,4 +37,17 @@ public class HelloController {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Method called when the register button is clicked. Open the register window.
+     * @param actionEvent the event of the click
+     */
+    @FXML
+    public void register(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("register");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
