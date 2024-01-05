@@ -1,9 +1,15 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
+
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 import java.sql.*;
 import java.time.LocalDateTime;
 
@@ -34,6 +40,18 @@ public abstract class DAOFactory {
      * @return The User DAO.
      */
     public abstract UserDAO getUserDAO();
+
+    /**
+     * Retrieves the unique instance of the accommodation DAO.
+     * @return The accommodation DAO.
+     */
+    public abstract AccommodationDAO getAccommodationDAO();
+
+    /**
+     * Retrieves the unique instance of the profile DAO.
+     * @return The profile DAO.
+     */
+    public abstract ProfileDAO getProfileDAO();
 
     /**
      * Retrieves the unique instance of the DAO factory.
@@ -81,6 +99,52 @@ public abstract class DAOFactory {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Creates the table related to the accomodation in the database.
+     * @param connection The connection to the database.
+     *
+     */
+    private void CreateAccomodationTable(Connection connection){
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Accomodations (id INTEGER PRIMARY KEY AUTOINCREMENT, price FLOAT , location TEXT, title TEXT, surface FLOAT, description TEXT, specialFonctionalities TEXT, energicReport FLOAT, photos TEXT )");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Creates the table related to the association between an owner and his accommodation in the database.
+     * @param connection The connection to the database.
+     *
+     */
+    private void CreateOwnsTable(Connection connection){
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Owns (user_id INTEGER,  accommodation_id INTEGER, PRIMARY KEY (user_id, accommodation_id),  FOREIGN KEY (user_id) REFERENCES user(id), FOREIGN KEY (accommodation_id) REFERENCES accommodation(id))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
+     * Seeds the tables related to the user in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedOwnsTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO owns (user_id, accommodation_id ) VALUES (1,1)");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Owns association already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
+
+
 
     /**
      * Seeds the tables related to the user in the database.
@@ -177,11 +241,28 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Seeds the tables related to the accommodation in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedAccommodationTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DELETE FROM Accomodations");
+           statement.executeUpdate("INSERT INTO Accomodations (price, location, title, surface, description, specialFonctionalities, energicReport, photos) VALUES (300000000, 'Université de Montpellier, Pl. Eugène Bataillon, 34090 Montpellier', 'Polytech Montpellier', 35, 'school', 'wifi', '0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS594D5fYC3ogCVbFVVY9zff7tM2z0_cZrf5FA65pLI_y05Bofbcxd4TFfT6NaXnASpRng&usqp=CAU')");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    /**
      * Creates the tables in the database.
      * @param connection The connection to the database.
      */
     protected void CreateTables(Connection connection) {
+
         CreateUserTable(connection);
+        CreateAccomodationTable(connection);
+        CreateOwnsTable(connection);
         CreateChatTable(connection);
         CreateProfileTable(connection);
     }
@@ -192,6 +273,8 @@ public abstract class DAOFactory {
      */
     protected void SeedTables(Connection connection) {
         SeedUserTable(connection);
+        SeedAccommodationTable(connection);
+        SeedOwnsTable(connection);
         SeedChatTable(connection);
         SeedProfileTable(connection);
     }
@@ -220,9 +303,5 @@ public abstract class DAOFactory {
         }
     }
 
-    /**
-     * Retrieves the unique instance of the DAO factory.
-     * @return The DAO factory.
-     */
-    public abstract ProfileDAO getProfileDAO();
+
 }

@@ -62,4 +62,5 @@ public class Profile {
     public String toString() {
         return "Profile{" + "id=" + userId + ", role=" + role + '}';
     }
+
 }

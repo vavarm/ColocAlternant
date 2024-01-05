@@ -13,7 +13,9 @@ import java.util.ArrayList;
 /**
  * DAO of the profile
  */
-public class ProfileDAO {
+
+public abstract class ProfileDAO {
+
     /**
      * The DAO factory
      */
@@ -48,4 +50,5 @@ public class ProfileDAO {
             return null;
         }
     }
+
 }

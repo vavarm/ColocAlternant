@@ -29,6 +29,11 @@ public class App extends Application {
         FXRouter.when("hello", "fxml/hello-view.fxml");
         FXRouter.when("login", "fxml/login-view.fxml");
         FXRouter.when("main", "fxml/main-view.fxml");
+        FXRouter.when("deleteAccommodation", "fxml/accommodation/delete.fxml");
+        FXRouter.when("accommodationInfo", "fxml/accommodation/info.fxml");
+        FXRouter.when("insertAccommodation", "fxml/accommodation/insert.fxml");
+        FXRouter.when("accommodationsList", "fxml/accommodation/list.fxml");
+        FXRouter.when("updateAccommodation", "fxml/accommodation/update.fxml");
         FXRouter.when("register", "fxml/register-view.fxml");
         FXRouter.when("settings", "fxml/settings-view.fxml");
         FXRouter.when("userList", "fxml/userList-view.fxml");

@@ -4,6 +4,7 @@ import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 
@@ -15,6 +16,7 @@ public class MainController {
     public Text firstName;
 
     @FXML
+    public Button list;
     public Button chatButton;
 
     @FXML
@@ -28,6 +30,14 @@ public class MainController {
 
     public void initialize() {
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
+        list.setText("See the accommodations");
+        list.setOnAction( event -> {
+            try {
+                FXRouter.goTo("accommodationsList");
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     public void chats(ActionEvent actionEvent) {
