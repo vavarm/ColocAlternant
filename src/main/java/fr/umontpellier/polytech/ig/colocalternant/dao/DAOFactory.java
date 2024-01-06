@@ -1,7 +1,9 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.category.CategoryFacade;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
@@ -60,6 +62,12 @@ public abstract class DAOFactory {
     public abstract ChatDAO getChatDAO();
 
     /**
+     * Retrieves the unique instance of the DAO factory.
+     * @return The Category DAO.
+     */
+    public abstract CategoryDAO getCategoryDAO();
+
+    /**
      * Initializes the database. Creates the tables and seeds them.
      * @param connection The connection to the database.
      */
@@ -108,6 +116,18 @@ public abstract class DAOFactory {
     private void CreateAccomodationTable(Connection connection){
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS Accomodations (id INTEGER PRIMARY KEY AUTOINCREMENT, price FLOAT , location TEXT, title TEXT, surface FLOAT, description TEXT, specialFonctionalities TEXT, energicReport FLOAT, photos TEXT )");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Creates the table related to the category in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateCategoryTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Categories (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT UNIQUE)");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -253,6 +273,50 @@ public abstract class DAOFactory {
         }
     }
 
+    /**
+     * Seeds the tables related to the category in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedCategoryTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO Categories (name) VALUES ('bathroom')");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Category already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Creates the tables related to the category and the accommodation in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateCategoryAccommodationTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS CategoryAccommodation (category_id INTEGER, accommodation_id INTEGER, PRIMARY KEY (category_id, accommodation_id), FOREIGN KEY (category_id) REFERENCES Categories(id), FOREIGN KEY (accommodation_id) REFERENCES Accomodations(id))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Seeds the tables related to the category and the accommodation in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedCategoryAccommodationTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO AccommodationCategories (category_id, accommodation_id) VALUES (1, 1)");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: CategoryAccommodation already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     /**
      * Creates the tables in the database.
@@ -265,6 +329,8 @@ public abstract class DAOFactory {
         CreateOwnsTable(connection);
         CreateChatTable(connection);
         CreateProfileTable(connection);
+        CreateCategoryTable(connection);
+        CreateCategoryAccommodationTable(connection);
     }
 
     /**
@@ -277,6 +343,8 @@ public abstract class DAOFactory {
         SeedOwnsTable(connection);
         SeedChatTable(connection);
         SeedProfileTable(connection);
+        SeedCategoryTable(connection);
+        SeedCategoryAccommodationTable(connection);
     }
 
     protected void printAllInfo(Connection connection){

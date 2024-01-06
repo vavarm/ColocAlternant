@@ -3,6 +3,8 @@ package fr.umontpellier.polytech.ig.colocalternant.dao;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAOSQLite;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
@@ -90,6 +92,14 @@ public class DAOSQLiteFactory extends DAOFactory {
      */
     public ProfileDAO getProfileDAO() {
         return ProfileDAOSQLite.getInstance();
+    }
+
+    /**
+     * Retrieves the category DAO.
+     * @return The category DAO.
+     */
+    public CategoryDAO getCategoryDAO() {
+        return CategoryDAOSQLite.getInstance();
     }
 
     /**
