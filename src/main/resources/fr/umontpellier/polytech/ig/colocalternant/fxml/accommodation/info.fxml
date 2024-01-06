@@ -21,6 +21,7 @@
             <Label fx:id="specialFunctionalitiesLabel" text="Special Functionalities" />
             <Label fx:id="energeticReportLabel" text="Energetic Report" />
             <ImageView fx:id="photosImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <fx:include source="../category-view.fxml"/>
             <Button fx:id="deleteButton"/>
             <Button fx:id="updateButton"/>
             <Button fx:id="back"/>

@@ -1,6 +1,9 @@
 package fr.umontpellier.polytech.ig.colocalternant.accomodation;
 
+import fr.umontpellier.polytech.ig.colocalternant.category.Category;
+
 import java.util.*;
+import java.util.stream.Collectors;
 
 /**
  * The `Accommodation` class represents a housing unit available for rent or stay.
@@ -72,6 +75,11 @@ public class Accommodation {
      * The file path or reference to photos representing the accommodation.
      */
     public String photos;
+
+    /**
+     * The list of all the category.
+     */
+    private ArrayList<Category> categories = new ArrayList<>();
 
     /**
      * Get the ID of the accommodation.
@@ -217,5 +225,20 @@ public class Accommodation {
         this.photos = photos;
     }
 
+    /**
+     * Get the categories of the accommodation.
+     * @return The categories of the accommodation.
+     */
+    public ArrayList<Category> getCategories() {
+        return categories;
+    }
+
+    /**
+     * Add a category to the accommodation.
+     * @param category The new category to set.
+     */
+    public void addCategories(Category category) {
+        this.categories.add(category);
+    }
 
 }

@@ -10,14 +10,13 @@ package fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.accomodation.Accommodation;
 import fr.umontpellier.polytech.ig.colocalternant.accomodation.AccommodationFacade;
+import fr.umontpellier.polytech.ig.colocalternant.category.Category;
+import fr.umontpellier.polytech.ig.colocalternant.category.CategoryFacade;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.scene.control.TableCell;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
@@ -25,6 +24,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.stream.Collectors;
 
 /**
  * The ListController class handles the display of the list of accommodations.
@@ -70,11 +70,20 @@ public class ListController {
      * Creates the TableView and adds it to the VBox, showing the list of all accommodations.
      */
     public void onCreation() {
+
+        // Create a TextField for category search
+        TextField categorySearchField = new TextField();
+        categorySearchField.setPromptText("Search by Category");
+
         ArrayList<Accommodation> accommodations = AccommodationFacade.getInstance().getAllAccommodations();
 
         // Create TableView
         TableView<Accommodation> tableView = new TableView<>();
         tableView.setItems(FXCollections.observableArrayList(accommodations));
+
+        // Create a button to trigger the search
+        Button searchButton = new Button("Search");
+        searchButton.setOnAction(event -> filterByCategory(categorySearchField.getText(), tableView));
 
         // Create columns
         TableColumn<Accommodation, String> titleColumn = new TableColumn<>("Title");
@@ -111,6 +120,9 @@ public class ListController {
             return new SimpleObjectProperty<>(imageView);
         });
 
+        TableColumn<Accommodation, ArrayList<Category>> categoriesColumn = new TableColumn<>("Categories");
+        categoriesColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(cellData.getValue().getCategories()));
+
         TableColumn<Accommodation, VBox> actionsButtonColumn = new TableColumn<>("Actions");
         actionsButtonColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(createButtonContainer(cellData.getValue())));
 
@@ -119,12 +131,28 @@ public class ListController {
         locationColumn.setMinWidth(200);
         descriptionColumn.setMinWidth(50);
         priceColumn.setMinWidth(150);
+        categoriesColumn.setMinWidth(150);
         photoColumn.setMinWidth(150);
 
         // Add columns to TableView
-        tableView.getColumns().addAll(titleColumn, locationColumn, descriptionColumn, priceColumn, energicReportColumn, specialFonctionalitiesColumn, photoColumn, actionsButtonColumn);
+        tableView.getColumns().addAll(titleColumn, locationColumn, descriptionColumn, priceColumn, energicReportColumn, specialFonctionalitiesColumn, photoColumn, categoriesColumn, actionsButtonColumn);
 
-        box.getChildren().add(tableView);
+        box.getChildren().removeAll();
+        box.getChildren().addAll(categorySearchField, searchButton, tableView);
+
+        // Button see all Categories
+        Button seeAllCategories = new Button("See all Categories");
+        seeAllCategories.setOnAction(event -> {
+            TableView<Category> tableView1 = new TableView<>();
+            tableView1.setItems(FXCollections.observableArrayList(getAllCategories()));
+
+            TableColumn<Category, String> nameColumn = new TableColumn<>("Name");
+            nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(
+                    cellData.getValue().getName()));
+
+            tableView1.getColumns().add(nameColumn);
+            box.getChildren().add(tableView1);
+        });
     }
 
     /**
@@ -159,7 +187,36 @@ public class ListController {
                 throw new RuntimeException(e);
             }
         });
-
         return button;
+    }
+
+    /**
+     * Filters the list of accommodations based on the given categories.
+     * @param category The category to filter on.
+     * @return The filtered list of accommodations.
+     */
+    private void filterByCategory(String category, TableView<Accommodation> tableView) {
+        ArrayList<Accommodation> allAccommodations = AccommodationFacade.getInstance().getAllAccommodations();
+
+        if (category.isEmpty()) {
+            // If the category is empty, show all accommodations
+            tableView.setItems(FXCollections.observableArrayList(allAccommodations));
+        } else {
+            // Filter accommodations based on the entered category
+            ArrayList<Accommodation> filteredAccommodations = allAccommodations.stream()
+                    .filter(accommodation -> accommodation.getCategories().stream()
+                            .anyMatch(cat -> cat.getName().toLowerCase().contains(category.toLowerCase())))
+                    .collect(Collectors.toCollection(ArrayList::new));
+
+            tableView.setItems(FXCollections.observableArrayList(filteredAccommodations));
+        }
+    }
+
+    /**
+     * Receives the list of categories to filter on from the CategoryController.
+     * @return The list of categories to filter on.
+     */
+    public ArrayList<Category> getAllCategories() {
+        return CategoryFacade.getInstance().getAllCategories();
     }
 }
