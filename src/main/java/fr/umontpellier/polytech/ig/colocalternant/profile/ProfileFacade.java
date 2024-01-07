@@ -3,6 +3,7 @@ package fr.umontpellier.polytech.ig.colocalternant.profile;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
+import fr.umontpellier.polytech.ig.colocalternant.user.User;
 
 import java.util.ArrayList;
 
@@ -11,7 +12,6 @@ public class ProfileFacade {
      * The current profile
      */
     private Profile currentProfile;
-
     /**
      * The DAO factory
      */
@@ -99,5 +99,9 @@ public class ProfileFacade {
      */
     private static class ProfileFacadeHolder {
         private final static ProfileFacade instance = new ProfileFacade();
+    }
+
+    public boolean isAdmin(User currentUser) {
+        return false;
     }
 }

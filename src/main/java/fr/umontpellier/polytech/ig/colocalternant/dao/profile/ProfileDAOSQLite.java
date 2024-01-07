@@ -2,11 +2,13 @@ package fr.umontpellier.polytech.ig.colocalternant.dao.profile;
 
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 
-import java.util.ArrayList;
-
+/**
+ * Concrete implementation of the profile DAO for SQLite.
+ */
 public class ProfileDAOSQLite extends ProfileDAO {
+
     /**
-     * Constructor of the user DAO
+     * Constructor of the profile DAO
      */
     private ProfileDAOSQLite() {
         this.daoFactory = DAOSQLiteFactory.getInstance();
