@@ -87,6 +87,8 @@ public class CreateProfileController {
         if (userHasProfileWithRole(selectedRole)) {
             System.out.println("Redirecting to ownProfile-view");
             try {
+                //FXRouter.goTo("ownProfile", profileId, false);
+                //FXRouter.goTo("main");
                 FXRouter.goTo("main", profileId, false);
             } catch (IOException e) {
                 throw new RuntimeException(e);

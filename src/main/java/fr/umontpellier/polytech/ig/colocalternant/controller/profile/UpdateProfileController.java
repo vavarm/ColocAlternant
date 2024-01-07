@@ -87,7 +87,6 @@ public class UpdateProfileController {
             try { FXRouter.goTo("main"); }
             catch (IOException e) { throw new RuntimeException(e); }
         }
-
     }
 
     /**
