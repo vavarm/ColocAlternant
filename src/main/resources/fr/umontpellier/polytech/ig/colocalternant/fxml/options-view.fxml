@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.OptionsController">
+
+    <fx:include source="header.fxml"/>
+
+    <HBox spacing="10" VBox.vgrow="ALWAYS" alignment="CENTER">
+        <VBox spacing="10" alignment="CENTER">
+
+            <Label text="Options"/>
+
+            <Button fx:id="logoutButton" onAction="#onLogout" text="Logout"/>
+
+            <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
+
+        </VBox>
+    </HBox>
+
+
+    <fx:include source="footer.fxml"/>
+
+</VBox>
