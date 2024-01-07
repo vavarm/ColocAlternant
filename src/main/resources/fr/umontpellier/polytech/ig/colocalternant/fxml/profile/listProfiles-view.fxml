@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import fr.umontpellier.polytech.ig.colocalternant.profile.Profile?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.profile.ProfilesListController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <fx:include source="../header.fxml"/>
+
+    <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="List of all profiles" />
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+
+        <TableView fx:id="profilesTable">
+            <columns>
+                <TableColumn fx:id="idCol" text="ID" />
+                <TableColumn fx:id="firstNameCol" text="First Name" />
+                <TableColumn fx:id="lastNameCol" text="Last Name" />
+                <TableColumn fx:id="ageCol" text="Age" />
+                <TableColumn fx:id="emailCol" text="Email" />
+                <TableColumn fx:id="descriptionCol" text="Description" />
+                <TableColumn fx:id="roleCol" text="Role" />
+            </columns>
+        </TableView>
+
+        <Button fx:id="backButton"
+                style=
+                        "-fx-padding: 10;
+                        -fx-min-width: 80;
+                        -fx-background-color: orange;
+                        -fx-text-fill: white;
+                        -fx-font-weight: bold;"
+                mnemonicParsing="false"
+                onAction="#handleBackButtonClick"
+                text="Back to your profile" />
+    </VBox>
+
+    <fx:include source="../footer.fxml"/>
+</VBox>

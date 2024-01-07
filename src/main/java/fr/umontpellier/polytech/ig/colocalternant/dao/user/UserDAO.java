@@ -3,6 +3,8 @@ package fr.umontpellier.polytech.ig.colocalternant.dao.user;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialExceptionType;
+import fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole;
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 
 import java.sql.Connection;

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.collections.FXCollections?>
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.profile.UpdateProfileController"
+      prefHeight="400.0" prefWidth="600.0">
+
+    <fx:include source="../header.fxml"/>
+
+    <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Update my profile" />
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+
+        <VBox spacing="12" alignment="TOP_CENTER">
+            <VBox.margin><Insets right="100" left="100"/></VBox.margin>
+            <Label style="-fx-font-size: 15;">Description</Label>
+            <TextArea fx:id="descriptionField" maxWidth="500" wrapText="true" />
+        </VBox>
+
+        <VBox spacing="12" alignment="TOP_CENTER">
+            <Label style="-fx-font-size: 15;">Public profile ?</Label>
+            <ComboBox fx:id="publicProfileComboBox">
+                <items>
+                    <FXCollections fx:factory="observableArrayList">
+                        <String fx:value="Yes" />
+                        <String fx:value="No" />
+                    </FXCollections>
+                </items>
+            </ComboBox>
+        </VBox>
+
+        <HBox fx:id="buttonBox" spacing="30" alignment="CENTER">
+            <Button fx:id="deleteButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: red;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#handleDeleteButtonClick"
+                    text="Delete"/>
+            <Button fx:id="cancelButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: orange;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#handleCancelButtonClick"
+                    text="Cancel"/>
+            <Button fx:id="submitButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: green;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#handleSubmitButtonClick"
+                    text="Submit"/>
+        </HBox>
+    </VBox>
+
+    <fx:include source="../footer.fxml"/>
+
+</VBox>

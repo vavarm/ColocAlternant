@@ -6,6 +6,8 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.Accommodation
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
+import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
 import java.sql.Connection;
@@ -97,6 +99,34 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Creates the tables related to the profile in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateProfileTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Profiles (id INTEGER PRIMARY KEY AUTOINCREMENT, userID INTEGER, description TEXT, role TEXT, isPublic BOOLEAN)");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void DeleteProfileTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DROP TABLE IF EXISTS Profiles");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void DeleteUserTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DROP TABLE IF EXISTS Users");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /*        
      * Creates the tables related to the chat in the database.
      * @param connection The connection to the database.
      */
@@ -173,6 +203,8 @@ public abstract class DAOFactory {
     private void SeedUserTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("INSERT INTO Users (firstName, lastName, age, email, password, photo) VALUES ('John', 'Doe', 42, 'john.doe@test.com', 'password', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Fso%2Fprofile&psig=AOvVaw06nRk09YyDMIfh1K51s08j&ust=1701708080137000&source=images&cd=vfe&ved=0CBEQjRxqFwoTCPCzzd7a84IDFQAAAAAdAAAAABAE')");
+            statement.executeUpdate("INSERT INTO Users (firstName, lastName, age, email, password, photo) VALUES ('Prenom_1', 'Nom_1', 18, 'a', 'a', 'https://res.cloudinary.com/editions-tissot/image/upload/t_wp_lynx_featured_post/v1585896810/Article_lumio_impact_crnvrs_apprentis.jpg')");
+            statement.executeUpdate("INSERT INTO Users (firstName, lastName, age, email, password, photo) VALUES ('Prenom_2', 'Nom_2', 20, 'b', 'b', 'https://res.cloudinary.com/editions-tissot/image/upload/t_wp_lynx_featured_post/v1585896810/Article_lumio_impact_crnvrs_apprentis.jpg')");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: User already exists");
@@ -232,17 +264,6 @@ public abstract class DAOFactory {
         }
     }
 
-    /**
-     * Creates the tables related to the profile in the database.
-     * @param connection The connection to the database.
-     */
-    private void CreateProfileTable(Connection connection) {
-        try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Profiles (user_id INTEGER, role TEXT, FOREIGN KEY(user_id) REFERENCES Users(id), PRIMARY KEY(user_id, role))");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-    }
 
     /**
      * Seeds the tables related to the profile in the database.
@@ -250,7 +271,12 @@ public abstract class DAOFactory {
      */
     private void SeedProfileTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO Profiles (user_id, role) VALUES (1, 'ADMIN')");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (1, 'The first description', 'Owner', 'TRUE')");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (2, 'The first description', 'Owner', 'TRUE')");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (3, 'The first description', 'Owner', 'TRUE')");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (1, 'The first description', 'Tenant', 'TRUE'");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (2, 'The first description', 'Tenant', 'TRUE'");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (3, 'The first description', 'Tenant', 'TRUE')");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: Profile already exists");
@@ -323,7 +349,6 @@ public abstract class DAOFactory {
      * @param connection The connection to the database.
      */
     protected void CreateTables(Connection connection) {
-
         CreateUserTable(connection);
         CreateAccomodationTable(connection);
         CreateOwnsTable(connection);
@@ -332,6 +357,7 @@ public abstract class DAOFactory {
         CreateCategoryTable(connection);
         CreateCategoryAccommodationTable(connection);
     }
+
 
     /**
      * Seeds the tables in the database.

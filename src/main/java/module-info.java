@@ -13,6 +13,7 @@ module fr.umontpellier.polytech.ig.colocalternant {
     requires junit;
 
     opens fr.umontpellier.polytech.ig.colocalternant to javafx.fxml;
+    opens fr.umontpellier.polytech.ig.colocalternant.profile to javafx.base;
     exports fr.umontpellier.polytech.ig.colocalternant;
     exports fr.umontpellier.polytech.ig.colocalternant.user;
     exports fr.umontpellier.polytech.ig.colocalternant.controller;
@@ -20,4 +21,6 @@ module fr.umontpellier.polytech.ig.colocalternant {
     opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
     opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodation to javafx.fxml;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller.profile;
+    opens fr.umontpellier.polytech.ig.colocalternant.controller.profile to javafx.fxml;
 }

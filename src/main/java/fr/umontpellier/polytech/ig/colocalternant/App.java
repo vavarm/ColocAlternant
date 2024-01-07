@@ -44,6 +44,11 @@ public class App extends Application {
 
         FXRouter.when("categoryList", "fxml/category-view.fxml");
 
+        FXRouter.when("ownProfile", "fxml/profile/ownProfile-view.fxml");
+        FXRouter.when("updateProfile", "fxml/profile/updateProfile-view.fxml");
+        FXRouter.when("listProfiles", "fxml/profile/listProfiles-view.fxml");
+        FXRouter.when("createProfile", "fxml/profile/createProfile-view.fxml");
+
         FXRouter.goTo("hello");
     }
 }
