@@ -12,8 +12,10 @@ import java.io.IOException;
 
 public class MainController {
 
+    private int profileID;
+
     @FXML
-    public Text firstName;
+    public Label firstName;
 
     @FXML
     public Button list;
@@ -28,7 +30,15 @@ public class MainController {
     @FXML
     public Button optionsButton;
 
+    @FXML
+    public Button profileButton;
+
+    @FXML
+    public Button changeProfileButton;
+
     public void initialize() {
+        profileID = getProfileID();
+
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
         list.setText("See the accommodations");
         list.setOnAction( event -> {
@@ -40,9 +50,15 @@ public class MainController {
         });
     }
 
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
+    }
+
     public void chats(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("chat");
+            FXRouter.goTo("chat", profileID, false);
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -50,7 +66,7 @@ public class MainController {
 
     public void settings(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("settings");
+            FXRouter.goTo("settings", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -58,7 +74,7 @@ public class MainController {
 
     public void userList(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("userList");
+            FXRouter.goTo("userList", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -72,6 +88,22 @@ public class MainController {
     public void options(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("options");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void profile(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("ownProfile", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void changeProfile(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("createProfile");
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

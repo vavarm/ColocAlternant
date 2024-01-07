@@ -11,6 +11,7 @@ import java.util.List;
 
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -98,11 +99,25 @@ public class ChatController {
             // open the chat window with the related user
             ChatMessageController.personToChatWith = user;
             try {
-                FXRouter.goTo("chat-message");
+                FXRouter.goTo("chat-message", getProfileID(), false);
             } catch (Exception e) {
                 e.printStackTrace();
             }
         });
         return button;
+    }
+
+    public void handleBackButtonClick(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("main", getProfileID(), false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }

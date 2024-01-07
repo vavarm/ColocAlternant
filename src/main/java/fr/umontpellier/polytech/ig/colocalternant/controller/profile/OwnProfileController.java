@@ -58,13 +58,13 @@ public class OwnProfileController {
 
     /**
      * Method called when the back button is clicked.
-     * Allow to go on createProfile-view.
+     * Allow to go on main-view.
      * @param   actionEvent Obligatory param for ActionEvent
      */
     @FXML
     private void handleBackButtonClick(ActionEvent actionEvent) {
-        System.out.println("Redirecting to createProfile-view");
-        try { FXRouter.goTo("createProfile"); }
+        System.out.println("Redirecting to main-view");
+        try { FXRouter.goTo("main"); }
         catch (IOException e) { e.printStackTrace(); throw new RuntimeException(e); }
     }
 

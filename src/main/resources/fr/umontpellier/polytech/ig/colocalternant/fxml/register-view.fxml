@@ -3,36 +3,61 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
+<?import javafx.geometry.Insets?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
-      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.RegisterController"
-      style="-fx-background-color: #f5f5f5;">
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.RegisterController">
 
     <fx:include source="header.fxml"/>
 
-    <HBox spacing="10" VBox.vgrow="ALWAYS" alignment="CENTER">
-        <VBox spacing="10" alignment="CENTER">
+    <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin><Insets bottom="30" top="30"/></VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Register" />
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
 
-            <Label text="Register"/>
-            <Label text="First Name"/>
-            <TextField fx:id="firstName"/>
-            <Label text="Last Name"/>
-            <TextField fx:id="lastName"/>
-            <Label text="Age"/>
-            <TextField fx:id="age"/>
-            <Label text="Email"/>
-            <TextField fx:id="email"/>
-            <Label text="Password"/>
-            <PasswordField fx:id="password"/>
-            <Label text="Photo"/>
-            <TextField fx:id="photo"/>
-            <Button mnemonicParsing="false" onAction="#register" text="Register"/>
-            <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
+        <HBox spacing="50" alignment="TOP_CENTER">
+            <VBox spacing="10" >
+                <Label text="First Name"/>
+                <TextField fx:id="firstName"/>
+                <Label text="Last Name"/>
+                <TextField fx:id="lastName"/>
+                <Label text="Age"/>
+                <TextField fx:id="age"/>
+            </VBox>
+            <VBox spacing="10">
+                <Label text="Email"/>
+                <TextField fx:id="email"/>
+                <Label text="Password"/>
+                <PasswordField fx:id="password"/>
+                <Label text="Photo"/>
+                <TextField fx:id="photo"/>
+            </VBox>
+        </HBox>
 
-
-        </VBox>
-    </HBox>
+        <HBox spacing="50" alignment="CENTER">
+            <Button fx:id="backButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: orange;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#handleBackButtonClick"
+                    text="Back"/>
+            <Button fx:id="loginButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: green;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#register"
+                    text="Register"/>
+        </HBox>
+        <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
+    </VBox>
 
     <fx:include source="footer.fxml"/>
-
 </VBox>

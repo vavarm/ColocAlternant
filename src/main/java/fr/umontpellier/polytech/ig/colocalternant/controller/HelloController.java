@@ -3,6 +3,7 @@ package fr.umontpellier.polytech.ig.colocalternant.controller;
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 
 import java.io.IOException;
@@ -14,16 +15,19 @@ public class HelloController {
     /**
      * The label of the welcome text
      */
-    @FXML
-    private Label welcomeText;
+    //@FXML
+    //private Label welcomeText;
 
     /**
      * Method called when the hello button is clicked
      */
+    //@FXML
+    //protected void onHelloButtonClick() { welcomeText.setText("Welcome to JavaFX Application!"); }
+
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
+    public Button loginButton;
+    @FXML
+    public Button registerButton;
 
     /**
      * Method called when the login button is clicked. Open the login window.
