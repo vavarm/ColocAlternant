@@ -272,11 +272,6 @@ public abstract class DAOFactory {
     private void SeedProfileTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (1, 'The first description', 'Owner', 'TRUE')");
-            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (2, 'The first description', 'Owner', 'TRUE')");
-            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (3, 'The first description', 'Owner', 'TRUE')");
-            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (1, 'The first description', 'Tenant', 'TRUE'");
-            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (2, 'The first description', 'Tenant', 'TRUE'");
-            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (3, 'The first description', 'Tenant', 'TRUE')");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: Profile already exists");
@@ -353,6 +348,7 @@ public abstract class DAOFactory {
         CreateAccomodationTable(connection);
         CreateOwnsTable(connection);
         CreateChatTable(connection);
+        DeleteProfileTable(connection);
         CreateProfileTable(connection);
         CreateCategoryTable(connection);
         CreateCategoryAccommodationTable(connection);
