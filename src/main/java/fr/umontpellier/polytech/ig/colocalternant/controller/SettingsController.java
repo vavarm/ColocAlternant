@@ -48,4 +48,19 @@ public class SettingsController {
     private void handlePasswordChange(String newPwd) {
         UserFacade.getInstance().changePassword(newPwd);
     }
+
+    public void handleCancelButtonClick(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("main", getProfileID(), false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
+    }
+
 }

@@ -3,27 +3,53 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.geometry.Insets?>
 <VBox xmlns:fx="http://javafx.com/fxml"
       xmlns="http://javafx.com/javafx"
-      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.LoginController"
-      style="-fx-background-color: #f5f5f5;">
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.LoginController">
 
     <fx:include source="header.fxml"/>
 
-    <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
-        <VBox spacing="30" alignment="CENTER">
+    <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
+        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Login" />
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
 
-            <Label text="Login"/>
-            <Label text="Email"/>
-            <TextField fx:id="email"/>
-            <Label text="Password"/>
-            <PasswordField fx:id="password"/>
-            <Button fx:id="loginButton" mnemonicParsing="false" onAction="#login" text="Login"/>
-            <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
+        <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
+            <VBox spacing="30" alignment="CENTER">
+                <Label text="Email"/>
+                <TextField fx:id="email"/>
+                <Label text="Password"/>
+                <PasswordField fx:id="password"/>
+            </VBox>
+        </HBox>
 
-        </VBox>
-    </HBox>
+        <HBox spacing="50" alignment="CENTER">
+            <Button fx:id="backButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: orange;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#handleBackButtonClick"
+                    text="Back"/>
 
+            <Button fx:id="loginButton"
+                    style=
+                            "-fx-padding: 10;
+                            -fx-min-width: 80;
+                            -fx-background-color: green;
+                            -fx-text-fill: white;
+                            -fx-font-weight: bold;"
+                    mnemonicParsing="false"
+                    onAction="#login"
+                    text="Login"/>
+        </HBox>
+
+        <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
+
+    </VBox>
     <fx:include source="footer.fxml"/>
-
 </VBox>

@@ -84,7 +84,7 @@ public class UpdateProfileController {
         }
         else {
             System.out.println("Redirecting to ownProfile-view");
-            try { FXRouter.goTo("main"); }
+            try { FXRouter.goTo("main", profileID, false); }
             catch (IOException e) { throw new RuntimeException(e); }
         }
     }
