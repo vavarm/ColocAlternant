@@ -64,7 +64,7 @@ public class UpdateController {
         newPhotos.setText(AccommodationFacade.getInstance().getCurrentAccommodation().getPhotos());
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationInfo");
+            FXRouter.goTo("accommodationInfo", getProfileID(), false);
         }catch (IOException e){
             throw new RuntimeException(e);
         }});
@@ -105,5 +105,11 @@ public class UpdateController {
                                           String specialFonctionalities, float energicReport, String photos) {
         AccommodationFacade.getInstance().updateAccommodation(id, title, location, description, price,
                 specialFonctionalities, energicReport, photos);
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }

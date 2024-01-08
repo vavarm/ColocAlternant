@@ -38,16 +38,7 @@ public class MainController {
 
     public void initialize() {
         profileID = getProfileID();
-
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
-        list.setText("See the accommodations");
-        list.setOnAction( event -> {
-            try {
-                FXRouter.goTo("accommodationsList");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
     }
 
     private int getProfileID() {
@@ -64,6 +55,13 @@ public class MainController {
         }
     }
 
+    public void accommodations(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("accommodationsList", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void settings(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("settings", profileID, false);

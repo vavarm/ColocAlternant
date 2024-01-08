@@ -64,7 +64,7 @@ public class OwnProfileController {
     @FXML
     private void handleBackButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to main-view");
-        try { FXRouter.goTo("main"); }
+        try { FXRouter.goTo("main", profileID, false); }
         catch (IOException e) { e.printStackTrace(); throw new RuntimeException(e); }
     }
 
@@ -76,7 +76,7 @@ public class OwnProfileController {
     @FXML
     public void handleListButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to profilesList-view");
-        try { FXRouter.goTo("listProfiles", profileID); }
+        try { FXRouter.goTo("listProfiles", profileID, false); }
         catch (IOException e) { e.printStackTrace(); throw new RuntimeException(e); }
     }
 

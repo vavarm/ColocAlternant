@@ -58,7 +58,7 @@ public class InsertController {
         add.setText("Add");
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationsList");
+            FXRouter.goTo("accommodationsList", getProfileID(), false);
         }catch (IOException e){
             throw new RuntimeException(e);
         }});
@@ -97,5 +97,11 @@ public class InsertController {
                                           String specialFunctionalities, float energeticReport, String photos) {
         AccommodationFacade.getInstance().insertAccommodation(title, location, description, price,
                 specialFunctionalities, energeticReport, photos);
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }
