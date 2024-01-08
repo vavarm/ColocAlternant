@@ -24,4 +24,6 @@ module fr.umontpellier.polytech.ig.colocalternant {
     opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodation to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.profile;
     opens fr.umontpellier.polytech.ig.colocalternant.controller.profile to javafx.fxml;
+
+    exports fr.umontpellier.polytech.ig.colocalternant.chat;
 }
