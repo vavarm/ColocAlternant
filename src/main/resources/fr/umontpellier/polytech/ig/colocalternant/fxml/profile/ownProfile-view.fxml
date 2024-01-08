@@ -59,7 +59,7 @@
                     style="-fx-padding: 10;-fx-min-width: 80;"
                     mnemonicParsing="false"
                     onAction="#handleBackButtonClick"
-                    text="Change profile"
+                    text="Back"
             />
             <Button fx:id="updateButton"
                     style="-fx-padding: 10;-fx-min-width: 80;"
