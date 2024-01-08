@@ -53,17 +53,23 @@ public class ListController {
         add.setText("Add an accommodation");
         add.setOnAction(event -> {
             try {
-                FXRouter.goTo("insertAccommodation");
+                FXRouter.goTo("insertAccommodation", getProfileID(), false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {
-            FXRouter.goTo("main");
+            FXRouter.goTo("main", getProfileID(),false);
         }catch (IOException e){
             throw new RuntimeException(e);
         }});
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 
     /**
@@ -182,7 +188,7 @@ public class ListController {
         button.setOnAction(event -> {
             try {
                 AccommodationFacade.getInstance().setCurrentAccommodation(accommodation);
-                FXRouter.goTo("accommodationInfo");
+                FXRouter.goTo("accommodationInfo", getProfileID(), false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }

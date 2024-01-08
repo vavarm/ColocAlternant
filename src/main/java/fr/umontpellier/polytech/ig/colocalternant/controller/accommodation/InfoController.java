@@ -75,7 +75,7 @@ public class InfoController {
             deleteButton.setText("Delete");
             deleteButton.setOnAction(event -> {
                 try {
-                    FXRouter.goTo("deleteAccommodation");
+                    FXRouter.goTo("deleteAccommodation", getProfileID(), false);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -83,7 +83,7 @@ public class InfoController {
             updateButton.setText("Update");
             updateButton.setOnAction(event -> {
                 try {
-                    FXRouter.goTo("updateAccommodation");
+                    FXRouter.goTo("updateAccommodation", getProfileID(), false);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
@@ -92,9 +92,15 @@ public class InfoController {
 
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationsList");
+            FXRouter.goTo("accommodationsList", getProfileID(), false);
         }catch (IOException e){
             throw new RuntimeException(e);
         }});
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }
