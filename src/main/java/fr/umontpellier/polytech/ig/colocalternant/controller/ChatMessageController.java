@@ -192,7 +192,7 @@ public class ChatMessageController {
     public void onBack(ActionEvent actionEvent) {
         // go back to the list of chats
         try{
-            FXRouter.goTo("chat");
+            FXRouter.goTo("chat", getProfileID(), false);
         } catch (IOException e){
             System.out.println("Error while going back to the list of chats");
         }
@@ -201,11 +201,19 @@ public class ChatMessageController {
     public void report(ActionEvent e){
         AbuseFacade.getInstance().setAbuser(personToChatWith);
         try {
-            FXRouter.goTo("createAbuse");
+            FXRouter.goTo("createAbuse", getProfileID(), false);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
 
     }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
+    }
+
+
 
 }

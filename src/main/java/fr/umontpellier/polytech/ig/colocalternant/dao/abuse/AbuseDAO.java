@@ -10,7 +10,7 @@ import java.sql.*;
 import java.util.ArrayList;
 
 /**
- *
+ * Abstract Data Access Object (DAO) class for handling interactions with the database related to abuse entries.
  */
 public abstract class AbuseDAO {
     /**
@@ -19,15 +19,17 @@ public abstract class AbuseDAO {
     protected DAOFactory daoFactory;
 
     /**
-     * Default constructor
+     * Default constructor for the AbuseDAO class.
      */
     public AbuseDAO() {
     }
 
     /**
-     * @param message
-     * @param dest
-     * @return
+     * Creates a new abuse entry in the database.
+     *
+     * @param message The message associated with the abuse.
+     * @param dest The destination user for the abuse.
+     * @return The created Abuse object.
      */
     public Abuse createAbuse(String message, User dest) {
         Connection connection = null;
@@ -42,7 +44,7 @@ public abstract class AbuseDAO {
             preparedStatement = connection.prepareStatement(sql);
             preparedStatement.setString(1, message);
             preparedStatement.setInt(2, dest.getId());
-            preparedStatement.setString(3,"Pending");
+            preparedStatement.setString(3, "PENDING");
             preparedStatement.executeUpdate();
 
             statement = connection.createStatement();
@@ -51,8 +53,7 @@ public abstract class AbuseDAO {
                 int abuseId = generatedKeys.getInt(1);
                 return new Abuse(abuseId, message, dest, StatusEnum.PENDING); // Adjust as needed
 
-            }
-            else {
+            } else {
                 throw new SQLException("Creating abuse failed, no ID obtained.");
             }
 
@@ -63,9 +64,11 @@ public abstract class AbuseDAO {
     }
 
     /**
-     * @param abuse
-     * @param status
-     * @return
+     * Updates the status of an existing abuse entry in the database.
+     *
+     * @param abuse The abuse entry to update.
+     * @param status The new status for the abuse entry.
+     * @return The updated Abuse object.
      */
     public Abuse updateAbuse(Abuse abuse, StatusEnum status) {
         Connection connection = null;
@@ -88,8 +91,10 @@ public abstract class AbuseDAO {
     }
 
     /**
-     * @param abuse
-     * @return
+     * Deletes an existing abuse entry from the database.
+     *
+     * @param abuse The abuse entry to delete.
+     * @return The deleted Abuse object.
      */
     public Abuse deleteAbuse(Abuse abuse) {
         Connection connection = null;
@@ -110,7 +115,9 @@ public abstract class AbuseDAO {
     }
 
     /**
-     * @return
+     * Retrieves all abuse entries from the database.
+     *
+     * @return An ArrayList of Abuse objects representing all abuse entries.
      */
     public ArrayList<Abuse> getAllAbuses() {
         Connection connection = null;
@@ -131,12 +138,10 @@ public abstract class AbuseDAO {
                 System.out.println(resultSet.getInt("id"));
                 System.out.println(resultSet.getString(2));
                 System.out.println(resultSet.getString(3));
-
                 System.out.println(resultSet.getString(4));
                 StatusEnum status = StatusEnum.valueOf(resultSet.getString("status"));
                 User user = daoFactory.getUserDAO().getUserById(userId);
-
-                        abuses.add(new Abuse(id, message, user, status));
+                abuses.add(new Abuse(id, message, user, status));
             }
 
             return abuses;
@@ -145,6 +150,4 @@ public abstract class AbuseDAO {
             return null;
         }
     }
-
-
 }

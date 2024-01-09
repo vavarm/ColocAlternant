@@ -71,30 +71,38 @@ public class InfoController {
         photosImageView.setImage(image);
 
         // Configure delete and update buttons for the accommodation owner
-        if (AccommodationFacade.getInstance().isOwner()){
+
             deleteButton.setText("Delete");
+            deleteButton.setVisible(AccommodationFacade.getInstance().isOwner());
             deleteButton.setOnAction(event -> {
                 try {
-                    FXRouter.goTo("deleteAccommodation");
+                    FXRouter.goTo("deleteAccommodation", getProfileID(), false);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             });
             updateButton.setText("Update");
+            updateButton.setVisible(AccommodationFacade.getInstance().isOwner());
             updateButton.setOnAction(event -> {
                 try {
-                    FXRouter.goTo("updateAccommodation");
+                    FXRouter.goTo("updateAccommodation", getProfileID(), false);
                 } catch (IOException e) {
                     throw new RuntimeException(e);
                 }
             });
-        }
+
 
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationsList");
+            FXRouter.goTo("accommodationsList", getProfileID(), false);
         }catch (IOException e){
             throw new RuntimeException(e);
         }});
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }

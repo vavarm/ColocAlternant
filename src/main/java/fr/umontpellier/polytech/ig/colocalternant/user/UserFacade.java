@@ -3,6 +3,10 @@ package fr.umontpellier.polytech.ig.colocalternant.user;
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
+import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
@@ -23,6 +27,7 @@ public class UserFacade {
      * The DAO factory
      */
     private DAOFactory daoFactory;
+    private UserDAO userDAO;
 
     /**
      * Constructor of the user facade
@@ -30,6 +35,7 @@ public class UserFacade {
     private UserFacade() {
         this.currentUser = null;
         this.daoFactory = DAOSQLiteFactory.getInstance();
+        this.userDAO =  daoFactory.getUserDAO();;
     }
 
     /**
@@ -68,8 +74,17 @@ public class UserFacade {
         return this.currentUser;
     }
 
+
+
     /**
-     * Registers a new user.
+     * Retrieves a user by his id in database.
+     * @return A user
+     */
+    public User getUserByID(int id) {
+        return userDAO.getUserById(id);
+    }
+
+     /* Registers a new user.
      * @param firstName The first name of the user.
      * @param lastName The last name of the user.
      * @param age The age of the user.

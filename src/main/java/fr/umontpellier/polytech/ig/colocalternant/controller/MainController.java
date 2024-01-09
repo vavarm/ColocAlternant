@@ -13,8 +13,10 @@ import java.io.IOException;
 
 public class MainController {
 
+    private int profileID;
+
     @FXML
-    public Text firstName;
+    public Label firstName;
 
     @FXML
     public Button list;
@@ -31,30 +33,41 @@ public class MainController {
 
     @FXML
     public Button abusesButton;
+    public Button profileButton;
+
+    @FXML
+    public Button changeProfileButton;
 
     public void initialize() {
+        profileID = getProfileID();
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
-        list.setText("See the accommodations");
-        list.setOnAction( event -> {
-            try {
-                FXRouter.goTo("accommodationsList");
-            } catch (IOException e) {
-                throw new RuntimeException(e);
-            }
-        });
+
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 
     public void chats(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("chat");
+            FXRouter.goTo("chat", profileID, false);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
+    public void accommodations(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("accommodationsList", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
     public void settings(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("settings");
+            FXRouter.goTo("settings", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -62,7 +75,7 @@ public class MainController {
 
     public void userList(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("userList");
+            FXRouter.goTo("userList", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
@@ -81,19 +94,38 @@ public class MainController {
         }
     }
 
+
     /**
      * Method called when the abuses button is clicked. Opens the abuses list window.
      * @param actionEvent the event of the click
      */
-
     public void abusesList(ActionEvent actionEvent) {
 
+        if (!ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())){
+            try {
+                FXRouter.goTo("abusesList", profileID, false);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
+    public void profile(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("abusesList");
+            FXRouter.goTo("ownProfile", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
     }
 
 
+    public void changeProfile(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("createProfile");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

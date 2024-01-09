@@ -40,7 +40,7 @@ public class DeleteController {
         this.accommodation.setText("Do you want to delete " + AccommodationFacade.getInstance().getCurrentAccommodation().getTitle() + "?");
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationInfo");
+            FXRouter.goTo("accommodationInfo", getProfileID(), false);
         }catch (IOException e){
             throw new RuntimeException(e);
         }});
@@ -55,7 +55,7 @@ public class DeleteController {
     public void onDelete(ActionEvent e) {
         handleDelete(AccommodationFacade.getInstance().getCurrentAccommodation().getId());
         try {
-            FXRouter.goTo("accommodationsList");
+            FXRouter.goTo("accommodationsList", getProfileID(), false);
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
@@ -69,5 +69,11 @@ public class DeleteController {
     public void handleDelete(int id) {
         // TODO: Implement the logic for deleting an accommodation.
         AccommodationFacade.getInstance().delete(id);
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }

@@ -110,4 +110,12 @@ public class RegisterController {
         }
         handleRegister(firstName.getText(), lastName.getText(), Integer.parseInt(age.getText()), email.getText(), password.getText(), photo.getText());
     }
+
+    public void handleBackButtonClick(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("hello");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

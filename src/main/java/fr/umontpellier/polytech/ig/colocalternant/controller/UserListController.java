@@ -1,10 +1,12 @@
 package fr.umontpellier.polytech.ig.colocalternant.controller;
 
+import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
@@ -27,6 +29,9 @@ public class UserListController {
      */
     @FXML
     VBox box;
+
+    @FXML
+    public Button backButton;
 
     /**
      * Handles when the user loads the view.
@@ -156,5 +161,19 @@ public class UserListController {
         });
 
         return button;
+    }
+
+    public void handleBackButtonClick(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("main", getProfileID(), false);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 }

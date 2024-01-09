@@ -4,8 +4,6 @@ import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse;
 import fr.umontpellier.polytech.ig.colocalternant.abuse.AbuseFacade;
 import fr.umontpellier.polytech.ig.colocalternant.abuse.StatusEnum;
-import fr.umontpellier.polytech.ig.colocalternant.accomodation.Accommodation;
-import fr.umontpellier.polytech.ig.colocalternant.accomodation.AccommodationFacade;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -20,24 +18,26 @@ import javafx.scene.layout.VBox;
 import java.io.IOException;
 import java.util.List;
 
+/**
+ * Controller class for managing the list of abuse entries and associated actions.
+ */
 public class AbusesListController {
 
     @FXML
     private TableView<Abuse> abuseTable;
 
-
     private TableColumn<Abuse, Integer> idColumn;
-
-
     private TableColumn<Abuse, String> messageColumn;
-
     private TableColumn<Abuse, String> destColumn;
-
     private TableColumn<Abuse, StatusEnum> statusColumn;
 
     @FXML
     Button back;
 
+    /**
+     * Initializes the controller, setting up the table columns, populating the table with abuse entries,
+     * and configuring actions for handling and deleting abuses.
+     */
     public void initialize() {
         // Initialize columns
         idColumn = new TableColumn<>();
@@ -53,25 +53,28 @@ public class AbusesListController {
         List<Abuse> allAbuses = AbuseFacade.getInstance().getAllAbuses();
         ObservableList<Abuse> abusesObservableList = FXCollections.observableArrayList(allAbuses);
         abuseTable.setItems(abusesObservableList);
+
+        // Create actions column with handle and delete buttons
         TableColumn<Abuse, VBox> actionsButtonColumn = new TableColumn<>("Actions");
         actionsButtonColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(createButtonContainer(cellData.getValue())));
         abuseTable.getColumns().addAll(idColumn, messageColumn, destColumn, statusColumn, actionsButtonColumn);
+
+        // Set up back button
         back.setText("Back");
         back.setOnAction(event -> {
             try {
-                FXRouter.goTo("main");
+                FXRouter.goTo("main", getProfileID(), false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
         });
     }
 
-
     /**
      * Creates a VBox to list the actions for the given abuse.
      *
      * @param abuse The abuse.
-     * @return The VBox.
+     * @return The VBox containing action buttons.
      */
     private VBox createButtonContainer(Abuse abuse) {
         Button updateButton = createUpdateButton(abuse);
@@ -87,7 +90,7 @@ public class AbusesListController {
      * Creates a button that redirects to the page allowing the admin to handle the given abuse.
      *
      * @param abuse The abuse.
-     * @return The button.
+     * @return The "Handle" button.
      */
     private Button createUpdateButton(Abuse abuse) {
         Button button = new Button("Handle");
@@ -96,7 +99,7 @@ public class AbusesListController {
             try {
                 AbuseFacade.getInstance().setCurrentAbuse(abuse);
                 AbuseFacade.getInstance().setAbuser(abuse.getDest());
-                FXRouter.goTo("updateAbuse");
+                FXRouter.goTo("updateAbuse", getProfileID(), false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -108,7 +111,7 @@ public class AbusesListController {
      * Creates a button that redirects to the page allowing the admin to delete the given abuse.
      *
      * @param abuse The abuse.
-     * @return The button.
+     * @return The "Delete" button.
      */
     private Button createDeleteButton(Abuse abuse) {
         Button button = new Button("Delete");
@@ -117,8 +120,7 @@ public class AbusesListController {
             try {
                 AbuseFacade.getInstance().setCurrentAbuse(abuse);
                 AbuseFacade.getInstance().setAbuser(abuse.getDest());
-
-                FXRouter.goTo("deleteAbuse");
+                FXRouter.goTo("deleteAbuse", getProfileID(), false);
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
@@ -126,11 +128,25 @@ public class AbusesListController {
         return button;
     }
 
+    /**
+     * Refreshes the content of the table by fetching the latest list of abuses.
+     *
+     * @param event The ActionEvent triggered by the refresh button.
+     */
     @FXML
     public void refreshTable(ActionEvent event) {
-        // Refresh the table content (you can call this method when needed)
         List<Abuse> allAbuses = AbuseFacade.getInstance().getAllAbuses();
         ObservableList<Abuse> abusesObservableList = FXCollections.observableArrayList(allAbuses);
         abuseTable.setItems(abusesObservableList);
+    }
+
+    /**
+     * Retrieves the profile ID from the router's data.
+     *
+     * @return The profile ID.
+     */
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        return (int) data;
     }
 }

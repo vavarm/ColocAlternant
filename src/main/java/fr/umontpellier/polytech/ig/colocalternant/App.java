@@ -49,6 +49,10 @@ public class App extends Application {
         FXRouter.when("deleteAbuse", "fxml/delete-abuse-view.fxml");
         FXRouter.when("abusesList","fxml/abuses-list-view.fxml");
 
+        FXRouter.when("ownProfile", "fxml/profile/ownProfile-view.fxml");
+        FXRouter.when("updateProfile", "fxml/profile/updateProfile-view.fxml");
+        FXRouter.when("listProfiles", "fxml/profile/listProfiles-view.fxml");
+        FXRouter.when("createProfile", "fxml/profile/createProfile-view.fxml");
 
         FXRouter.goTo("hello");
     }
