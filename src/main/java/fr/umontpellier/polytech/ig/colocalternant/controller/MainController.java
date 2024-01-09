@@ -28,7 +28,7 @@ public class MainController {
     public Button userListButton;
 
     @FXML
-    public Button optionsButton;
+    public Button notifButton;
 
     @FXML
     public Button profileButton;
@@ -62,6 +62,7 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
     public void settings(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("settings", profileID, false);
@@ -83,9 +84,9 @@ public class MainController {
      * @param actionEvent the event of the click
      */
 
-    public void options(ActionEvent actionEvent) {
+    public void notifications(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("options");
+            FXRouter.goTo("listNotification", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

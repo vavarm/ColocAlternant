@@ -4,8 +4,6 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<?import fr.umontpellier.polytech.ig.colocalternant.profile.Profile?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
 <VBox xmlns="http://javafx.com/javafx"
       xmlns:fx="http://javafx.com/fxml"
       fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.profile.ProfilesListController"

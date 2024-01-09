@@ -28,7 +28,7 @@
 
             <VBox spacing="20">
                 <Button fx:id="settingsButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Settings" onAction="#settings"/>
-                <!--<Button fx:id="optionsButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Options" onAction="#options"/>-->
+                <Button fx:id="notifButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Notifications" onAction="#notifications"/>
                 <Button fx:id="profileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="My Profile" onAction="#profile"/>
             </VBox>
         </HBox>

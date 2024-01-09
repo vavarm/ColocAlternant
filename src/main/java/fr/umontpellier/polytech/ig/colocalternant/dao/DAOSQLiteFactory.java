@@ -1,5 +1,9 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 
@@ -90,6 +94,15 @@ public class DAOSQLiteFactory extends DAOFactory {
 
 
     /**
+     * Retrieves the accommodationAlert DAO.
+     * @return The accommodationAlert DAO.
+     */
+    public AccommodationAlertDAO getAccommodationAlertDAO() {
+        return AccommodationAlertDAOSQLite.getInstance();
+    }
+
+
+    /**
      * Retrieves the chat DAO.
      * @return The chat DAO.
      */
@@ -104,6 +117,15 @@ public class DAOSQLiteFactory extends DAOFactory {
      */
     public CategoryDAO getCategoryDAO() {
         return CategoryDAOSQLite.getInstance();
+    }
+
+
+    /**
+     * Retrieves the category DAO.
+     * @return The category DAO.
+     */
+    public NotificationDAO getNotificationDAO() {
+        return NotificationDAOSQLite.getInstance();
     }
 
 
