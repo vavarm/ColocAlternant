@@ -47,7 +47,7 @@ public class App extends Application {
         FXRouter.when("chat", "fxml/chat-view.fxml");
         FXRouter.when("chat-message", "fxml/chat-message-view.fxml");
 
-        FXRouter.when("categoryList", "fxml/category-view.fxml");
+        FXRouter.when("categoryList", "fxml/categorylist-view.fxml");
 
         FXRouter.when("createAbuse", "fxml/create-abuse-view.fxml");
         FXRouter.when("updateAbuse", "fxml/update-abuse-view.fxml");

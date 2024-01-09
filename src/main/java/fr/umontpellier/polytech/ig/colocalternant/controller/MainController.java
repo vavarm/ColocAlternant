@@ -163,4 +163,16 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Method called when the categories list button is clicked. Open the categories list window.
+     * @param actionEvent the event of the click
+     */
+    public void categoriesList(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("categoryList", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
