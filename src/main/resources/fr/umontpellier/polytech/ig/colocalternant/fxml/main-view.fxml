@@ -23,6 +23,8 @@
         <HBox spacing="50" alignment="TOP_CENTER">
             <VBox spacing="20">
                 <Button fx:id="list" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#accommodations" text="See the accommodations" />
+                <Button fx:id="rentalRequestListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Rental requests" onAction="#rentalRequestList"/>
+                <Button fx:id="rentalListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Rentals" onAction="#rentalList"/>
                 <Button fx:id="chatButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#chats" text="Chats"/>
                 <Button fx:id="userListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="UserList" onAction="#userList"/>
 

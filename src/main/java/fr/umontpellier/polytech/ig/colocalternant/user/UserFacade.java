@@ -27,6 +27,9 @@ public class UserFacade {
      * The DAO factory
      */
     private DAOFactory daoFactory;
+    /**
+     * The user DAO
+     */
     private UserDAO userDAO;
 
     /**
@@ -35,7 +38,7 @@ public class UserFacade {
     private UserFacade() {
         this.currentUser = null;
         this.daoFactory = DAOSQLiteFactory.getInstance();
-        this.userDAO =  daoFactory.getUserDAO();;
+        this.userDAO =  daoFactory.getUserDAO();
     }
 
     /**

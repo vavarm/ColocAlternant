@@ -34,6 +34,9 @@ public class App extends Application {
         FXRouter.when("insertAccommodation", "fxml/accommodation/insert.fxml");
         FXRouter.when("accommodationsList", "fxml/accommodation/list.fxml");
         FXRouter.when("updateAccommodation", "fxml/accommodation/update.fxml");
+        FXRouter.when("requestRental", "fxml/rental/rentalRequestForm-view.fxml");
+        FXRouter.when("rentalRequestList", "fxml/rental/rentalRequestList-view.fxml");
+        FXRouter.when("rentalList", "fxml/rental/rentalList-view.fxml");
         FXRouter.when("register", "fxml/register-view.fxml");
         FXRouter.when("settings", "fxml/settings-view.fxml");
         FXRouter.when("userList", "fxml/userList-view.fxml");

@@ -67,7 +67,6 @@ public class DeleteController {
      * @param id The ID of the accommodation to be deleted.
      */
     public void handleDelete(int id) {
-        // TODO: Implement the logic for deleting an accommodation.
         AccommodationFacade.getInstance().delete(id);
     }
 

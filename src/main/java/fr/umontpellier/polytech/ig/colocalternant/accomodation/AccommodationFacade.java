@@ -81,6 +81,7 @@ public class AccommodationFacade {
      * @param energicReport        The energetic report of the accommodation.
      * @param photos               The photos of the accommodation.
      */
+
     public void updateAccommodation(int userId, String title, String location, String description, float price, String specialFonctionalities, float energicReport, String photos) {
         Accommodation newAccommodation = new Accommodation(userId, title, location, description, price, specialFonctionalities, energicReport, photos);
         notificationObservable.setNotification(userId, newAccommodation.getId());

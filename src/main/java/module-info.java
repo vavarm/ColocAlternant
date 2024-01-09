@@ -16,6 +16,9 @@ module fr.umontpellier.polytech.ig.colocalternant {
     opens fr.umontpellier.polytech.ig.colocalternant to javafx.fxml;
         opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller;
+    exports fr.umontpellier.polytech.ig.colocalternant.rental;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller.rental;
+    opens fr.umontpellier.polytech.ig.colocalternant.controller.rental to javafx.fxml;
 
     opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodation to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.accomodation;

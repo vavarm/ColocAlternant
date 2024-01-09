@@ -8,17 +8,14 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
-
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAOSQLite;
-
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAOSQLite;
-import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
-import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.rental.RentalDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.rental.RentalDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAOSQLite;
-
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAOSQLite;
 
@@ -92,6 +89,14 @@ public class DAOSQLiteFactory extends DAOFactory {
      */
     public AccommodationDAO getAccommodationDAO() {
         return AccommodationDAOSQLite.getInstance();
+    }
+
+    /**
+     * Retrieves the rental DAO.
+     * @return The rental DAO.
+     */
+    public RentalDAO getRentalDAO() {
+        return RentalDAOSQLite.getInstance();
     }
 
 

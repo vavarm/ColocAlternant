@@ -7,6 +7,7 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.Accommo
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.rental.RentalDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
@@ -41,7 +42,7 @@ public abstract class DAOFactory {
     }
 
     /**
-     * Retrieves the unique instance of the DAO factory.
+     * Retrieves the unique instance of the user DAO.
      * @return The User DAO.
      */
     public abstract UserDAO getUserDAO();
@@ -65,19 +66,25 @@ public abstract class DAOFactory {
     public abstract ProfileDAO getProfileDAO();
 
     /**
-     * Retrieves the unique instance of the DAO factory.
+     * Retrieves the unique instance of the chat DAO
      * @return The Chat DAO.
      */
     public abstract ChatDAO getChatDAO();
 
     /**
-     * Retrieves the unique instance of the DAO factory.
+     * Retrieves the unique instance of the category DAO
      * @return The Category DAO.
      */
     public abstract CategoryDAO getCategoryDAO();
 
     /**
-     * Retrieves the unique instance of the DAO factory.
+     * Retrieves the unique instance of the rental DAO.
+     * @return The rental DAO.
+     */
+    public abstract RentalDAO getRentalDAO();
+
+    /**
+     * Retrieves the unique instance of the notification DAO.
      * @return The Notification DAO.
      */
     public abstract NotificationDAO getNotificationDAO();
@@ -172,7 +179,8 @@ public abstract class DAOFactory {
      */
     private void CreateAccomodationTable(Connection connection){
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Accomodations (id INTEGER PRIMARY KEY AUTOINCREMENT, price FLOAT , location TEXT, title TEXT, surface FLOAT, description TEXT, specialFonctionalities TEXT, energicReport FLOAT, photos TEXT )");
+            // drop table
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Accomodations (id INTEGER PRIMARY KEY AUTOINCREMENT, price FLOAT , location TEXT, title TEXT, surface FLOAT, description TEXT, specialFonctionalities TEXT, energicReport FLOAT, photos TEXT, UNIQUE (location, title))");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -217,6 +225,17 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Creates the table related to the rentals in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateRentalsTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Rentals (id INTEGER PRIMARY KEY AUTOINCREMENT, profileId INTEGER, accommodationId INTEGER, period TEXT, isRequest INTEGER, FOREIGN KEY (profileId) REFERENCES Profiles(id), FOREIGN KEY (accommodationId) REFERENCES Accomodations(id), UNIQUE (profileId, accommodationId, period))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    /**
      * Creates the table related to the abuses in the database.
      * @param connection The connection to the database.
      */
@@ -228,7 +247,21 @@ public abstract class DAOFactory {
         }
     }
 
-
+    /**
+     * Seeds the tables related to the rentals in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedRentalsTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO Rentals (profileId, accommodationId, period, isRequest) VALUES (2, 1, '2020-01-01 2020-08-01', 0)");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Rental already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
 
     /**
      * Seeds the tables related to the user in the database.
@@ -245,9 +278,6 @@ public abstract class DAOFactory {
             }
         }
     }
-
-
-
 
     /**
      * Seeds the tables related to the user in the database.
@@ -282,11 +312,13 @@ public abstract class DAOFactory {
      */
     private void SeedChatTable(Connection connection) {
         // remove all chats
+        /*
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("DELETE FROM Chats");
         } catch (SQLException e) {
             e.printStackTrace();
         }
+        */
         try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
             preparedStatement.setInt(1, 1);
             preparedStatement.setInt(2, 2);
@@ -340,7 +372,6 @@ public abstract class DAOFactory {
      */
     private void SeedAccommodationTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("DELETE FROM Accomodations");
            statement.executeUpdate("INSERT INTO Accomodations (price, location, title, surface, description, specialFonctionalities, energicReport, photos) VALUES (300000000, 'Université de Montpellier, Pl. Eugène Bataillon, 34090 Montpellier', 'Polytech Montpellier', 35, 'school', 'wifi', '0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS594D5fYC3ogCVbFVVY9zff7tM2z0_cZrf5FA65pLI_y05Bofbcxd4TFfT6NaXnASpRng&usqp=CAU')");
         } catch (SQLException e) {
             e.printStackTrace();
@@ -460,6 +491,7 @@ public abstract class DAOFactory {
         CreateProfileTable(connection);
         CreateCategoryTable(connection);
         CreateCategoryAccommodationTable(connection);
+        CreateRentalsTable(connection);
         CreateNotificationTable(connection);
         createAbusesTable(connection);
     }
@@ -477,6 +509,7 @@ public abstract class DAOFactory {
         SeedProfileTable(connection);
         SeedCategoryTable(connection);
         SeedCategoryAccommodationTable(connection);
+        SeedRentalsTable(connection);
         SeedAccommodationAlertTable(connection);
         SeedNotificationTable(connection);
         SeedAbusesTable(connection);
@@ -500,6 +533,15 @@ public abstract class DAOFactory {
             ResultSet resultSet = statement.executeQuery("SELECT id, message FROM Chats");
             while(resultSet.next()){
                 System.out.println("id: " + resultSet.getInt("id") + " message: " + resultSet.getString("message"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        System.out.println("Accommodations:");
+        try(Statement statement = connection.createStatement()){
+            ResultSet resultSet = statement.executeQuery("SELECT id, title FROM Accomodations");
+            while(resultSet.next()){
+                System.out.println("id: " + resultSet.getInt("id") + " title: " + resultSet.getString("title"));
             }
         } catch (SQLException e) {
             e.printStackTrace();

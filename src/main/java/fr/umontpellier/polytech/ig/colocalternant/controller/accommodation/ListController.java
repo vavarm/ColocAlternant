@@ -12,6 +12,9 @@ import fr.umontpellier.polytech.ig.colocalternant.accomodation.Accommodation;
 import fr.umontpellier.polytech.ig.colocalternant.accomodation.AccommodationFacade;
 import fr.umontpellier.polytech.ig.colocalternant.category.Category;
 import fr.umontpellier.polytech.ig.colocalternant.category.CategoryFacade;
+import fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole;
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
+import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 import javafx.beans.property.SimpleObjectProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -24,6 +27,7 @@ import javafx.scene.layout.VBox;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.stream.Collectors;
 
 /**
@@ -132,6 +136,9 @@ public class ListController {
         TableColumn<Accommodation, VBox> actionsButtonColumn = new TableColumn<>("Actions");
         actionsButtonColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(createButtonContainer(cellData.getValue())));
 
+        TableColumn<Accommodation, VBox> requestRentalButtonColumn = new TableColumn<>("Request Rental");
+        requestRentalButtonColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(createRequestRentalButtonContainer(cellData.getValue())));
+
         // Set column widths
         titleColumn.setMinWidth(200);
         locationColumn.setMinWidth(200);
@@ -141,7 +148,7 @@ public class ListController {
         photoColumn.setMinWidth(150);
 
         // Add columns to TableView
-        tableView.getColumns().addAll(titleColumn, locationColumn, descriptionColumn, priceColumn, energicReportColumn, specialFonctionalitiesColumn, photoColumn, categoriesColumn, actionsButtonColumn);
+        tableView.getColumns().addAll(titleColumn, locationColumn, descriptionColumn, priceColumn, energicReportColumn, specialFonctionalitiesColumn, photoColumn, categoriesColumn, actionsButtonColumn, requestRentalButtonColumn);
 
         box.getChildren().removeAll();
         box.getChildren().addAll(categorySearchField, searchButton, tableView);
@@ -195,6 +202,50 @@ public class ListController {
         });
         return button;
     }
+
+    /**
+     * Creates a VBox to contain the button for requesting a rental for the given accommodation.
+     * @param accommodation The accommodation.
+     */
+    private VBox createRequestRentalButtonContainer(Accommodation accommodation) {
+        // Get the current user's profile
+        List<Profile> profiles = ProfileFacade.getInstance().getAllProfiles();
+        Profile profile = profiles.stream().filter(p -> p.getId() == getProfileID()).findFirst().orElse(null);
+
+        if(profile == null) {
+            return new VBox();
+        }
+
+        if(!(profile.getRole() == EnumRole.Tenant)) {
+            return new VBox();
+        }
+        Button requestRentalButton = createRequestRentalButton(accommodation);
+
+        VBox buttonContainer = new VBox(requestRentalButton);
+        buttonContainer.setSpacing(5); // Optional: Set the spacing between buttons
+
+        return buttonContainer;
+    }
+
+    /**
+     * Creates a button that redirects to the page redirecting to the page to request a rental for the given accommodation.
+     * @param accommodation The accommodation.
+     * @return The button.
+     */
+    private Button createRequestRentalButton(Accommodation accommodation) {
+        Button button = new Button("Request Rental");
+
+        button.setOnAction(event -> {
+            try {
+                AccommodationFacade.getInstance().setCurrentAccommodation(accommodation);
+                FXRouter.goTo("requestRental", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        return button;
+    }
+
 
     /**
      * Filters the list of accommodations based on the given categories.

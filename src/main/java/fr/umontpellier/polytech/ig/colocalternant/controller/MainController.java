@@ -38,6 +38,12 @@ public class MainController {
     @FXML
     public Button changeProfileButton;
 
+    @FXML
+    public Button rentalRequestListButton;
+
+    @FXML
+    public Button rentalListButton;
+
     public void initialize() {
         profileID = getProfileID();
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
@@ -125,6 +131,30 @@ public class MainController {
     public void changeProfile(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("createProfile");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Method called when the rental request list button is clicked. Open the rental request list window.
+     * @param actionEvent the event of the click
+     */
+    public void rentalRequestList(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("rentalRequestList", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    /**
+     * Method called when the rental list button is clicked. Open the rental list window.
+     * @param actionEvent the event of the click
+     */
+    public void rentalList(ActionEvent actionEvent) {
+        try {
+            FXRouter.goTo("rentalList", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
