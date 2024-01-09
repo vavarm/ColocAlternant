@@ -19,7 +19,6 @@
     <TextField fx:id="newSF" layoutX="150.0" layoutY="210.0" promptText="New Special Functionalities"/>
     <TextField fx:id="newER" layoutX="150.0" layoutY="255.0" promptText="New Energetic Report"/>
     <TextField fx:id="newPhotos" layoutX="150.0" layoutY="300.0" promptText="New Photos"/>
-    <fx:include source="../category-view.fxml"/>
     <Button fx:id="add" onAction="#onInsert"/>
     <Button fx:id="back"/>
 
