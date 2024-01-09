@@ -102,4 +102,43 @@ public abstract class CategoryDAO {
         }
     }
 
+    /**
+     * Add category to accommodation.
+     * @param accommodationID The id of the accommodation.
+     * @param categoryName The name of the category.
+     */
+    public void addCategoryToAccommodation(int accommodationID, String categoryName) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO AccommodationCategories (accommodation_id, category_id) VALUES (?, (SELECT id FROM Categories WHERE name = ?));")) {
+                preparedStatement.setInt(1, accommodationID);
+                preparedStatement.setString(2, categoryName);
+                preparedStatement.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Remove category from accommodation.
+     * @param accommodationID The id of the accommodation.
+     * @param categoryName The name of the category.
+     */
+    public void removeCategoryFromAccommodation(int accommodationID, String categoryName) {
+        Connection connection = null;
+        try {
+            connection = this.daoFactory.getConnection();
+            if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
+            try (PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM AccommodationCategories WHERE accommodation_id = ? AND category_id = (SELECT id FROM Categories WHERE name = ?);")) {
+                preparedStatement.setInt(1, accommodationID);
+                preparedStatement.setString(2, categoryName);
+                preparedStatement.executeUpdate();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 }

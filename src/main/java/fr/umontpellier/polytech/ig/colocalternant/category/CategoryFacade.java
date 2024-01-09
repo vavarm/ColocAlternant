@@ -74,4 +74,22 @@ public class CategoryFacade {
         return "You are not allowed to delete a category";
     }
 
+    /**
+     * Add category to accommodation.
+     * @param accommodationID The id of the accommodation.
+     * @param categoryName The name of the category.
+     */
+    public void addCategoryToAccommodation(int accommodationID, String categoryName) {
+        daoFactory.getCategoryDAO().addCategoryToAccommodation(accommodationID, categoryName);
+    }
+
+    /**
+     * Remove category from accommodation.
+     * @param accommodationID The id of the accommodation.
+     * @param categoryName The name of the category.
+     */
+    public void removeCategoryFromAccommodation(int accommodationID, String categoryName) {
+        daoFactory.getCategoryDAO().removeCategoryFromAccommodation(accommodationID, categoryName);
+    }
+
 }

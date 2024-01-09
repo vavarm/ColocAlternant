@@ -71,53 +71,9 @@ public class CategoryController {
         nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(
                 cellData.getValue().getName()));
 
-        TableColumn<Category, VBox> actionsButtonColumn = new TableColumn<>("Actions");
-        actionsButtonColumn.setCellValueFactory(cellData -> new SimpleObjectProperty<>(createButtonContainer(cellData.getValue())));
-
         // Add columns to the TableView
-        tableView.getColumns().addAll(nameColumn, actionsButtonColumn);
+        tableView.getColumns().add(nameColumn);
         box.getChildren().add(tableView);
-    }
-
-    /**
-     * Create a VBox to list the actions for the given category.
-     * @param category The category.
-     * @return The VBox.
-     */
-    private VBox createButtonContainer(Category category) {
-        Button banButton = createAddButton(category);
-        Button unbanButton = createDeleteButton(category);
-
-        VBox buttonContainer = new VBox(banButton, unbanButton);
-        buttonContainer.setSpacing(5); // Optional: Set the spacing between buttons
-
-        return buttonContainer;
-    }
-
-    /**
-     * Create a button to add the given category.
-     * @param category The category.
-     * @return The button.
-     */
-    private Button createAddButton(Category category) {
-        Button button = new Button("Add");
-        button.setOnAction(event -> {
-            addCategory(category.getName());
-        });
-        return button;
-    }
-
-    /**
-     * Create a button to delete the given category.
-     * @param category The category.
-     * @return The button.
-     */
-    private Button createDeleteButton(Category category) {
-        Button button = new Button("Delete");
-        button.setOnAction(event -> {
-            deleteCategory(category.getName());
-        });
-        return button;
     }
 
 }
