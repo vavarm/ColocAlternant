@@ -47,42 +47,57 @@ public class OwnProfileController {
     /**
      * Method called when the update button is clicked.
      * Allow to go on updateProfile-view.
-     * @param   actionEvent Obligatory param for ActionEvent
+     *
+     * @param actionEvent Obligatory param for ActionEvent
      */
     @FXML
     private void handleUpdateButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to updateProfile-view");
-        try { FXRouter.goTo("updateProfile", profileID, false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("updateProfile", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * Method called when the back button is clicked.
      * Allow to go on main-view.
-     * @param   actionEvent Obligatory param for ActionEvent
+     *
+     * @param actionEvent Obligatory param for ActionEvent
      */
     @FXML
     private void handleBackButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to main-view");
-        try { FXRouter.goTo("main", profileID, false); }
-        catch (IOException e) { e.printStackTrace(); throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("main", profileID, false);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * Method called when the list button is clicked.
      * Allow to go on profilesList-view.
-     * @param   actionEvent Obligatory param for ActionEvent
+     *
+     * @param actionEvent Obligatory param for ActionEvent
      */
     @FXML
     public void handleListButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to profilesList-view");
-        try { FXRouter.goTo("listProfiles", profileID, false); }
-        catch (IOException e) { e.printStackTrace(); throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("listProfiles", profileID, false);
+        } catch (IOException e) {
+            e.printStackTrace();
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * Allow to get the ID of the profile.
-     * @return  The ID of the profile.
+     *
+     * @return The ID of the profile.
      */
     private int getProfileID() {
         Object data = FXRouter.getData();
@@ -92,7 +107,8 @@ public class OwnProfileController {
 
     /**
      * Allow to get a profile of the current user by its ID.
-     * @param   profileID The profile by its ID.
+     *
+     * @param profileID The profile by its ID.
      */
     private Profile getMyProfile(int profileID) {
         Profile myProfile = null;
@@ -104,10 +120,11 @@ public class OwnProfileController {
         }
         return myProfile;
     }
+
     public void initialize() {
         profileID = getProfileID();
         myProfile = getMyProfile(profileID);
-        System.out.println("profileId in OwnProfileController : "+ profileID);
+        System.out.println("profileId in OwnProfileController : " + profileID);
 
         title.setText("My " + myProfile.getRole().name().toLowerCase() + " profile");
 
@@ -128,7 +145,8 @@ public class OwnProfileController {
 
     /**
      * Allow to get all profiles of a user.
-     * @param   userID The ID of the user.
+     *
+     * @param userID The ID of the user.
      */
     public ArrayList<Profile> getOwnProfiles(int userID) {
         return profileFacade.getOwnProfiles(userID);

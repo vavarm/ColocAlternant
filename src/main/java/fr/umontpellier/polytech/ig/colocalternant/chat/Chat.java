@@ -1,6 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.chat;
 
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
+
 import java.time.LocalDateTime;
 
 public class Chat {
@@ -31,6 +32,7 @@ public class Chat {
 
     /**
      * Constructor of the chat
+     *
      * @param id
      * @param sender
      * @param dest
@@ -49,6 +51,7 @@ public class Chat {
 
     /**
      * Retrieves the unique identifier of the chat.
+     *
      * @return The chat's identifier.
      */
     public int getId() {
@@ -57,6 +60,7 @@ public class Chat {
 
     /**
      * Sets the unique identifier of the chat.
+     *
      * @param id The chat's identifier.
      */
     public void setId(int id) {
@@ -65,6 +69,7 @@ public class Chat {
 
     /**
      * Retrieves the sender of the message.
+     *
      * @return The sender of the message.
      */
     public User getSender() {
@@ -73,6 +78,7 @@ public class Chat {
 
     /**
      * Sets the sender of the message.
+     *
      * @param sender The sender of the message.
      */
     public void setSender(User sender) {
@@ -81,6 +87,7 @@ public class Chat {
 
     /**
      * Retrieves the destination user of the message.
+     *
      * @return The destination user of the message.
      */
     public User getDest() {
@@ -89,6 +96,7 @@ public class Chat {
 
     /**
      * Sets the destination user of the message.
+     *
      * @param dest The destination user of the message.
      */
     public void setDest(User dest) {
@@ -97,6 +105,7 @@ public class Chat {
 
     /**
      * Retrieves the content of the message.
+     *
      * @return The content of the message.
      */
     public String getMessage() {
@@ -105,6 +114,7 @@ public class Chat {
 
     /**
      * Sets the content of the message.
+     *
      * @param message The content of the message.
      */
     public void setMessage(String message) {
@@ -113,6 +123,7 @@ public class Chat {
 
     /**
      * Retrieves the timestamp of the creation of the message.
+     *
      * @return The timestamp of the creation of the message.
      */
     public LocalDateTime getTimestamp() {
@@ -121,6 +132,7 @@ public class Chat {
 
     /**
      * Sets the timestamp of the creation of the message.
+     *
      * @param timestamp The timestamp of the creation of the message.
      */
     public void setTimestamp(LocalDateTime timestamp) {
@@ -129,6 +141,7 @@ public class Chat {
 
     /**
      * Retrieves the boolean to know if the message was deleted.
+     *
      * @return The boolean to know if the message was deleted.
      */
     public boolean isDeleted() {
@@ -137,6 +150,7 @@ public class Chat {
 
     /**
      * Sets the boolean to know if the message was deleted.
+     *
      * @param deleted The boolean to know if the message was deleted.
      */
     public void setDeleted(boolean deleted) {

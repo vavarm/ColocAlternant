@@ -63,11 +63,13 @@ public class UpdateController {
         newER.setText(String.valueOf(AccommodationFacade.getInstance().getCurrentAccommodation().getEnergicReport()));
         newPhotos.setText(AccommodationFacade.getInstance().getCurrentAccommodation().getPhotos());
         this.back.setText("Back");
-        this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationInfo", getProfileID(), false);
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }});
+        this.back.setOnAction(event -> {
+            try {
+                FXRouter.goTo("accommodationInfo", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     /**
@@ -92,14 +94,14 @@ public class UpdateController {
     /**
      * Updates the accommodation information using the provided parameters.
      *
-     * @param id                   The ID of the accommodation to be updated.
-     * @param title                The new title of the accommodation.
-     * @param location             The new location of the accommodation.
-     * @param description          The new description of the accommodation.
-     * @param price                The new price of the accommodation.
+     * @param id                     The ID of the accommodation to be updated.
+     * @param title                  The new title of the accommodation.
+     * @param location               The new location of the accommodation.
+     * @param description            The new description of the accommodation.
+     * @param price                  The new price of the accommodation.
      * @param specialFonctionalities The new special functionalities of the accommodation.
-     * @param energicReport        The new energetic report of the accommodation.
-     * @param photos               The new photos of the accommodation.
+     * @param energicReport          The new energetic report of the accommodation.
+     * @param photos                 The new photos of the accommodation.
      */
     public void handleUpdateAccommodation(int id, String title, String location, String description, float price,
                                           String specialFonctionalities, float energicReport, String photos) {

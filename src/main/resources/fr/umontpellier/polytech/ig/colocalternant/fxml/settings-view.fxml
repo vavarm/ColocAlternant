@@ -12,41 +12,43 @@
     <fx:include source="header.fxml"/>
 
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="firstName" textFill="orange" style="-fx-font-size: 20;" text="Settings" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="firstName" textFill="orange" style="-fx-font-size: 20;" text="Settings"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
 
-            <VBox spacing="30" alignment="CENTER">
+        <VBox spacing="30" alignment="CENTER">
 
-                <Label style="-fx-font-size: 15;" text="Change Password"/>
-                <PasswordField fx:id="newPwd" maxWidth="500"/>
+            <Label style="-fx-font-size: 15;" text="Change Password"/>
+            <PasswordField fx:id="newPwd" maxWidth="500"/>
 
-                <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
-                    <Button fx:id="cancelButton"
-                            style=
-                                    "-fx-padding: 10;
+            <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
+                <Button fx:id="cancelButton"
+                        style=
+                                "-fx-padding: 10;
                             -fx-min-width: 80;
                             -fx-background-color: orange;
                             -fx-text-fill: white;
                             -fx-font-weight: bold;"
-                            mnemonicParsing="false"
-                            onAction="#handleCancelButtonClick"
-                            text="Cancel"/>
-                    <Button fx:id="submitButton"
-                            style=
-                                    "-fx-padding: 10;
+                        mnemonicParsing="false"
+                        onAction="#handleCancelButtonClick"
+                        text="Cancel"/>
+                <Button fx:id="submitButton"
+                        style=
+                                "-fx-padding: 10;
                             -fx-min-width: 80;
                             -fx-background-color: green;
                             -fx-text-fill: white;
                             -fx-font-weight: bold;"
-                            mnemonicParsing="false"
-                            onAction="#passwordChange"
-                            text="Change Password"/>
-                </HBox>
+                        mnemonicParsing="false"
+                        onAction="#passwordChange"
+                        text="Change Password"/>
+            </HBox>
 
-                <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
-            </VBox>
+            <Label fx:id="errorLabel" text="Error" textFill="RED" visible="false"/>
+        </VBox>
     </VBox>
 
     <fx:include source="footer.fxml"/>

@@ -63,13 +63,13 @@ public class ProfilesListController {
 
         List<CombinedModel> combinedDataList = IntStream.range(0, parseProfileList().size())
                 .mapToObj(i -> new CombinedModel(
-                    parseProfileList().get(i).getId(),
-                    parseUserList().get(i).getFirstName(),
-                    parseUserList().get(i).getLastName(),
-                    parseUserList().get(i).getAge(),
-                    parseUserList().get(i).getEmail(),
-                    parseProfileList().get(i).getDescription(),
-                    parseProfileList().get(i).getRole()))
+                        parseProfileList().get(i).getId(),
+                        parseUserList().get(i).getFirstName(),
+                        parseUserList().get(i).getLastName(),
+                        parseUserList().get(i).getAge(),
+                        parseUserList().get(i).getEmail(),
+                        parseProfileList().get(i).getDescription(),
+                        parseProfileList().get(i).getRole()))
                 .toList();
 
         profilesTable.getItems().setAll(combinedDataList);
@@ -77,6 +77,7 @@ public class ProfilesListController {
 
     /**
      * Allow to get all users having one or two public profiles.
+     *
      * @return a List of users
      */
     private List<User> parseUserList() {
@@ -93,6 +94,7 @@ public class ProfilesListController {
 
     /**
      * Allow to get a List of all public profiles.
+     *
      * @return a List of all public profiles
      */
     private List<Profile> parseProfileList() {
@@ -102,6 +104,7 @@ public class ProfilesListController {
 
     /**
      * Allow to get a ArrayList of all profiles.
+     *
      * @return a ArrayList of all profiles
      */
     public ArrayList<Profile> getAllProfiles() {
@@ -110,11 +113,12 @@ public class ProfilesListController {
 
     /**
      * Allow to get a ArrayList of all public profiles.
+     *
      * @return a ArrayList of all public profiles
      */
     private ArrayList<Profile> getAllPublicProfiles() {
         ArrayList<Profile> allPublicProfiles = new ArrayList<>();
-        for (Profile profile: getAllProfiles()) {
+        for (Profile profile : getAllProfiles()) {
             if (profile.getIsPublic() == true) {
                 allPublicProfiles.add(profile);
             }
@@ -125,13 +129,17 @@ public class ProfilesListController {
     /**
      * Method called when the back button is clicked.
      * Allow to go on ownProfile-view.
-     * @param actionEvent   Obligatory param for ActionEvent
+     *
+     * @param actionEvent Obligatory param for ActionEvent
      */
     public void handleBackButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to ownProfile-view");
         Object data = FXRouter.getData();
         int profileID = (int) data;
-        try { FXRouter.goTo("ownProfile", profileID, false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("ownProfile", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

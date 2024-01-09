@@ -14,11 +14,12 @@
     <fx:include source="header.fxml"/>
 
     <HBox>
-        <Label text="Report "/><Label fx:id="user"/>
+        <Label text="Report "/>
+        <Label fx:id="user"/>
     </HBox>
 
     <TextField fx:id="message"/>
-    <Button fx:id="validate"  text="Create" onAction="#onCreate"/>
+    <Button fx:id="validate" text="Create" onAction="#onCreate"/>
     <Button fx:id="back" text="Back" onAction="#backToChat"/>
     <fx:include source="footer.fxml"/>
 

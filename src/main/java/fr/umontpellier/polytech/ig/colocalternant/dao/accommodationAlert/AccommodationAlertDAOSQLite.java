@@ -2,16 +2,17 @@ package fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert;
 
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 
-public class AccommodationAlertDAOSQLite extends  AccommodationAlertDAO {
+public class AccommodationAlertDAOSQLite extends AccommodationAlertDAO {
     /**
      * Constructor of the AccommodationAlert DAO
      */
-    private AccommodationAlertDAOSQLite () {
+    private AccommodationAlertDAOSQLite() {
         this.daoFactory = DAOSQLiteFactory.getInstance();
     }
 
     /**
      * Retrieves the unique instance of the user DAO.
+     *
      * @return The user DAO.
      */
     public static AccommodationAlertDAOSQLite getInstance() {
@@ -22,6 +23,6 @@ public class AccommodationAlertDAOSQLite extends  AccommodationAlertDAO {
      * Holder of the unique instance of the accommodation DAO
      */
     private static class AccommodationAlertDAOSQLiteHolder {
-        private final static AccommodationAlertDAOSQLite  instance = new AccommodationAlertDAOSQLite ();
+        private final static AccommodationAlertDAOSQLite instance = new AccommodationAlertDAOSQLite();
     }
 }

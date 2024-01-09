@@ -18,13 +18,14 @@ public class RentalDAO {
 
     /**
      * Creates a new rental in the database.
-     * @param id The id of the rental.
-     * @param profileId The id of the profile.
+     *
+     * @param id              The id of the rental.
+     * @param profileId       The id of the profile.
      * @param accommodationId The id of the accommodation.
-     * @param period The period of the rental.
-     * @param isRequest The state of the rental.
+     * @param period          The period of the rental.
+     * @param isRequest       The state of the rental.
      */
-    public void insertRental(int profileId, int accommodationId, String period, boolean isRequest){
+    public void insertRental(int profileId, int accommodationId, String period, boolean isRequest) {
         try {
             Connection connection = this.daoFactory.getConnection();
             try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Rentals (profileId, accommodationId, period, isRequest) VALUES (?, ?, ?, ?)")) {
@@ -42,6 +43,7 @@ public class RentalDAO {
 
     /**
      * Retrieves all rentals from the database.
+     *
      * @return List of all rentals.
      */
     public List<Rental> getAllRentals() {
@@ -71,6 +73,7 @@ public class RentalDAO {
 
     /**
      * Retrieves a rental from the database.
+     *
      * @param id The id of the rental.
      * @return The rental.
      */
@@ -100,6 +103,7 @@ public class RentalDAO {
 
     /**
      * Updates the state of a rental.
+     *
      * @param id
      * @param isRequest
      */
@@ -118,6 +122,7 @@ public class RentalDAO {
 
     /**
      * Deletes a rental from the database.
+     *
      * @param id The id of the rental.
      */
     public void deleteRental(int id) {

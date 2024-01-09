@@ -13,21 +13,26 @@
     <fx:include source="../header.fxml"/>
 
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="My profile" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
-        <Label fx:id="connectAs" style="-fx-font-size: 20;" text="Connect as :" />
+        <VBox.margin>
+            <Insets top="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="My profile"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
+        <Label fx:id="connectAs" style="-fx-font-size: 20;" text="Connect as :"/>
 
         <HBox fx:id="buttonBox" spacing="30" alignment="CENTER">
-            <Button fx:id="tenantButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#handleTenantButtonClick" text="Tenant"/>
-            <Button fx:id="ownerButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#handleOwnerButtonClick" text="Owner"/>
-            <Button fx:id="adminButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#handleAdminButtonClick" text="Admin"/>
+            <Button fx:id="tenantButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                    onAction="#handleTenantButtonClick" text="Tenant"/>
+            <Button fx:id="ownerButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                    onAction="#handleOwnerButtonClick" text="Owner"/>
+            <Button fx:id="adminButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                    onAction="#handleAdminButtonClick" text="Admin"/>
         </HBox>
 
-        <Separator fx:id="separator2" prefHeight="2" style="-fx-background-color: black;" />
-        <Label fx:id="logout" style="-fx-font-size: 20;" text="Back to the login page" />
-        <Button fx:id="logoutButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#handleLogoutButtonClick" text="Logout" />
-
+        <Separator fx:id="separator2" prefHeight="2" style="-fx-background-color: black;"/>
+        <Label fx:id="logout" style="-fx-font-size: 20;" text="Back to the login page"/>
+        <Button fx:id="logoutButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                onAction="#handleLogoutButtonClick" text="Logout"/>
 
 
     </VBox>

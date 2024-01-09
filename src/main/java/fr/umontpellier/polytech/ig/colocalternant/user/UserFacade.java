@@ -38,11 +38,12 @@ public class UserFacade {
     private UserFacade() {
         this.currentUser = null;
         this.daoFactory = DAOSQLiteFactory.getInstance();
-        this.userDAO =  daoFactory.getUserDAO();
+        this.userDAO = daoFactory.getUserDAO();
     }
 
     /**
      * Retrieves the unique instance of the user facade.
+     *
      * @return The user facade.
      */
     public static UserFacade getInstance() {
@@ -51,7 +52,8 @@ public class UserFacade {
 
     /**
      * Logs in the user with the given email and password.
-     * @param email The email of the user.
+     *
+     * @param email    The email of the user.
      * @param password The password of the user.
      * @return The user if the login is successful, null otherwise.
      */
@@ -67,6 +69,7 @@ public class UserFacade {
 
     /**
      * Retrieves the current user.
+     *
      * @return The current user.
      * @throws NullPointerException if no user is currently logged in.
      */
@@ -78,16 +81,16 @@ public class UserFacade {
     }
 
 
-
     /**
      * Retrieves a user by his id in database.
+     *
      * @return A user
      */
     public User getUserByID(int id) {
         return userDAO.getUserById(id);
     }
 
-     /* Registers a new user.
+    /* Registers a new user.
      * @param firstName The first name of the user.
      * @param lastName The last name of the user.
      * @param age The age of the user.
@@ -108,6 +111,7 @@ public class UserFacade {
 
     /**
      * Changes the password of the current user.
+     *
      * @param newPwd The new password.
      */
     public void changePassword(String newPwd) {
@@ -117,6 +121,7 @@ public class UserFacade {
 
     /**
      * Retrieves all the users.
+     *
      * @return The list of all users.
      */
     public ArrayList<User> getAllUsers() {
@@ -125,6 +130,7 @@ public class UserFacade {
 
     /**
      * Ban the given user.
+     *
      * @param user The user.
      */
     public void banUser(User user) {
@@ -136,6 +142,7 @@ public class UserFacade {
 
     /**
      * Unban the given user.
+     *
      * @param user The user.
      */
     public void unBanUser(User user) {

@@ -27,6 +27,7 @@ public class OptionsController {
 
     /**
      * Method called when the logout button is clicked. Logout the user. Open the login window.
+     *
      * @param actionEvent the event of the click
      */
     @FXML

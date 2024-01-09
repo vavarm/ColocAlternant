@@ -33,6 +33,7 @@ public class ProfileFacade {
 
     /**
      * Retrieves the unique instance of the user facade.
+     *
      * @return The user facade.
      */
     public static ProfileFacade getInstance() {
@@ -57,6 +58,7 @@ public class ProfileFacade {
 
     /**
      * Retrieves all profiles in database.
+     *
      * @return An ArrayList of all profiles.
      */
     public ArrayList<Profile> getAllProfiles() {
@@ -65,6 +67,7 @@ public class ProfileFacade {
 
     /**
      * Retrieves all profiles from a user.
+     *
      * @param userID The id of the user.
      * @return An arrayList of all profile from a user
      */
@@ -74,10 +77,11 @@ public class ProfileFacade {
 
     /**
      * Update the profile from a user.
-     * @param profileID The id of the profile
-     * @param isPublic The visibility of the profile
+     *
+     * @param profileID   The id of the profile
+     * @param isPublic    The visibility of the profile
      * @param description The description of the profile
-     * //@param userID The id of the user who has this profile
+     *                    //@param userID The id of the user who has this profile
      */
     public void updateProfile(int profileID, boolean isPublic, String description) {
         profileDAO.updateProfile(profileID, isPublic, description);

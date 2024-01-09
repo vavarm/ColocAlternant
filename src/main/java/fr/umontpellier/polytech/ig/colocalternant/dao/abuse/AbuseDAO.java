@@ -28,7 +28,7 @@ public abstract class AbuseDAO {
      * Creates a new abuse entry in the database.
      *
      * @param message The message associated with the abuse.
-     * @param dest The destination user for the abuse.
+     * @param dest    The destination user for the abuse.
      * @return The created Abuse object.
      */
     public Abuse createAbuse(String message, User dest) {
@@ -66,7 +66,7 @@ public abstract class AbuseDAO {
     /**
      * Updates the status of an existing abuse entry in the database.
      *
-     * @param abuse The abuse entry to update.
+     * @param abuse  The abuse entry to update.
      * @param status The new status for the abuse entry.
      * @return The updated Abuse object.
      */

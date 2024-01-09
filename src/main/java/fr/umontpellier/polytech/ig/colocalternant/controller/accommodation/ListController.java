@@ -3,7 +3,6 @@
  * It displays a TableView showing the list of all accommodations, with columns for title, location, description,
  * price, photo, and actions. Additionally, it provides functionality to add a new accommodation or view detailed
  * information about a selected accommodation.
- *
  */
 package fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
 
@@ -63,11 +62,13 @@ public class ListController {
             }
         });
         this.back.setText("Back");
-        this.back.setOnAction(event -> {try {
-            FXRouter.goTo("main", getProfileID(),false);
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }});
+        this.back.setOnAction(event -> {
+            try {
+                FXRouter.goTo("main", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private int getProfileID() {
@@ -212,11 +213,11 @@ public class ListController {
         List<Profile> profiles = ProfileFacade.getInstance().getAllProfiles();
         Profile profile = profiles.stream().filter(p -> p.getId() == getProfileID()).findFirst().orElse(null);
 
-        if(profile == null) {
+        if (profile == null) {
             return new VBox();
         }
 
-        if(!(profile.getRole() == EnumRole.Tenant)) {
+        if (!(profile.getRole() == EnumRole.Tenant)) {
             return new VBox();
         }
         Button requestRentalButton = createRequestRentalButton(accommodation);

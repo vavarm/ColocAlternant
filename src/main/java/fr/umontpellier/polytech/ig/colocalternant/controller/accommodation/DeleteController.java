@@ -39,11 +39,13 @@ public class DeleteController {
         this.delete.setText("Delete");
         this.accommodation.setText("Do you want to delete " + AccommodationFacade.getInstance().getCurrentAccommodation().getTitle() + "?");
         this.back.setText("Back");
-        this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationInfo", getProfileID(), false);
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }});
+        this.back.setOnAction(event -> {
+            try {
+                FXRouter.goTo("accommodationInfo", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     /**

@@ -53,13 +53,13 @@ public class AccommodationFacade {
     /**
      * Inserts a new accommodation with the provided details.
      *
-     * @param title                The title of the accommodation.
-     * @param location             The location of the accommodation.
-     * @param description          The description of the accommodation.
-     * @param price                The price of the accommodation.
+     * @param title                  The title of the accommodation.
+     * @param location               The location of the accommodation.
+     * @param description            The description of the accommodation.
+     * @param price                  The price of the accommodation.
      * @param specialFonctionalities The special functionalities of the accommodation.
-     * @param energicReport        The energetic report of the accommodation.
-     * @param photos               The photos of the accommodation.
+     * @param energicReport          The energetic report of the accommodation.
+     * @param photos                 The photos of the accommodation.
      */
     public void insertAccommodation(String title, String location, String description,
                                     float price, String specialFonctionalities,
@@ -72,14 +72,14 @@ public class AccommodationFacade {
     /**
      * Updates an existing accommodation with the provided details.
      *
-     * @param userId               The ID of the user associated with the accommodation.
-     * @param title                The title of the accommodation.
-     * @param location             The location of the accommodation.
-     * @param description          The description of the accommodation.
-     * @param price                The price of the accommodation.
+     * @param userId                 The ID of the user associated with the accommodation.
+     * @param title                  The title of the accommodation.
+     * @param location               The location of the accommodation.
+     * @param description            The description of the accommodation.
+     * @param price                  The price of the accommodation.
      * @param specialFonctionalities The special functionalities of the accommodation.
-     * @param energicReport        The energetic report of the accommodation.
-     * @param photos               The photos of the accommodation.
+     * @param energicReport          The energetic report of the accommodation.
+     * @param photos                 The photos of the accommodation.
      */
 
     public void updateAccommodation(int userId, String title, String location, String description, float price, String specialFonctionalities, float energicReport, String photos) {

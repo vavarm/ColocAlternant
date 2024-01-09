@@ -3,6 +3,7 @@ package fr.umontpellier.polytech.ig.colocalternant.user;
 import org.junit.Test;
 
 import static org.testng.AssertJUnit.*;
+
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.*;
 
 /**
@@ -35,6 +36,7 @@ public class UserFacadeTest {
         }
         assertEquals(user, userFacade.getCurrentUser());
     }
+
     @Test
     public void failedLogin() {
         UserFacade userFacade = UserFacade.getInstance();
@@ -44,7 +46,7 @@ public class UserFacadeTest {
         try {
             user = userFacade.login("wrong@example.com", "wrong_password");
         } catch (CredentialException credentialException) {
-            assertTrue("User with wrong credentials",credentialException.getType() == CredentialExceptionType.INVALID_EMAIL || credentialException.getType() == CredentialExceptionType.INVALID_PASSWORD);
+            assertTrue("User with wrong credentials", credentialException.getType() == CredentialExceptionType.INVALID_EMAIL || credentialException.getType() == CredentialExceptionType.INVALID_PASSWORD);
         }
         assertEquals(null, user);
     }
@@ -61,7 +63,7 @@ public class UserFacadeTest {
 
         // Test getting current user after successful login
         User user = null;
-        try{
+        try {
             user = userFacade.login("john.doe@test.com", "password");
         } catch (CredentialException credentialException) {
             fail("UserFacade: login: CredentialException thrown.");

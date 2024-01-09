@@ -2,7 +2,9 @@ package fr.umontpellier.polytech.ig.colocalternant.chat;
 
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import org.junit.Test;
+
 import java.util.List;
+
 import static org.testng.AssertJUnit.*;
 
 

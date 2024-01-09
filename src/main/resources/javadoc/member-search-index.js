@@ -1,1 +1,2323 @@
-memberSearchIndex = [{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"connection"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"CreateTables(Connection)","u":"CreateTables(java.sql.Connection)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialException","l":"CredentialException(CredentialExceptionType)","u":"%3Cinit%3E(fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialExceptionType)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user","c":"UserDAO","l":"daoFactory"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"DAOFactory()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginController","l":"errorLabel"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getAge()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"getConnection()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOSQLiteFactory","l":"getConnection()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacade","l":"getCurrentUser()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacadeTest","l":"getCurrentUser()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getEmail()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getFirstName()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getId()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOSQLiteFactory","l":"getInstance()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user","c":"UserDAOSQLite","l":"getInstance()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacade","l":"getInstance()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacadeTest","l":"getInstance()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getLastName()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getPassword()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"getPhoto()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialException","l":"getType()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user","c":"UserDAO","l":"getUser(String, String)","u":"getUser(java.lang.String,java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"getUserDAO()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOSQLiteFactory","l":"getUserDAO()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"HelloApplication","l":"HelloApplication()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"HelloController","l":"HelloController()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialExceptionType","l":"INVALID_EMAIL"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialExceptionType","l":"INVALID_PASSWORD"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacadeTest","l":"login()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"HelloController","l":"login(ActionEvent)","u":"login(javafx.event.ActionEvent)"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginController","l":"login(ActionEvent)","u":"login(javafx.event.ActionEvent)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacade","l":"login(String, String)","u":"login(java.lang.String,java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginApplication","l":"LoginApplication()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginController","l":"loginButton"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginController","l":"LoginController()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"HelloApplication","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginApplication","l":"main(String[])","u":"main(java.lang.String[])"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"HelloController","l":"onHelloButtonClick()"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginController","l":"password"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginController","l":"pseudo"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"SeedTables(Connection)","u":"SeedTables(java.sql.Connection)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setAge(int)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setEmail(String)","u":"setEmail(java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setFirstName(String)","u":"setFirstName(java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setId(int)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setLastName(String)","u":"setLastName(java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setPassword(String)","u":"setPassword(java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"setPhoto(String)","u":"setPhoto(java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","c":"DAOFactory","l":"setup(Connection)","u":"setup(java.sql.Connection)"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"HelloApplication","l":"start(Stage)","u":"start(javafx.stage.Stage)"},{"p":"fr.umontpellier.polytech.ig.colocalternant","c":"LoginApplication","l":"start(Stage)","u":"start(javafx.stage.Stage)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialException","l":"toString()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"toString()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"User","l":"User(int, String, String, int, String, String, String)","u":"%3Cinit%3E(int,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user","c":"UserDAO","l":"UserDAO()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","c":"UserFacadeTest","l":"UserFacadeTest()","u":"%3Cinit%3E()"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialExceptionType","l":"valueOf(String)","u":"valueOf(java.lang.String)"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","c":"CredentialExceptionType","l":"values()"}];updateSearchResults();
+memberSearchIndex = [{
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "Abuse(int, String, User, StatusEnum)",
+    "u": "%3Cinit%3E(int,java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.abuse.StatusEnum)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "AbuseController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAO",
+    "l": "AbuseDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "abusesButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "abusesList(ActionEvent)",
+    "u": "abusesList(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbusesListController",
+    "l": "AbusesListController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "accommodation"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "Accommodation(int, String, String, String, float, String, float, String)",
+    "u": "%3Cinit%3E(int,java.lang.String,java.lang.String,java.lang.String,float,java.lang.String,float,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "AccommodationAlert(int, int, String, float, float, float)",
+    "u": "%3Cinit%3E(int,int,java.lang.String,float,float,float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "AccommodationAlertDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "AccommodationAlertFacade()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "AccommodationDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "AccommodationFacade()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "accommodations(ActionEvent)",
+    "u": "accommodations(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "add"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "addCategories(Category)",
+    "u": "addCategories(fr.umontpellier.polytech.ig.colocalternant.category.Category)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "CategoryFacade",
+    "l": "addCategory(String)",
+    "u": "addCategory(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "CategoryController",
+    "l": "addCategory(String)",
+    "u": "addCategory(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "CategoryFacade",
+    "l": "addCategoryToAccommodation(int, String)",
+    "u": "addCategoryToAccommodation(int,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "addCategoryToAccommodation(int, String)",
+    "u": "addCategoryToAccommodation(int,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObservable",
+    "l": "addObserver(Observer)",
+    "u": "addObserver(fr.umontpellier.polytech.ig.colocalternant.notification.observer.Observer)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "EnumRole",
+    "l": "Admin"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Role",
+    "l": "ADMIN"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "App",
+    "l": "App()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "back"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "back"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "UserListController",
+    "l": "backButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "backToAbusesList(ActionEvent)",
+    "u": "backToAbusesList(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "backToChat(ActionEvent)",
+    "u": "backToChat(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "banUser(User)",
+    "u": "banUser(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "banUser(User)",
+    "u": "banUser(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "bind(Object, Stage)",
+    "u": "bind(java.lang.Object,javafx.stage.Stage)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "bind(Object, Stage, double, double)",
+    "u": "bind(java.lang.Object,javafx.stage.Stage,double,double)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "bind(Object, Stage, String)",
+    "u": "bind(java.lang.Object,javafx.stage.Stage,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "bind(Object, Stage, String, double, double)",
+    "u": "bind(java.lang.Object,javafx.stage.Stage,java.lang.String,double,double)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "Category",
+    "l": "Category(String)",
+    "u": "%3Cinit%3E(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "CategoryController",
+    "l": "CategoryController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "CategoryDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "changePassword(String)",
+    "u": "changePassword(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "changePassword(User, String)",
+    "u": "changePassword(fr.umontpellier.polytech.ig.colocalternant.user.User,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "changeProfile(ActionEvent)",
+    "u": "changeProfile(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "changeProfileButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "Chat(int, User, User, String, LocalDateTime, boolean)",
+    "u": "%3Cinit%3E(int,fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User,java.lang.String,java.time.LocalDateTime,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "chatButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatController",
+    "l": "ChatController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAO",
+    "l": "ChatDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "ChatMessageController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "chats(ActionEvent)",
+    "u": "chats(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "CombinedModel(int, String, String, int, String, String, EnumRole)",
+    "u": "%3Cinit%3E(int,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "connection"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "createAbuse(String, User)",
+    "u": "createAbuse(java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "createAbuse(String, User)",
+    "u": "createAbuse(java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAO",
+    "l": "createAbuse(String, User)",
+    "u": "createAbuse(java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.notification",
+    "c": "CreateAlertController",
+    "l": "CreateAlertController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CreateProfileController",
+    "l": "createProfile(boolean, String, int, EnumRole)",
+    "u": "createProfile(boolean,java.lang.String,int,fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "createProfile(boolean, String, int, EnumRole)",
+    "u": "createProfile(boolean,java.lang.String,int,fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "createProfile(boolean, String, int, EnumRole)",
+    "u": "createProfile(boolean,java.lang.String,int,fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CreateProfileController",
+    "l": "CreateProfileController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "createRental(int, int, String, boolean)",
+    "u": "createRental(int,int,java.lang.String,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "CreateTables(Connection)",
+    "u": "CreateTables(java.sql.Connection)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialException",
+    "l": "CredentialException(CredentialExceptionType)",
+    "u": "%3Cinit%3E(fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialExceptionType)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "c": "NotificationDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "daoFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "DAOFactory()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "delete"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "ChatFacade",
+    "l": "delete(Chat)",
+    "u": "delete(fr.umontpellier.polytech.ig.colocalternant.chat.Chat)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "delete(Chat)",
+    "u": "delete(fr.umontpellier.polytech.ig.colocalternant.chat.Chat)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAO",
+    "l": "delete(Chat)",
+    "u": "delete(fr.umontpellier.polytech.ig.colocalternant.chat.Chat)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "delete(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "c": "NotificationDAO",
+    "l": "delete(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "deleteAbuse(Abuse)",
+    "u": "deleteAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "deleteAbuse(Abuse)",
+    "u": "deleteAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAO",
+    "l": "deleteAbuse(Abuse)",
+    "u": "deleteAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "deleteAccommodation(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "deleteAccommodationAlert(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "deleteAccommodationAlert(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.notification",
+    "c": "DeleteAlertController",
+    "l": "DeleteAlertController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "deleteCategory(Category)",
+    "u": "deleteCategory(fr.umontpellier.polytech.ig.colocalternant.category.Category)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "CategoryFacade",
+    "l": "deleteCategory(String)",
+    "u": "deleteCategory(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "CategoryController",
+    "l": "deleteCategory(String)",
+    "u": "deleteCategory(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "DeleteController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "NotificationFacade",
+    "l": "deleteNotif(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "deleteProfile(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "deleteProfile(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "deleteRental(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "deleteRental(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "email"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialExceptionType",
+    "l": "EMAIL_ALREADY_USED"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "energicReport"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "CategoryController",
+    "l": "errorLabel"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "errorLabel"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "OptionsController",
+    "l": "errorLabel"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "SettingsController",
+    "l": "errorLabel"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "firstName"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getAbuseDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getAbuseDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "getAbuser()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "getAccommodation(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "getAccommodation(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "getAccommodationAlertByID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "getAccommodationAlertByID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getAccommodationAlertDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getAccommodationAlertDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getAccommodationDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getAccommodationDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "getAccommodationId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getAge()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getAge()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "getAllAbuses()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAO",
+    "l": "getAllAbuses()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "getAllAccommodation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "getAllAccommodationAlert()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "getAllAccommodationAlerts()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "getAllAccommodations()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "CategoryFacade",
+    "l": "getAllCategories()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "ListController",
+    "l": "getAllCategories()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "CategoryController",
+    "l": "getAllCategories()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "getAllCategories()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "getAllCategoriesForAccommodation(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "c": "NotificationDAO",
+    "l": "getAllNotifs()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "ProfilesListController",
+    "l": "getAllProfiles()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "getAllProfiles()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "getAllProfiles()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "getAllRentals()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "getAllRentals()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "getAllUsers()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "getAllUsers()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getCategories()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getCategoryDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getCategoryDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getChatDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getChatDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "ChatFacade",
+    "l": "getChatsOf(User)",
+    "u": "getChatsOf(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAO",
+    "l": "getChatsOf(User)",
+    "u": "getChatsOf(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "ChatFacade",
+    "l": "getChatsWith(User, User)",
+    "u": "getChatsWith(fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "getChatsWith(User, User)",
+    "u": "getChatsWith(fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAO",
+    "l": "getChatsWith(User, User)",
+    "u": "getChatsWith(fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getConnection()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getConnection()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "getCurrentAbuse()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "getCurrentAccommodation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "getCurrentAccommodationAlert()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "getCurrentUser()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "getData()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "getData2()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getDescription()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getDescription()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "getDescription()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "getDest()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "getDest()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getEmail()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getEmail()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getEnergicReport()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getFirstName()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getFirstName()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "CategoryFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "ChatFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "c": "NotificationDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAOSQLite",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "NotificationFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "getInstance()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getIsBanned()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "getIsPublic()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "getIsRequest()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getLastName()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getLastName()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "getLocation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getLocation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "getMaxPrice()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "getMessage()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "getMessage()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "getMinPrice()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "Category",
+    "l": "getName()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObserver",
+    "l": "getNewItem()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "getNewItemID()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getNotificationDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getNotificationDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "getNotificationObservable()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "getOwnAccommodationAlert(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "getOwnAccommodationAlerts(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "NotificationFacade",
+    "l": "getOwnNotifs()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "OwnProfileController",
+    "l": "getOwnProfiles(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "getOwnProfiles(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "getOwnProfiles(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "getOwns(int, int)",
+    "u": "getOwns(int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getPassword()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "getPeriod()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "getPhoto()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getPhotos()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getPrice()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getProfileDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getProfileDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "getProfileId()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "getProfileID()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "getProfileIdWithRole(int, EnumRole)",
+    "u": "getProfileIdWithRole(int,fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "getRental(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "getRentalById(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getRentalDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getRentalDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "getRentalsOf(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "getRentalsOfAccommodationsOf(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "getRole()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "getRole()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "getSender()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getSpecialFonctionalities()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "getStatus()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "getSurface()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "getTimestamp()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "getTitle()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialException",
+    "l": "getType()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "getUser(String, String)",
+    "u": "getUser(java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "getUserByID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "getUserById(Integer)",
+    "u": "getUserById(java.lang.Integer)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "getUserDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOSQLiteFactory",
+    "l": "getUserDAO()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "getUserID()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObserver",
+    "l": "getUserID()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "getUserID()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "goTo(String)",
+    "u": "goTo(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "goTo(String, int, boolean)",
+    "u": "goTo(java.lang.String,int,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "goTo(String, Object)",
+    "u": "goTo(java.lang.String,java.lang.Object)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "goToOld(String)",
+    "u": "goToOld(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "goToOld(String, int, boolean)",
+    "u": "goToOld(java.lang.String,int,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "insertUpdateAccommodationAlertController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "listAccommodationAlertController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "ProfilesListController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "RegisterController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalListController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestFormController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestListController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "UserListController",
+    "l": "handleBackButtonClick(ActionEvent)",
+    "u": "handleBackButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "SettingsController",
+    "l": "handleCancelButtonClick(ActionEvent)",
+    "u": "handleCancelButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "listAccommodationAlertController",
+    "l": "handleCreateAlterButtonClick(ActionEvent)",
+    "u": "handleCreateAlterButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "handleDelete(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "handleInsertAccommodation(String, String, String, float, String, float, String)",
+    "u": "handleInsertAccommodation(java.lang.String,java.lang.String,java.lang.String,float,java.lang.String,float,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "OwnProfileController",
+    "l": "handleListButtonClick(ActionEvent)",
+    "u": "handleListButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CreateProfileController",
+    "l": "handleLogoutButtonClick(ActionEvent)",
+    "u": "handleLogoutButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "RegisterController",
+    "l": "handleRegister(String, String, int, String, String, String)",
+    "u": "handleRegister(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "insertUpdateAccommodationAlertController",
+    "l": "handleSubmitButtonClick(ActionEvent)",
+    "u": "handleSubmitButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestFormController",
+    "l": "handleSubmitButtonClick(ActionEvent)",
+    "u": "handleSubmitButtonClick(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "handleUpdateAccommodation(int, String, String, String, float, String, float, String)",
+    "u": "handleUpdateAccommodation(int,java.lang.String,java.lang.String,java.lang.String,float,java.lang.String,float,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "HelloController",
+    "l": "HelloController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InfoController",
+    "l": "InfoController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbusesListController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InfoController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "ListController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "insertUpdateAccommodationAlertController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "listAccommodationAlertController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "listNotificationController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "CategoryController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CreateProfileController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "OwnProfileController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "ProfilesListController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "UpdateProfileController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalListController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestFormController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestListController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "UserListController",
+    "l": "initialize()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "insertAccommodation(Accommodation)",
+    "u": "insertAccommodation(fr.umontpellier.polytech.ig.colocalternant.accomodation.Accommodation)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "insertAccommodation(String, String, String, float, String, float, String)",
+    "u": "insertAccommodation(java.lang.String,java.lang.String,java.lang.String,float,java.lang.String,float,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "insertAccommodationAlert(int, String, float, float, float)",
+    "u": "insertAccommodationAlert(int,java.lang.String,float,float,float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "insertAccommodationAlert(int, String, float, float, float)",
+    "u": "insertAccommodationAlert(int,java.lang.String,float,float,float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "insertCategory(Category)",
+    "u": "insertCategory(fr.umontpellier.polytech.ig.colocalternant.category.Category)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "InsertController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "c": "NotificationDAO",
+    "l": "insertNotif(int, int)",
+    "u": "insertNotif(int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "NotificationFacade",
+    "l": "insertNotif(int, int)",
+    "u": "insertNotif(int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "insertRental(int, int, String, boolean)",
+    "u": "insertRental(int,int,java.lang.String,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "insertUpdateAccommodationAlertController",
+    "l": "insertUpdateAccommodationAlertController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "insertUser(User)",
+    "u": "insertUser(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialExceptionType",
+    "l": "INVALID_EMAIL"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialExceptionType",
+    "l": "INVALID_PASSWORD"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "isAdmin(User)",
+    "u": "isAdmin(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "isDeleted()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "isOwner()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "list"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "listAccommodationAlertController",
+    "l": "listAccommodationAlertController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "ListController",
+    "l": "ListController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "c": "listNotificationController",
+    "l": "listNotificationController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "HelloController",
+    "l": "login(ActionEvent)",
+    "u": "login(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "login(ActionEvent)",
+    "u": "login(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "login(String, String)",
+    "u": "login(java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "HelloController",
+    "l": "loginButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "loginButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "LoginController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "logout()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "OptionsController",
+    "l": "logoutButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "Main",
+    "l": "Main()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "App",
+    "l": "main(String[])",
+    "u": "main(java.lang.String[])"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "Main",
+    "l": "main(String[])",
+    "u": "main(java.lang.String[])"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "MainController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "message"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newDescription"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newDescription"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newER"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newER"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newLocation"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newLocation"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newPhotos"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newPhotos"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newPrice"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newPrice"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "SettingsController",
+    "l": "newPwd"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newSF"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newSF"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "newTitle"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "newTitle"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "notifButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "Notification(int, int, int)",
+    "u": "%3Cinit%3E(int,int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "c": "NotificationDAO",
+    "l": "NotificationDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "NotificationFacade",
+    "l": "NotificationFacade()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObservable",
+    "l": "NotificationObservable()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObserver",
+    "l": "NotificationObserver()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "notifications(ActionEvent)",
+    "u": "notifications(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObservable",
+    "l": "notifyObservers()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "onBack(ActionEvent)",
+    "u": "onBack(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "onCreate(ActionEvent)",
+    "u": "onCreate(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "ListController",
+    "l": "onCreation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatController",
+    "l": "onCreation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "UserListController",
+    "l": "onCreation()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "onDelete(ActionEvent)",
+    "u": "onDelete(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "DeleteController",
+    "l": "onDelete(ActionEvent)",
+    "u": "onDelete(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "InsertController",
+    "l": "onInsert(ActionEvent)",
+    "u": "onInsert(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "OptionsController",
+    "l": "onLogout(ActionEvent)",
+    "u": "onLogout(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "onRefresh(ActionEvent)",
+    "u": "onRefresh(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "onSend()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "onUpdate(ActionEvent)",
+    "u": "onUpdate(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "OptionsController",
+    "l": "OptionsController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "EnumRole",
+    "l": "Owner"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Role",
+    "l": "OWNER"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "OwnProfileController",
+    "l": "OwnProfileController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "LoginController",
+    "l": "password"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "SettingsController",
+    "l": "passwordChange(ActionEvent)",
+    "u": "passwordChange(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "pending"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "StatusEnum",
+    "l": "PENDING"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "personToChatWith"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "photos"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "printAllInfo(Connection)",
+    "u": "printAllInfo(java.sql.Connection)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "profile(ActionEvent)",
+    "u": "profile(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "Profile(int, boolean, String, int, EnumRole)",
+    "u": "%3Cinit%3E(int,boolean,java.lang.String,int,fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "profileButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "ProfileDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "ProfilesListController",
+    "l": "ProfilesListController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.notification",
+    "c": "ReceiveNotificationController",
+    "l": "ReceiveNotificationController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbusesListController",
+    "l": "refreshTable(ActionEvent)",
+    "u": "refreshTable(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "HelloController",
+    "l": "register(ActionEvent)",
+    "u": "register(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "RegisterController",
+    "l": "register(ActionEvent)",
+    "u": "register(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "register(String, String, int, String, String, String)",
+    "u": "register(java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "HelloController",
+    "l": "registerButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "RegisterController",
+    "l": "RegisterController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "rejected"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "StatusEnum",
+    "l": "REJECTED"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "CategoryFacade",
+    "l": "removeCategoryFromAccommodation(int, String)",
+    "u": "removeCategoryFromAccommodation(int,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "c": "CategoryDAO",
+    "l": "removeCategoryFromAccommodation(int, String)",
+    "u": "removeCategoryFromAccommodation(int,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObservable",
+    "l": "removeObserver(Observer)",
+    "u": "removeObserver(fr.umontpellier.polytech.ig.colocalternant.notification.observer.Observer)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "Rental(int, int, int, String, boolean)",
+    "u": "%3Cinit%3E(int,int,int,java.lang.String,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "RentalDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "rentalList(ActionEvent)",
+    "u": "rentalList(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "rentalListButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalListController",
+    "l": "RentalListController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestFormController",
+    "l": "RentalRequestFormController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "rentalRequestList(ActionEvent)",
+    "u": "rentalRequestList(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "rentalRequestListButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "c": "RentalRequestListController",
+    "l": "RentalRequestListController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "report(ActionEvent)",
+    "u": "report(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "resolved"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "StatusEnum",
+    "l": "RESOLVED"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "SeedTables(Connection)",
+    "u": "SeedTables(java.sql.Connection)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "ChatFacade",
+    "l": "send(String, User, User)",
+    "u": "send(java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "ChatMessageController",
+    "l": "send(String, User, User)",
+    "u": "send(java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "c": "ChatDAO",
+    "l": "send(String, User, User)",
+    "u": "send(java.lang.String,fr.umontpellier.polytech.ig.colocalternant.user.User,fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "setAbuser(User)",
+    "u": "setAbuser(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "setAccommodationId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setAge(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setAge(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "setAnimationType(String)",
+    "u": "setAnimationType(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "setAnimationType(String, double)",
+    "u": "setAnimationType(java.lang.String,double)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "setCurrentAbuse(Abuse)",
+    "u": "setCurrentAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "setCurrentAccommodation(Accommodation)",
+    "u": "setCurrentAccommodation(fr.umontpellier.polytech.ig.colocalternant.accomodation.Accommodation)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "setCurrentAccommodationAlert(AccommodationAlert)",
+    "u": "setCurrentAccommodationAlert(fr.umontpellier.polytech.ig.colocalternant.accommodationAlert.AccommodationAlert)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "setDeleted(boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setDescription(String)",
+    "u": "setDescription(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setDescription(String)",
+    "u": "setDescription(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "setDescription(String)",
+    "u": "setDescription(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "setDest(User)",
+    "u": "setDest(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "setDest(User)",
+    "u": "setDest(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setEmail(String)",
+    "u": "setEmail(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setEmail(String)",
+    "u": "setEmail(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setEnergicReport(float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setFirstName(String)",
+    "u": "setFirstName(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setFirstName(String)",
+    "u": "setFirstName(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setIsBanned(boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "setIsPublic(boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "setIsRequest(boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setLastName(String)",
+    "u": "setLastName(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setLastName(String)",
+    "u": "setLastName(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "setLocation(String)",
+    "u": "setLocation(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setLocation(String)",
+    "u": "setLocation(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "setMaxPrice(float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "setMessage(String)",
+    "u": "setMessage(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "setMessage(String)",
+    "u": "setMessage(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "setMinPrice(float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "Category",
+    "l": "setName(String)",
+    "u": "setName(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObserver",
+    "l": "setNewItem(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "setNewItemID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObservable",
+    "l": "setNotification(int, int)",
+    "u": "setNotification(int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setPassword(String)",
+    "u": "setPassword(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "setPeriod(String)",
+    "u": "setPeriod(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "setPhoto(String)",
+    "u": "setPhoto(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setPhotos(String)",
+    "u": "setPhotos(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setPrice(float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "Rental",
+    "l": "setProfileId(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "setProfileID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "CombinedModel",
+    "l": "setRole(EnumRole)",
+    "u": "setRole(fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "setRole(EnumRole)",
+    "u": "setRole(fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "setSender(User)",
+    "u": "setSender(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setSpecialFonctionalities(String)",
+    "u": "setSpecialFonctionalities(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "Abuse",
+    "l": "setStatus(StatusEnum)",
+    "u": "setStatus(fr.umontpellier.polytech.ig.colocalternant.abuse.StatusEnum)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlert",
+    "l": "setSurface(float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "c": "Chat",
+    "l": "setTimestamp(LocalDateTime)",
+    "u": "setTimestamp(java.time.LocalDateTime)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "settings(ActionEvent)",
+    "u": "settings(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "settingsButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "SettingsController",
+    "l": "SettingsController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "Accommodation",
+    "l": "setTitle(String)",
+    "u": "setTitle(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "c": "DAOFactory",
+    "l": "setup(Connection)",
+    "u": "setup(java.sql.Connection)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "c": "Notification",
+    "l": "setUserID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObserver",
+    "l": "setUserID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "setUserID(int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "App",
+    "l": "start(Stage)",
+    "u": "start(javafx.stage.Stage)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "startFrom(String)",
+    "u": "startFrom(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "startFrom(String, Object)",
+    "u": "startFrom(java.lang.String,java.lang.Object)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "EnumRole",
+    "l": "Tenant"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Role",
+    "l": "TENANT"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "tg"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "c": "Category",
+    "l": "toString()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialException",
+    "l": "toString()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Profile",
+    "l": "toString()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "toString()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "unBanUser(User)",
+    "u": "unBanUser(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "UserFacade",
+    "l": "unBanUser(User)",
+    "u": "unBanUser(fr.umontpellier.polytech.ig.colocalternant.user.User)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "update"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "NotificationObserver",
+    "l": "update(int, int)",
+    "u": "update(int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "c": "Observer",
+    "l": "update(int, int)",
+    "u": "update(int,int)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "AbuseFacade",
+    "l": "updateAbuse(Abuse, StatusEnum)",
+    "u": "updateAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse,fr.umontpellier.polytech.ig.colocalternant.abuse.StatusEnum)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "updateAbuse(Abuse, StatusEnum)",
+    "u": "updateAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse,fr.umontpellier.polytech.ig.colocalternant.abuse.StatusEnum)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "c": "AbuseDAO",
+    "l": "updateAbuse(Abuse, StatusEnum)",
+    "u": "updateAbuse(fr.umontpellier.polytech.ig.colocalternant.abuse.Abuse,fr.umontpellier.polytech.ig.colocalternant.abuse.StatusEnum)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "c": "AccommodationDAO",
+    "l": "updateAccommodation(Accommodation)",
+    "u": "updateAccommodation(fr.umontpellier.polytech.ig.colocalternant.accomodation.Accommodation)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "c": "AccommodationFacade",
+    "l": "updateAccommodation(int, String, String, String, float, String, float, String)",
+    "u": "updateAccommodation(int,java.lang.String,java.lang.String,java.lang.String,float,java.lang.String,float,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "c": "AccommodationAlertFacade",
+    "l": "updateAccommodationAlert(int, int, String, float, float, float)",
+    "u": "updateAccommodationAlert(int,int,java.lang.String,float,float,float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "c": "AccommodationAlertDAO",
+    "l": "updateAccommodationAlert(int, int, String, float, float, float)",
+    "u": "updateAccommodationAlert(int,int,java.lang.String,float,float,float)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "c": "UpdateController",
+    "l": "UpdateController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "UpdateProfileController",
+    "l": "updateProfile(int, boolean, String)",
+    "u": "updateProfile(int,boolean,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "c": "ProfileDAO",
+    "l": "updateProfile(int, boolean, String)",
+    "u": "updateProfile(int,boolean,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "ProfileFacade",
+    "l": "updateProfile(int, boolean, String)",
+    "u": "updateProfile(int,boolean,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "c": "UpdateProfileController",
+    "l": "UpdateProfileController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "c": "RentalDAO",
+    "l": "updateRentalState(int, boolean)",
+    "u": "updateRentalState(int,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "c": "RentalFacade",
+    "l": "updateRentalState(int, boolean)",
+    "u": "updateRentalState(int,boolean)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "user"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "c": "User",
+    "l": "User(int, String, String, int, String, String, String)",
+    "u": "%3Cinit%3E(int,java.lang.String,java.lang.String,int,java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "c": "UserDAO",
+    "l": "UserDAO()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "userList(ActionEvent)",
+    "u": "userList(javafx.event.ActionEvent)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "MainController",
+    "l": "userListButton"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "UserListController",
+    "l": "UserListController()",
+    "u": "%3Cinit%3E()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "c": "AbuseController",
+    "l": "validate"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "StatusEnum",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialExceptionType",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "EnumRole",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Role",
+    "l": "valueOf(String)",
+    "u": "valueOf(java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "c": "StatusEnum",
+    "l": "values()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "c": "CredentialExceptionType",
+    "l": "values()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "EnumRole",
+    "l": "values()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "c": "Role",
+    "l": "values()"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "when(String, String)",
+    "u": "when(java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "when(String, String, double, double)",
+    "u": "when(java.lang.String,java.lang.String,double,double)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "when(String, String, String)",
+    "u": "when(java.lang.String,java.lang.String,java.lang.String)"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "c": "FXRouter",
+    "l": "when(String, String, String, double, double)",
+    "u": "when(java.lang.String,java.lang.String,java.lang.String,double,double)"
+}];
+updateSearchResults();

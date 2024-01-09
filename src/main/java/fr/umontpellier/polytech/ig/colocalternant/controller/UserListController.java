@@ -120,6 +120,7 @@ public class UserListController {
 
     /**
      * Create a VBox to list the actions for the given user.
+     *
      * @param user The user.
      * @return The VBox.
      */
@@ -135,6 +136,7 @@ public class UserListController {
 
     /**
      * Create a button to ban the given user.
+     *
      * @param user The user.
      * @return The button.
      */
@@ -150,6 +152,7 @@ public class UserListController {
 
     /**
      * Create a button to unban the given user.
+     *
      * @param user The user.
      * @return The button.
      */

@@ -41,6 +41,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the unique instance of the DAO factory.
+     *
      * @return The DAO factory.
      */
     public static DAOSQLiteFactory getInstance() {
@@ -49,6 +50,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the connection to the database.
+     *
      * @return The connection to the database.
      * @throws SQLException if the connection to the database fails.
      */
@@ -68,6 +70,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the user DAO.
+     *
      * @return The user DAO.
      */
     public UserDAO getUserDAO() {
@@ -76,6 +79,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the profile DAO.
+     *
      * @return The profile DAO.
      */
     public ProfileDAO getProfileDAO() {
@@ -85,6 +89,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the accommodation DAO.
+     *
      * @return The accommodation DAO.
      */
     public AccommodationDAO getAccommodationDAO() {
@@ -93,6 +98,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the rental DAO.
+     *
      * @return The rental DAO.
      */
     public RentalDAO getRentalDAO() {
@@ -102,6 +108,7 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the accommodationAlert DAO.
+     *
      * @return The accommodationAlert DAO.
      */
     public AccommodationAlertDAO getAccommodationAlertDAO() {
@@ -111,15 +118,17 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the chat DAO.
+     *
      * @return The chat DAO.
      */
     public ChatDAO getChatDAO() {
         return ChatDAOSQLite.getInstance();
     }
 
-    
+
     /**
      * Retrieves the category DAO.
+     *
      * @return The category DAO.
      */
     public CategoryDAO getCategoryDAO() {
@@ -129,14 +138,17 @@ public class DAOSQLiteFactory extends DAOFactory {
 
     /**
      * Retrieves the category DAO.
+     *
      * @return The category DAO.
      */
     public NotificationDAO getNotificationDAO() {
         return NotificationDAOSQLite.getInstance();
     }
 
-    
-    /** Retrieves the abuse DAO.
+
+    /**
+     * Retrieves the abuse DAO.
+     *
      * @return The abuse DAO.
      */
     public AbuseDAO getAbuseDAO() {

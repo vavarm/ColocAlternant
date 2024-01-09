@@ -24,7 +24,8 @@ public abstract class UserDAO {
 
     /**
      * Retrieves the user with the given email and password from the database.
-     * @param email The email of the user.
+     *
+     * @param email    The email of the user.
      * @param password The password of the user.
      * @return The user if the login is successful, null otherwise.
      * @throws CredentialException if the email or the password is incorrect.
@@ -54,7 +55,7 @@ public abstract class UserDAO {
         }
     }
 
-    public User getUserById(Integer id){
+    public User getUserById(Integer id) {
         try {
             Connection connection = this.daoFactory.getConnection();
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
@@ -63,8 +64,8 @@ public abstract class UserDAO {
                 try (ResultSet resultSet = preparedStatement.executeQuery()) {
                     if (resultSet.next()) {
                         return new User(resultSet.getInt("id"), resultSet.getString("firstname"), resultSet.getString("lastname"), resultSet.getInt("age"), resultSet.getString("email"), resultSet.getString("password"), resultSet.getString("photo"));
+                    }
                 }
-            }
                 return null;
             }
         } catch (SQLException sqlException) {
@@ -75,6 +76,7 @@ public abstract class UserDAO {
 
     /**
      * Inserts the given user into the database.
+     *
      * @param newUser The user to insert.
      * @throws CredentialException if the email is already used.
      */
@@ -105,8 +107,9 @@ public abstract class UserDAO {
 
     /**
      * Updates the password's given user’s password in the database.
+     *
      * @param currentUser The user to update.
-     * @param newPwd The new password of the user.
+     * @param newPwd      The new password of the user.
      */
     public void changePassword(User currentUser, String newPwd) {
         Connection connection = null;
@@ -133,6 +136,7 @@ public abstract class UserDAO {
 
     /**
      * Retrieves all the users from the database.
+     *
      * @return The list of all the users.
      */
     public ArrayList<User> getAllUsers() {
@@ -157,6 +161,7 @@ public abstract class UserDAO {
 
     /**
      * Ban the user.
+     *
      * @param user The user to ban.
      */
     public void banUser(User user) {
@@ -183,6 +188,7 @@ public abstract class UserDAO {
 
     /**
      * Unban the user.
+     *
      * @param user The user to unban.
      */
     public void unBanUser(User user) {

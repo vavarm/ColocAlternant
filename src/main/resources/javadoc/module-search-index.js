@@ -1,1 +1,2 @@
-moduleSearchIndex = [{"l":"fr.umontpellier.polytech.ig.colocalternant"}];updateSearchResults();
+moduleSearchIndex = [{"l": "fr.umontpellier.polytech.ig.colocalternant"}];
+updateSearchResults();

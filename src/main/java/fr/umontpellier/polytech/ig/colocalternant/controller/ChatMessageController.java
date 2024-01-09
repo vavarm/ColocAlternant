@@ -53,6 +53,7 @@ public class ChatMessageController {
 
     /**
      * Deletes a chat
+     *
      * @param chat
      */
     public void delete(Chat chat) {
@@ -62,6 +63,7 @@ public class ChatMessageController {
 
     /**
      * Retrieves the chats between two users
+     *
      * @param current
      * @param second
      */
@@ -72,6 +74,7 @@ public class ChatMessageController {
 
     /**
      * Sends a message to another user
+     *
      * @param message
      * @param current
      * @param dest
@@ -101,21 +104,21 @@ public class ChatMessageController {
         updateChatBox();
     }
 
-    private void updateChatBox(){
+    private void updateChatBox() {
         // get all chats
         List<Chat> chats = this.getChatsWith(UserFacade.getInstance().getCurrentUser(), personToChatWith);
         // print all the chats
         System.out.println("Chats:");
-        for(Chat chat : chats) {
+        for (Chat chat : chats) {
             System.out.println(chat.getId() + " " + chat.getSender().getFirstName() + " " + chat.getDest().getFirstName() + " " + chat.getMessage() + " " + chat.getTimestamp() + " " + chat.isDeleted());
         }
         System.out.println();
         // remove all the children of the VBox
         chatBox.getChildren().clear();
         // create a HBox for each chat
-        for(Chat chat : chats) {
+        for (Chat chat : chats) {
             // add the HBox to the view only if the message is not deleted
-            if(!chat.isDeleted()) {
+            if (!chat.isDeleted()) {
                 System.out.println("Create item for: " + chat.getId());
                 HBox hBox = this.createItem(chat);
                 chatBox.getChildren().add(hBox);
@@ -127,6 +130,7 @@ public class ChatMessageController {
 
     /**
      * Create an item for a chat message.
+     *
      * @param chat
      * @return the HBox
      */
@@ -134,10 +138,9 @@ public class ChatMessageController {
         HBox hBox = new HBox();
         // if the current user is the sender, then the message box is grey
         // if the current user is the dest, then the message box is blue
-        if(chat.getSender().getId() == UserFacade.getInstance().getCurrentUser().getId()) {
+        if (chat.getSender().getId() == UserFacade.getInstance().getCurrentUser().getId()) {
             hBox.setStyle("-fx-background-color: #d3d3d3");
-        }
-        else {
+        } else {
             hBox.setStyle("-fx-background-color: #add8e6");
         }
         // add the message and the timestamp
@@ -186,7 +189,7 @@ public class ChatMessageController {
     /**
      * Handles when the user clicks on the refresh button.
      */
-        public void onRefresh(ActionEvent actionEvent) {
+    public void onRefresh(ActionEvent actionEvent) {
         // update the chat box
         updateChatBox();
     }
@@ -196,9 +199,9 @@ public class ChatMessageController {
      */
     public void onBack(ActionEvent actionEvent) {
         // go back to the list of chats
-        try{
+        try {
             FXRouter.goTo("chat", getProfileID(), false);
-        } catch (IOException e){
+        } catch (IOException e) {
             System.out.println("Error while going back to the list of chats");
         }
     }
@@ -206,7 +209,7 @@ public class ChatMessageController {
     /**
      * Handles when the user clicks on the report button.
      */
-    public void report(ActionEvent e){
+    public void report(ActionEvent e) {
         AbuseFacade.getInstance().setAbuser(personToChatWith);
         try {
             FXRouter.goTo("createAbuse", getProfileID(), false);
@@ -218,6 +221,7 @@ public class ChatMessageController {
 
     /**
      * Get the profile id from the data passed by FXRouter.
+     *
      * @return the user's profile id
      */
     private int getProfileID() {
@@ -225,7 +229,6 @@ public class ChatMessageController {
         int profileId = (int) data;
         return profileId;
     }
-
 
 
 }

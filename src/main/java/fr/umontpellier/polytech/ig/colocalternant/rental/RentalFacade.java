@@ -27,11 +27,12 @@ public class RentalFacade {
      */
     private RentalFacade() {
         this.daoFactory = DAOSQLiteFactory.getInstance();
-        this.rentalDAO =  daoFactory.getRentalDAO();
+        this.rentalDAO = daoFactory.getRentalDAO();
     }
 
     /**
      * Retrieves the unique instance of the rental facade.
+     *
      * @return The rental facade.
      */
     public static RentalFacade getInstance() {
@@ -47,6 +48,7 @@ public class RentalFacade {
 
     /**
      * Retrieves the rental with the given id.
+     *
      * @param id The id of the rental.
      * @return The rental if it exists, null otherwise.
      */
@@ -56,11 +58,12 @@ public class RentalFacade {
 
     /**
      * Creates a rental.
-     * @param id The id of the rental.
-     * @param profileId The id of the profile.
+     *
+     * @param id              The id of the rental.
+     * @param profileId       The id of the profile.
      * @param accommodationId The id of the accommodation.
-     * @param period The period of the rental.
-     * @param isRequest The state of the rental.
+     * @param period          The period of the rental.
+     * @param isRequest       The state of the rental.
      */
     public void createRental(int profileId, int accommodationId, String period, boolean isRequest) {
         rentalDAO.insertRental(profileId, accommodationId, period, isRequest);
@@ -68,6 +71,7 @@ public class RentalFacade {
 
     /**
      * Retrieves all rentals from the database.
+     *
      * @return List of all rentals.
      */
     public List<Rental> getAllRentals() {
@@ -76,6 +80,7 @@ public class RentalFacade {
 
     /**
      * Updates the state of a rental.
+     *
      * @param id
      * @param isRequest
      */
@@ -85,6 +90,7 @@ public class RentalFacade {
 
     /**
      * Deletes a rental.
+     *
      * @param id The id of the rental.
      */
     public void deleteRental(int id) {
@@ -93,6 +99,7 @@ public class RentalFacade {
 
     /**
      * Retrieves all rentals of a profile.
+     *
      * @param profileId The id of the profile.
      * @return List of all rentals of the profile.
      */
@@ -104,6 +111,7 @@ public class RentalFacade {
 
     /**
      * Retrieves all rentals of the accomodations of a profile.
+     *
      * @param ownerId The id of the owner's profile.
      * @return List of all rentals of the accomodations of the profile.
      */

@@ -16,16 +16,16 @@
 
         <TableView fx:id="tableView" VBox.vgrow="ALWAYS"/>
 
-    <Button fx:id="backButton"
-            style=
-                    "-fx-padding: 10;
+        <Button fx:id="backButton"
+                style=
+                        "-fx-padding: 10;
                             -fx-min-width: 80;
                             -fx-background-color: orange;
                             -fx-text-fill: white;
                             -fx-font-weight: bold;"
-            mnemonicParsing="false"
-            onAction="#handleBackButtonClick"
-            text="Cancel"/>
+                mnemonicParsing="false"
+                onAction="#handleBackButtonClick"
+                text="Cancel"/>
 
     </VBox>
 

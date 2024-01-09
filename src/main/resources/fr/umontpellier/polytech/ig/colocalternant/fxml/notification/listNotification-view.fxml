@@ -12,9 +12,11 @@
     <fx:include source="../header.fxml"/>
 
     <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label textFill="orange" style="-fx-font-size: 20;" text="List of all notifications" />
-        <Separator prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label textFill="orange" style="-fx-font-size: 20;" text="List of all notifications"/>
+        <Separator prefHeight="2" style="-fx-background-color: black;"/>
 
         <HBox spacing="50" alignment="CENTER">
             <Button fx:id="backButton"
@@ -26,7 +28,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#handleBackButtonClick"
-                    text="Back to your profile" />
+                    text="Back to your profile"/>
 
             <Button fx:id="alertButton"
                     style=
@@ -37,7 +39,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#handleListAccommodationAlterButtonClick"
-                    text="See your alert" />
+                    text="See your alert"/>
         </HBox>
 
     </VBox>

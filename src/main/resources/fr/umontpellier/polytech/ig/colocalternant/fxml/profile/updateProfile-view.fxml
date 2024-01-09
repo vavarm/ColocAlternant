@@ -14,14 +14,18 @@
     <fx:include source="../header.fxml"/>
 
     <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Update my profile" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Update my profile"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <VBox spacing="12" alignment="TOP_CENTER">
-            <VBox.margin><Insets right="100" left="100"/></VBox.margin>
+            <VBox.margin>
+                <Insets right="100" left="100"/>
+            </VBox.margin>
             <Label style="-fx-font-size: 15;">Description</Label>
-            <TextArea fx:id="descriptionField" maxWidth="500" wrapText="true" />
+            <TextArea fx:id="descriptionField" maxWidth="500" wrapText="true"/>
         </VBox>
 
         <VBox spacing="12" alignment="TOP_CENTER">
@@ -29,8 +33,8 @@
             <ComboBox fx:id="publicProfileComboBox">
                 <items>
                     <FXCollections fx:factory="observableArrayList">
-                        <String fx:value="Yes" />
-                        <String fx:value="No" />
+                        <String fx:value="Yes"/>
+                        <String fx:value="No"/>
                     </FXCollections>
                 </items>
             </ComboBox>

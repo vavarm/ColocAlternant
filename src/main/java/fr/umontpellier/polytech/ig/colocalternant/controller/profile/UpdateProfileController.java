@@ -39,32 +39,41 @@ public class UpdateProfileController {
     /**
      * Method called when the delete button is clicked.
      * Allow to go on createProfile-view.
+     *
      * @param actionEvent Obligatory param for ActionEvent
      */
     @FXML
     private void handleDeleteButtonClick(ActionEvent actionEvent) {
         profileFacade.deleteProfile(profileID);
         System.out.println("Redirecting to createProfile-view");
-        try { FXRouter.goTo("createProfile"); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("createProfile");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * Method called when the cancel button is clicked.
      * Allow to go on ownProfile-view.
-     * @param   actionEvent Obligatory param for ActionEvent
+     *
+     * @param actionEvent Obligatory param for ActionEvent
      */
     @FXML
     private void handleCancelButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to ownProfile-view");
-        try { FXRouter.goTo("ownProfile", profileID, false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("ownProfile", profileID, false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
      * Method called when the submit button is clicked.
      * Allow to go on ownProfile-view.
-     * @param   actionEvent Obligatory param for ActionEvent
+     *
+     * @param actionEvent Obligatory param for ActionEvent
      */
     @FXML
     private void handleSubmitButtonClick(ActionEvent actionEvent) {
@@ -73,24 +82,33 @@ public class UpdateProfileController {
         boolean choice = true;
         publicProfileComboBox.setValue("Yes");
 
-        if (publicProfileValue.equals("Yes")) { choice = true; }
-        else { choice = false; }
+        if (publicProfileValue.equals("Yes")) {
+            choice = true;
+        } else {
+            choice = false;
+        }
         updateProfile(profileID, choice, description);
 
         if (getCond() == false) {
             System.out.println("Redirecting to ownProfile-view");
-            try { FXRouter.goTo("ownProfile", profileID, false); }
-            catch (IOException e) { throw new RuntimeException(e); }
-        }
-        else {
+            try {
+                FXRouter.goTo("ownProfile", profileID, false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        } else {
             System.out.println("Redirecting to main-view");
-            try { FXRouter.goTo("main", profileID, false); }
-            catch (IOException e) { throw new RuntimeException(e); }
+            try {
+                FXRouter.goTo("main", profileID, false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
     }
 
     /**
      * Allow to get the id of the profile by getting the data from the router.
+     *
      * @return The id of the profile.
      */
     private int getProfileID() {
@@ -101,6 +119,7 @@ public class UpdateProfileController {
 
     /**
      * Allow to get the cond of the profile by getting the data from the router.
+     *
      * @return The cond of the profile.
      */
     private boolean getCond() {
@@ -111,7 +130,8 @@ public class UpdateProfileController {
 
     /**
      * Allow to get a profile of the current user by its ID.
-     * @param   profileID The profile by its ID.
+     *
+     * @param profileID The profile by its ID.
      */
     private Profile getMyProfile(int profileID) {
         Profile myProfile = null;
@@ -128,7 +148,7 @@ public class UpdateProfileController {
         profileID = getProfileID();
         myProfile = getMyProfile(profileID);
         cond = getCond();
-        System.out.println("profileId in UpdateProfileController : "+ profileID);
+        System.out.println("profileId in UpdateProfileController : " + profileID);
 
         descriptionField.setText(myProfile.getDescription());
         publicProfileComboBox.setValue("Yes");
@@ -136,8 +156,7 @@ public class UpdateProfileController {
         if (cond == true) {
             deleteButton.setVisible(false);
             cancelButton.setVisible(false);
-        }
-        else {
+        } else {
             deleteButton.setVisible(true);
             cancelButton.setVisible(true);
         }
@@ -148,9 +167,10 @@ public class UpdateProfileController {
 
     /**
      * Method called when the submit button is clicked. Call the updateProfile method of the profile facade.
-     * @param profileID     the ID of the profile
-     * @param isPublic      the visibility of the profile
-     * @param description   the description of the profile
+     *
+     * @param profileID   the ID of the profile
+     * @param isPublic    the visibility of the profile
+     * @param description the description of the profile
      */
     public void updateProfile(int profileID, boolean isPublic, String description) {
         profileFacade.updateProfile(profileID, isPublic, description);

@@ -90,6 +90,7 @@ public class MainController {
 
     /**
      * Method called when the options button is clicked. Open the options window.
+     *
      * @param actionEvent the event of the click
      */
 
@@ -104,11 +105,12 @@ public class MainController {
 
     /**
      * Method called when the abuses button is clicked. Opens the abuses list window.
+     *
      * @param actionEvent the event of the click
      */
     public void abusesList(ActionEvent actionEvent) {
 
-        if (!ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())){
+        if (!ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())) {
             try {
                 FXRouter.goTo("abusesList", profileID, false);
 
@@ -138,6 +140,7 @@ public class MainController {
 
     /**
      * Method called when the rental request list button is clicked. Open the rental request list window.
+     *
      * @param actionEvent the event of the click
      */
     public void rentalRequestList(ActionEvent actionEvent) {
@@ -150,6 +153,7 @@ public class MainController {
 
     /**
      * Method called when the rental list button is clicked. Open the rental list window.
+     *
      * @param actionEvent the event of the click
      */
     public void rentalList(ActionEvent actionEvent) {

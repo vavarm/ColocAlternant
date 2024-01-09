@@ -13,7 +13,6 @@
 
     <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
         <VBox spacing="30" alignment="CENTER">
-
             <Label fx:id="titleLabel" text="Title" />
             <Label fx:id="locationLabel" text="Location" />
             <Label fx:id="descriptionLabel" text="Description" />

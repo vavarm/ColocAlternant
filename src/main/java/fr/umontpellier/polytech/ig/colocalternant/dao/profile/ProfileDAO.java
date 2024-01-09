@@ -22,6 +22,7 @@ public abstract class ProfileDAO {
 
     /**
      * Creates a new profile in the database.
+     *
      * @param isPublic    Whether the profile is public or not.
      * @param description The description of the profile.
      * @param userID      The userID associated with the profile.
@@ -47,6 +48,7 @@ public abstract class ProfileDAO {
 
     /**
      * Retrieves all profiles from the database.
+     *
      * @return List of all profiles.
      */
     public ArrayList<Profile> getAllProfiles() {
@@ -76,6 +78,7 @@ public abstract class ProfileDAO {
 
     /**
      * Retrieves the profiles owned by a specific user from the database.
+     *
      * @param userID The user for whom to retrieve the profiles.
      * @return List of profiles owned by the user.
      */
@@ -107,6 +110,7 @@ public abstract class ProfileDAO {
 
     /**
      * Update the information of a profile in the database.
+     *
      * @param isPublic    Whether the profile is public or not.
      * @param description The description of the profile.
      * @param profileID   The ID of the profile.
@@ -128,6 +132,7 @@ public abstract class ProfileDAO {
 
     /**
      * Delete a profile from the database.
+     *
      * @param profileID The ID of the profile.
      */
     public void deleteProfile(int profileID) {

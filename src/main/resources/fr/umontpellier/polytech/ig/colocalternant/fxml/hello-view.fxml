@@ -13,9 +13,11 @@
     <fx:include source="header.fxml"/>
 
     <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Welcome to JavaFX Application !" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Welcome to ColocAlternant !"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <HBox spacing="50" alignment="CENTER">
             <!--<Button text="Hello!" onAction="#onHelloButtonClick"/>-->
@@ -28,7 +30,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#login"
-                    text="Login" />
+                    text="Login"/>
 
             <Button fx:id="registerButton"
                     style=
@@ -39,7 +41,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#register"
-                    text="Register" />
+                    text="Register"/>
         </HBox>
     </VBox>
 
