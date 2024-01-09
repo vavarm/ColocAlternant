@@ -1,8 +1,5 @@
 package fr.umontpellier.polytech.ig.colocalternant.accommodationAlert;
 
-import fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions.CredentialException;
-import fr.umontpellier.polytech.ig.colocalternant.user.User;
-import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import org.junit.Test;
 
 import static org.testng.AssertJUnit.*;

@@ -14,7 +14,7 @@ module fr.umontpellier.polytech.ig.colocalternant {
     requires java.desktop;
 
     opens fr.umontpellier.polytech.ig.colocalternant to javafx.fxml;
-        opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
+    opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller;
     exports fr.umontpellier.polytech.ig.colocalternant.rental;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.rental;
@@ -40,4 +40,5 @@ module fr.umontpellier.polytech.ig.colocalternant {
     exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
     exports fr.umontpellier.polytech.ig.colocalternant.chat;
     exports fr.umontpellier.polytech.ig.colocalternant;
+    exports fr.umontpellier.polytech.ig.colocalternant.abuse;
 }
