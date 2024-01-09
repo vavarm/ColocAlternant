@@ -29,17 +29,29 @@ public class CreateProfileController {
     private Button logoutButton;
 
     @FXML
-    private void handleTenantButtonClick(ActionEvent event) { redirectToCorrectView(EnumRole.Tenant); }
+    private void handleTenantButtonClick(ActionEvent event) {
+        redirectToCorrectView(EnumRole.Tenant);
+    }
+
     @FXML
-    private void handleOwnerButtonClick(ActionEvent event) { redirectToCorrectView(EnumRole.Owner); }
+    private void handleOwnerButtonClick(ActionEvent event) {
+        redirectToCorrectView(EnumRole.Owner);
+    }
+
     @FXML
-    private void handleAdminButtonClick(ActionEvent event) { redirectToCorrectView(EnumRole.Admin); }
+    private void handleAdminButtonClick(ActionEvent event) {
+        redirectToCorrectView(EnumRole.Admin);
+    }
+
     @FXML
     public void handleLogoutButtonClick(ActionEvent actionEvent) {
         userFacade.logout();
         System.out.println("Redirecting to loginProfile-view");
-        try { FXRouter.goTo("login"); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("login");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void initialize() {
@@ -51,10 +63,11 @@ public class CreateProfileController {
 
     /**
      * Method called when the Tenant button or the Owner button is clicked. Call the createProfile method of the profile facade.
-     * @param isPublic      the visibility of the profile
-     * @param description   the description of the profile
-     * @param userID        the identifer of the user of the profile
-     * @param role          the role of the profile
+     *
+     * @param isPublic    the visibility of the profile
+     * @param description the description of the profile
+     * @param userID      the identifer of the user of the profile
+     * @param role        the role of the profile
      */
     public void createProfile(boolean isPublic, String description, int userID, EnumRole role) {
         profileFacade.createProfile(isPublic, description, userID, role);
@@ -62,7 +75,8 @@ public class CreateProfileController {
 
     /**
      * Allow to know if a user has a profile with the role specified.
-     * @param   selectedRole The role of the specified profile
+     *
+     * @param selectedRole The role of the specified profile
      * @return true if a user has a profile with the role specified. Else false.
      */
     private boolean userHasProfileWithRole(EnumRole selectedRole) {
@@ -79,7 +93,8 @@ public class CreateProfileController {
     /**
      * Method called when a button is clicked.
      * Allow to go on another view.
-     * @param   selectedRole The role of the specified profile
+     *
+     * @param selectedRole The role of the specified profile
      */
     private void redirectToCorrectView(EnumRole selectedRole) {
         int profileId = profileFacade.getProfileIdWithRole(currentUser.getId(), selectedRole);

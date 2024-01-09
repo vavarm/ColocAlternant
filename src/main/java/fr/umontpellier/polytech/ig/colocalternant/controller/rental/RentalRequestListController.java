@@ -28,18 +28,17 @@ public class RentalRequestListController {
         // get the current user's profile
         List<Profile> profiles = ProfileFacade.getInstance().getAllProfiles();
         Profile profile = profiles.stream().filter(p -> p.getId() == getProfileID()).findFirst().orElse(null);
-        if(profile == null) {
+        if (profile == null) {
             System.out.println("Profile not found");
             return;
         }
-        if(profile.getRole() == EnumRole.Tenant) {
+        if (profile.getRole() == EnumRole.Tenant) {
             // display rental list of the tenant
             List<Rental> rentals = RentalFacade.getInstance().getRentalsOf(this.getProfileID());
             // remove the non-requests
             rentals.removeIf(r -> !r.getIsRequest());
             tableView.setItems(FXCollections.observableArrayList(rentals));
-        }
-        else if (profile.getRole() == EnumRole.Owner) {
+        } else if (profile.getRole() == EnumRole.Owner) {
             // TODO display rental list of the owner by listing the rentals of all of his accommodations
         }
 
@@ -92,6 +91,7 @@ public class RentalRequestListController {
 
     /**
      * Creates a VBox to contain the delete button for the given rental.
+     *
      * @return The VBox.
      */
     private VBox createDeleteButtonContainer(int rentalId) {
@@ -105,6 +105,7 @@ public class RentalRequestListController {
 
     /**
      * Creates a button that deletes the given rental.
+     *
      * @return The button.
      */
     private Button createDeleteButton(int rentalId) {
@@ -134,6 +135,7 @@ public class RentalRequestListController {
 
     /**
      * Get the profile id from the data passed by FXRouter.
+     *
      * @return the user's profile id
      */
     private int getProfileID() {

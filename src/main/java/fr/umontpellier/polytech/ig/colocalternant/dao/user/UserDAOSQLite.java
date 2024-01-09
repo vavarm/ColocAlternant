@@ -16,6 +16,7 @@ public class UserDAOSQLite extends UserDAO {
 
     /**
      * Retrieves the unique instance of the user DAO.
+     *
      * @return The user DAO.
      */
     public static UserDAOSQLite getInstance() {

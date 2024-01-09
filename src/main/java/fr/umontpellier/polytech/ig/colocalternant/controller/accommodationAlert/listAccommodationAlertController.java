@@ -50,15 +50,21 @@ public class listAccommodationAlertController {
     @FXML
     public void handleBackButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to main-view");
-        try { FXRouter.goTo("listNotification", getProfileID(), false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("listNotification", getProfileID(), false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
     public void handleCreateAlterButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to insertUpdateAccommodationAlert-view");
-        try { FXRouter.goTo("manageAlert", getProfileID(), false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("manageAlert", getProfileID(), false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void initialize() {
@@ -75,6 +81,7 @@ public class listAccommodationAlertController {
 
         deleteCol.setCellFactory(param -> new TableCell<>() {
             private final Button deleteButton = new Button("Delete");
+
             {
                 deleteButton.setOnAction(event -> {
                     AccommodationAlert alert = getTableView().getItems().get(getIndex());
@@ -86,14 +93,18 @@ public class listAccommodationAlertController {
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
-                if (empty) { setGraphic(null); }
-                else { setGraphic(deleteButton); }
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(deleteButton);
+                }
             }
         });
 
         // Configuration des cellules de colonne "Update"
         updateCol.setCellFactory(param -> new TableCell<>() {
             private final Button updateButton = new Button("Update");
+
             {
                 updateButton.setOnAction(event -> {
                     AccommodationAlert alert = getTableView().getItems().get(getIndex());
@@ -104,8 +115,11 @@ public class listAccommodationAlertController {
             @Override
             protected void updateItem(Void item, boolean empty) {
                 super.updateItem(item, empty);
-                if (empty) { setGraphic(null); }
-                else { setGraphic(updateButton); }
+                if (empty) {
+                    setGraphic(null);
+                } else {
+                    setGraphic(updateButton);
+                }
             }
         });
 
@@ -121,14 +135,20 @@ public class listAccommodationAlertController {
     private void handleUpdateButtonClick(AccommodationAlert alert) {
         alertFacade.setCurrentAccommodationAlert(alert);
         System.out.println("Redirecting to insertUpdateAccommodationAlert-view");
-        try { FXRouter.goTo("manageAlert", getProfileID(), true); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("manageAlert", getProfileID(), true);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     private void handleDeleteButtonClick(int id) {
         alertFacade.deleteAccommodationAlert(id);
         System.out.println("ReloadlistAccommodationAlert-view");
-        try { FXRouter.goTo("listAlert", getProfileID(), false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("listAlert", getProfileID(), false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

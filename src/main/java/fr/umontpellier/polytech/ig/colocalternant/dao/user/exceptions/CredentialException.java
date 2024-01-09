@@ -12,6 +12,7 @@ public class CredentialException extends Exception {
 
     /**
      * Constructor of the exception
+     *
      * @param type The type of the exception
      */
     public CredentialException(CredentialExceptionType type) {
@@ -21,6 +22,7 @@ public class CredentialException extends Exception {
 
     /**
      * Retrieves the type of the exception
+     *
      * @return The type of the exception
      */
     public CredentialExceptionType getType() {
@@ -29,6 +31,7 @@ public class CredentialException extends Exception {
 
     /**
      * Retrieves a message describing the type of the exception
+     *
      * @return A message describing the type of the exception
      */
     @Override

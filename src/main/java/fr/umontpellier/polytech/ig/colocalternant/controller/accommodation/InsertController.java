@@ -2,7 +2,6 @@
  * The InsertController class is responsible for controlling the user interface of the accommodation insertion view.
  * It provides functionality to add a new accommodation with specified details such as title, location, description,
  * price, special functionalities, energetic report, and associated photos.
- *
  */
 package fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
 
@@ -57,11 +56,13 @@ public class InsertController {
     public void initialize() {
         add.setText("Add");
         this.back.setText("Back");
-        this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationsList", getProfileID(), false);
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }});
+        this.back.setOnAction(event -> {
+            try {
+                FXRouter.goTo("accommodationsList", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     /**

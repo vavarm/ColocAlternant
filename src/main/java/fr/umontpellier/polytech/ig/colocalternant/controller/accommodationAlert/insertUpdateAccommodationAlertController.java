@@ -33,8 +33,11 @@ public class insertUpdateAccommodationAlertController {
     @FXML
     public void handleBackButtonClick(ActionEvent actionEvent) {
         System.out.println("Redirecting to listAccommodationAlert-view");
-        try { FXRouter.goTo("listAlert", getProfileID(), false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("listAlert", getProfileID(), false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @FXML
@@ -46,15 +49,17 @@ public class insertUpdateAccommodationAlertController {
 
         if (alertFacade.getCurrentAccommodationAlert() != null) {
             alertFacade.updateAccommodationAlert(alertFacade.getCurrentAccommodationAlert().getId(), getProfileID(), location, surface, minPrice, maxPrice);
-        }
-        else {
+        } else {
             alertFacade.insertAccommodationAlert(getProfileID(), location, surface, minPrice, maxPrice);
         }
         alertFacade.setCurrentAccommodationAlert(null);
 
         System.out.println("Redirecting to listAccommodationAlert-view");
-        try { FXRouter.goTo("listAlert", getProfileID(), false); }
-        catch (IOException e) { throw new RuntimeException(e); }
+        try {
+            FXRouter.goTo("listAlert", getProfileID(), false);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void initialize() {

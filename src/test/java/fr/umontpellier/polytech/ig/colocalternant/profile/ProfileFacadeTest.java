@@ -20,23 +20,23 @@ public class ProfileFacadeTest {
         UserFacade userFacade = UserFacade.getInstance();
         ProfileFacade profileFacade = ProfileFacade.getInstance();
         try {
-        userFacade.login("john.doe@test.com", "password");
-        List<Profile> profiles = profileFacade.getOwnProfiles(userFacade.getCurrentUser().getId());
-        List<Integer> profileIDs = new ArrayList<Integer>();
-        for(Profile profile : profiles) {
-            profileIDs.add(profile.getId());
-        }
-        List<Integer> expectedProfileIDs = new ArrayList<Integer>();
-        List<EnumRole> allRoles = new ArrayList<>();
-        allRoles.add(EnumRole.Tenant);
-        allRoles.add(EnumRole.Owner);
-        allRoles.add(EnumRole.Admin);
-        for(int i = 0; i < allRoles.size(); i++) {
-            expectedProfileIDs.add(profileFacade.getProfileIdWithRole(userFacade.getCurrentUser().getId(), allRoles.get(i)));
-        }
-        // for each role, we check if the profile is in the list of profiles or if its id is -1 (does not exist) don't test it
-            for(int i = 0; i < 3; i++) {
-                if(expectedProfileIDs.get(i) != -1) {
+            userFacade.login("john.doe@test.com", "password");
+            List<Profile> profiles = profileFacade.getOwnProfiles(userFacade.getCurrentUser().getId());
+            List<Integer> profileIDs = new ArrayList<Integer>();
+            for (Profile profile : profiles) {
+                profileIDs.add(profile.getId());
+            }
+            List<Integer> expectedProfileIDs = new ArrayList<Integer>();
+            List<EnumRole> allRoles = new ArrayList<>();
+            allRoles.add(EnumRole.Tenant);
+            allRoles.add(EnumRole.Owner);
+            allRoles.add(EnumRole.Admin);
+            for (int i = 0; i < allRoles.size(); i++) {
+                expectedProfileIDs.add(profileFacade.getProfileIdWithRole(userFacade.getCurrentUser().getId(), allRoles.get(i)));
+            }
+            // for each role, we check if the profile is in the list of profiles or if its id is -1 (does not exist) don't test it
+            for (int i = 0; i < 3; i++) {
+                if (expectedProfileIDs.get(i) != -1) {
                     assertTrue(profileIDs.contains(expectedProfileIDs.get(i)));
                 }
             }

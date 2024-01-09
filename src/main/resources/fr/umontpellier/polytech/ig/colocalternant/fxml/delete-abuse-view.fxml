@@ -14,7 +14,11 @@
     <fx:include source="header.fxml"/>
 
 
-    <HBox> <Label text="Do you want to delete the abuse by "/> <Label fx:id="user"/><Label text="?"/></HBox>
+    <HBox>
+        <Label text="Do you want to delete the abuse by "/>
+        <Label fx:id="user"/>
+        <Label text="?"/>
+    </HBox>
 
 
     <Button fx:id="validate" text="Delete" onAction="#onDelete"/>

@@ -31,6 +31,7 @@ public class HelloController {
 
     /**
      * Method called when the login button is clicked. Open the login window.
+     *
      * @param actionEvent the event of the click
      */
     @FXML
@@ -44,6 +45,7 @@ public class HelloController {
 
     /**
      * Method called when the register button is clicked. Open the register window.
+     *
      * @param actionEvent the event of the click
      */
     @FXML

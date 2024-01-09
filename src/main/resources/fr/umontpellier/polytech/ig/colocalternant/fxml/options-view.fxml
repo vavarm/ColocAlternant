@@ -7,8 +7,8 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.OptionsController">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.OptionsController">
 
     <fx:include source="header.fxml"/>
 

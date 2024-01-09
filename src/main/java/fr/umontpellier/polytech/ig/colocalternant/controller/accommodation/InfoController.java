@@ -4,7 +4,6 @@
  * special functionalities, energetic report, and associated photos. Additionally, it provides functionality
  * for the user to delete or update the accommodation, but these options are only available if the user is
  * the owner of the accommodation.
- *
  */
 package fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
 
@@ -72,32 +71,34 @@ public class InfoController {
 
         // Configure delete and update buttons for the accommodation owner
 
-            deleteButton.setText("Delete");
-            deleteButton.setVisible(AccommodationFacade.getInstance().isOwner());
-            deleteButton.setOnAction(event -> {
-                try {
-                    FXRouter.goTo("deleteAccommodation", getProfileID(), false);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
-            updateButton.setText("Update");
-            updateButton.setVisible(AccommodationFacade.getInstance().isOwner());
-            updateButton.setOnAction(event -> {
-                try {
-                    FXRouter.goTo("updateAccommodation", getProfileID(), false);
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-            });
+        deleteButton.setText("Delete");
+        deleteButton.setVisible(AccommodationFacade.getInstance().isOwner());
+        deleteButton.setOnAction(event -> {
+            try {
+                FXRouter.goTo("deleteAccommodation", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
+        updateButton.setText("Update");
+        updateButton.setVisible(AccommodationFacade.getInstance().isOwner());
+        updateButton.setOnAction(event -> {
+            try {
+                FXRouter.goTo("updateAccommodation", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
 
 
         this.back.setText("Back");
-        this.back.setOnAction(event -> {try {
-            FXRouter.goTo("accommodationsList", getProfileID(), false);
-        }catch (IOException e){
-            throw new RuntimeException(e);
-        }});
+        this.back.setOnAction(event -> {
+            try {
+                FXRouter.goTo("accommodationsList", getProfileID(), false);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        });
     }
 
     private int getProfileID() {

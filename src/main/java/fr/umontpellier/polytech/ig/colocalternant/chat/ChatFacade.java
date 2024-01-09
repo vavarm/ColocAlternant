@@ -3,6 +3,7 @@ package fr.umontpellier.polytech.ig.colocalternant.chat;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
+
 import java.util.List;
 
 /**
@@ -24,6 +25,7 @@ public class ChatFacade {
 
     /**
      * Retrieves the unique instance of the chat facade.
+     *
      * @return The chat facade.
      */
     public static ChatFacade getInstance() {
@@ -39,6 +41,7 @@ public class ChatFacade {
 
     /**
      * Retrieves all the chats of the user
+     *
      * @param user
      * @return a list of chats
      */
@@ -48,6 +51,7 @@ public class ChatFacade {
 
     /**
      * Retrieves the chats between two users
+     *
      * @param user1
      * @param user2
      * @return a list of chats
@@ -59,6 +63,7 @@ public class ChatFacade {
 
     /**
      * Sends a message to another user
+     *
      * @param message
      * @param current
      * @param dest
@@ -70,6 +75,7 @@ public class ChatFacade {
 
     /**
      * Deletes a chat
+     *
      * @param chat
      * @return
      */

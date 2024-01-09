@@ -31,10 +31,11 @@ public class Rental {
 
     /**
      * The constructor of the rental
-     * @param profileId the id of the tenant profile who created the rental
+     *
+     * @param profileId       the id of the tenant profile who created the rental
      * @param accommodationId the id of the accommodation concerned by the rental
-     * @param period the period of the rental
-     * @param isRequest the state of the rental
+     * @param period          the period of the rental
+     * @param isRequest       the state of the rental
      */
     public Rental(int id, int profileId, int accommodationId, String period, boolean isRequest) {
         this.id = id;
@@ -46,61 +47,91 @@ public class Rental {
 
     /**
      * Retrieves the id of the rental.
+     *
      * @return The rental's id.
      */
-    public int getId() { return this.id; }
+    public int getId() {
+        return this.id;
+    }
 
     /**
      * Defines the id of the rental.
+     *
      * @param id The rental's id.
      */
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Retrieves the id of the tenant profile who created the rental.
+     *
      * @return The rental's tenant profile id.
      */
-    public int getProfileId() { return this.profileId; }
+    public int getProfileId() {
+        return this.profileId;
+    }
 
     /**
      * Defines the id of the tenant profile who created the rental.
+     *
      * @param profileId The rental's tenant profile id.
      */
-    public void setProfileId(int profileId) { this.profileId = profileId; }
+    public void setProfileId(int profileId) {
+        this.profileId = profileId;
+    }
 
     /**
      * Retrieves the id of the accommodation concerned by the rental.
+     *
      * @return The rental's accommodation id.
      */
-    public int getAccommodationId() { return this.accommodationId; }
+    public int getAccommodationId() {
+        return this.accommodationId;
+    }
 
     /**
      * Defines the id of the accommodation concerned by the rental.
+     *
      * @param accommodationId The rental's accommodation id.
      */
-    public void setAccommodationId(int accommodationId) { this.accommodationId = accommodationId; }
+    public void setAccommodationId(int accommodationId) {
+        this.accommodationId = accommodationId;
+    }
 
     /**
      * Retrieves the period of the rental.
+     *
      * @return The rental's period.
      */
-    public String getPeriod() { return this.period; }
+    public String getPeriod() {
+        return this.period;
+    }
 
     /**
      * Defines the period of the rental.
+     *
      * @param period The rental's period.
      */
-    public void setPeriod(String period) { this.period = period; }
+    public void setPeriod(String period) {
+        this.period = period;
+    }
 
     /**
      * Retrieves the state of the rental.
+     *
      * @return The rental's state.
      */
-    public boolean getIsRequest() { return this.isRequest; }
+    public boolean getIsRequest() {
+        return this.isRequest;
+    }
 
     /**
      * Defines the state of the rental.
+     *
      * @param isRequest The rental's state.
      */
-    public void setIsRequest(boolean isRequest) { this.isRequest = isRequest; }
+    public void setIsRequest(boolean isRequest) {
+        this.isRequest = isRequest;
+    }
 }

@@ -34,12 +34,16 @@ public class AccommodationAlertFacade {
 
     /**
      * Retrieves the unique instance of the AccommodationAlert facade.
+     *
      * @return The AccommodationAlert facade.
      */
-    public static AccommodationAlertFacade getInstance() { return AccommodationAlertFacade.AccommodationAlertFacadeHolder.instance; }
+    public static AccommodationAlertFacade getInstance() {
+        return AccommodationAlertFacade.AccommodationAlertFacadeHolder.instance;
+    }
 
     /**
      * Deletes an accommodationAlert with the given ID.
+     *
      * @param id The ID of the accommodation to be deleted.
      */
     public void deleteAccommodationAlert(int id) {
@@ -48,11 +52,12 @@ public class AccommodationAlertFacade {
 
     /**
      * Inserts a new accommodationAlert with the provided details.
-     * @param profileID         The ID of the profile.
-     * @param location          The location of the accommodationAlert.
-     * @param surface           The surface of the accommodationAlert.
-     * @param minPrice          The minimum price of the accommodationAlert.
-     * @param maxPrice          The maximum price of the accommodationAlert.
+     *
+     * @param profileID The ID of the profile.
+     * @param location  The location of the accommodationAlert.
+     * @param surface   The surface of the accommodationAlert.
+     * @param minPrice  The minimum price of the accommodationAlert.
+     * @param maxPrice  The maximum price of the accommodationAlert.
      */
     public void insertAccommodationAlert(int profileID, String location, float surface, float minPrice, float maxPrice) {
         accommodationAlertDAO.insertAccommodationAlert(profileID, location, surface, minPrice, maxPrice);
@@ -60,12 +65,13 @@ public class AccommodationAlertFacade {
 
     /**
      * Updates an existing accommodationAlert with the provided details.
-     * @param id                The ID of the accommodationAlert.
-     * @param profileID         The ID of the profile
-     * @param location          The location of the accommodationAlert.
-     * @param surface           The surface of the accommodationAlert.
-     * @param minPrice          The minimum price of the accommodationAlert.
-     * @param maxPrice          The maximum price of the accommodationAlert.
+     *
+     * @param id        The ID of the accommodationAlert.
+     * @param profileID The ID of the profile
+     * @param location  The location of the accommodationAlert.
+     * @param surface   The surface of the accommodationAlert.
+     * @param minPrice  The minimum price of the accommodationAlert.
+     * @param maxPrice  The maximum price of the accommodationAlert.
      */
     public void updateAccommodationAlert(int id, int profileID, String location, float surface, float minPrice, float maxPrice) {
         accommodationAlertDAO.updateAccommodationAlert(id, profileID, location, surface, minPrice, maxPrice);
@@ -73,6 +79,7 @@ public class AccommodationAlertFacade {
 
     /**
      * Retrieves a list of all accommodationAlerts.
+     *
      * @return ArrayList containing all accommodationAlerts.
      */
     public ArrayList<AccommodationAlert> getAllAccommodationAlerts() {
@@ -81,6 +88,7 @@ public class AccommodationAlertFacade {
 
     /**
      * Retrieves an accommodationAlert with the given profileID.
+     *
      * @param profileID The ID of the profile.
      * @return The accommodationAlert with the specified profileID.
      */
@@ -90,6 +98,7 @@ public class AccommodationAlertFacade {
 
     /**
      * Retrieves an accommodationAlert with the given ID.
+     *
      * @param id The ID of the accommodationAlert to retrieve.
      * @return The accommodationAlert with the specified ID.
      */
@@ -99,6 +108,7 @@ public class AccommodationAlertFacade {
 
     /**
      * Gets the currently viewed accommodation.
+     *
      * @return The currently viewed accommodation.
      */
     public AccommodationAlert getCurrentAccommodationAlert() {
@@ -107,12 +117,17 @@ public class AccommodationAlertFacade {
 
     /**
      * Sets the currently viewed accommodation.
+     *
      * @param currentAccommodationAlert The accommodation to set as currently viewed.
      */
-    public void setCurrentAccommodationAlert(AccommodationAlert currentAccommodationAlert) { this.currentAccommodationAlert = currentAccommodationAlert; }
+    public void setCurrentAccommodationAlert(AccommodationAlert currentAccommodationAlert) {
+        this.currentAccommodationAlert = currentAccommodationAlert;
+    }
 
     /**
      * Holder class for implementing the Singleton pattern for `AccommodationFacade`.
      */
-    private static class AccommodationAlertFacadeHolder { private final static AccommodationAlertFacade instance = new AccommodationAlertFacade();}
+    private static class AccommodationAlertFacadeHolder {
+        private final static AccommodationAlertFacade instance = new AccommodationAlertFacade();
+    }
 }

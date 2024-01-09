@@ -19,6 +19,7 @@ public abstract class CategoryDAO {
 
     /**
      * Retrieves all the categories.
+     *
      * @return a list of categories
      */
     public ArrayList<Category> getAllCategories() {
@@ -43,6 +44,7 @@ public abstract class CategoryDAO {
 
     /**
      * Retrieves all the categories for a given accommodation.
+     *
      * @return a list of categories for a given accommodation
      */
     public ArrayList<Category> getAllCategoriesForAccommodation(int accommodationId) {
@@ -68,6 +70,7 @@ public abstract class CategoryDAO {
 
     /**
      * insert a category in the database
+     *
      * @param category
      */
     public void insertCategory(Category category) {
@@ -86,6 +89,7 @@ public abstract class CategoryDAO {
 
     /**
      * delete a category in the database
+     *
      * @param category
      */
     public void deleteCategory(Category category) {
@@ -104,8 +108,9 @@ public abstract class CategoryDAO {
 
     /**
      * Add category to accommodation.
+     *
      * @param accommodationID The id of the accommodation.
-     * @param categoryName The name of the category.
+     * @param categoryName    The name of the category.
      */
     public void addCategoryToAccommodation(int accommodationID, String categoryName) {
         Connection connection = null;
@@ -124,8 +129,9 @@ public abstract class CategoryDAO {
 
     /**
      * Remove category from accommodation.
+     *
      * @param accommodationID The id of the accommodation.
-     * @param categoryName The name of the category.
+     * @param categoryName    The name of the category.
      */
     public void removeCategoryFromAccommodation(int accommodationID, String categoryName) {
         Connection connection = null;

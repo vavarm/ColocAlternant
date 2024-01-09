@@ -43,60 +43,70 @@ public abstract class DAOFactory {
 
     /**
      * Retrieves the unique instance of the user DAO.
+     *
      * @return The User DAO.
      */
     public abstract UserDAO getUserDAO();
 
     /**
      * Retrieves the unique instance of the accommodation DAO.
+     *
      * @return The accommodation DAO.
      */
     public abstract AccommodationDAO getAccommodationDAO();
 
     /**
      * Retrieves the unique instance of the accommodationAlert DAO.
+     *
      * @return The accommodation DAO.
      */
     public abstract AccommodationAlertDAO getAccommodationAlertDAO();
 
     /**
      * Retrieves the unique instance of the profile DAO.
+     *
      * @return The profile DAO.
      */
     public abstract ProfileDAO getProfileDAO();
 
     /**
      * Retrieves the unique instance of the chat DAO
+     *
      * @return The Chat DAO.
      */
     public abstract ChatDAO getChatDAO();
 
     /**
      * Retrieves the unique instance of the category DAO
+     *
      * @return The Category DAO.
      */
     public abstract CategoryDAO getCategoryDAO();
 
     /**
      * Retrieves the unique instance of the rental DAO.
+     *
      * @return The rental DAO.
      */
     public abstract RentalDAO getRentalDAO();
 
     /**
      * Retrieves the unique instance of the notification DAO.
+     *
      * @return The Notification DAO.
      */
     public abstract NotificationDAO getNotificationDAO();
 
     /**
      * Retrieves the unique instance of the abuse DAO
+     *
      * @return the abuse DAO
      */
     public abstract AbuseDAO getAbuseDAO();
 
     /**
      * Initializes the database. Creates the tables and seeds them.
+     *
      * @param connection The connection to the database.
      */
     protected void setup(Connection connection) {
@@ -107,6 +117,7 @@ public abstract class DAOFactory {
 
     /**
      * Retrieves the connection to the database.
+     *
      * @return The connection to the database.
      * @throws SQLException if the connection to the database fails.
      */
@@ -114,6 +125,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the tables related to the user in the database.
+     *
      * @param connection The connection to the database.
      */
     private void CreateUserTable(Connection connection) {
@@ -126,6 +138,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the tables related to the profile in the database.
+     *
      * @param connection The connection to the database.
      */
     private void CreateProfileTable(Connection connection) {
@@ -160,7 +173,7 @@ public abstract class DAOFactory {
         }
     }
 
-    /*        
+    /*
      * Creates the tables related to the chat in the database.
      * @param connection The connection to the database.
      */
@@ -174,10 +187,10 @@ public abstract class DAOFactory {
 
     /**
      * Creates the table related to the accomodation in the database.
-     * @param connection The connection to the database.
      *
+     * @param connection The connection to the database.
      */
-    private void CreateAccomodationTable(Connection connection){
+    private void CreateAccomodationTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             // drop table
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS Accomodations (id INTEGER PRIMARY KEY AUTOINCREMENT, price FLOAT , location TEXT, title TEXT, surface FLOAT, description TEXT, specialFonctionalities TEXT, energicReport FLOAT, photos TEXT, UNIQUE (location, title))");
@@ -188,10 +201,10 @@ public abstract class DAOFactory {
 
     /**
      * Creates the table related to the accomodationAlert in the database.
-     * @param connection The connection to the database.
      *
+     * @param connection The connection to the database.
      */
-    private void CreateAccomodationAlertTable(Connection connection){
+    private void CreateAccomodationAlertTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS AccomodationAlerts (id INTEGER PRIMARY KEY AUTOINCREMENT, profileID INTEGER, location TEXT, surface FLOAT, minPrice FLOAT, maxPrice FLOAT)");
         } catch (SQLException e) {
@@ -201,6 +214,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the table related to the category in the database.
+     *
      * @param connection The connection to the database.
      */
     private void CreateCategoryTable(Connection connection) {
@@ -213,10 +227,10 @@ public abstract class DAOFactory {
 
     /**
      * Creates the table related to the association between an owner and his accommodation in the database.
-     * @param connection The connection to the database.
      *
+     * @param connection The connection to the database.
      */
-    private void CreateOwnsTable(Connection connection){
+    private void CreateOwnsTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS Owns (user_id INTEGER,  accommodation_id INTEGER, PRIMARY KEY (user_id, accommodation_id),  FOREIGN KEY (user_id) REFERENCES user(id), FOREIGN KEY (accommodation_id) REFERENCES accommodation(id))");
         } catch (SQLException e) {
@@ -226,6 +240,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the table related to the rentals in the database.
+     *
      * @param connection The connection to the database.
      */
     private void CreateRentalsTable(Connection connection) {
@@ -235,8 +250,10 @@ public abstract class DAOFactory {
             e.printStackTrace();
         }
     }
+
     /**
      * Creates the table related to the abuses in the database.
+     *
      * @param connection The connection to the database.
      */
     private void createAbusesTable(Connection connection) {
@@ -249,6 +266,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the rentals in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedRentalsTable(Connection connection) {
@@ -265,6 +283,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the user in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedOwnsTable(Connection connection) {
@@ -281,6 +300,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the user in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedUserTable(Connection connection) {
@@ -308,6 +328,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the chat in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedChatTable(Connection connection) {
@@ -333,7 +354,7 @@ public abstract class DAOFactory {
                 e.printStackTrace();
             }
         }
-        try(PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
+        try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
             preparedStatement.setInt(1, 2);
             preparedStatement.setInt(2, 1);
             preparedStatement.setString(3, "Hi");
@@ -352,6 +373,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the profile in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedProfileTable(Connection connection) {
@@ -368,11 +390,12 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the accommodation in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedAccommodationTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-           statement.executeUpdate("INSERT INTO Accomodations (price, location, title, surface, description, specialFonctionalities, energicReport, photos) VALUES (300000000, 'Université de Montpellier, Pl. Eugène Bataillon, 34090 Montpellier', 'Polytech Montpellier', 35, 'school', 'wifi', '0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS594D5fYC3ogCVbFVVY9zff7tM2z0_cZrf5FA65pLI_y05Bofbcxd4TFfT6NaXnASpRng&usqp=CAU')");
+            statement.executeUpdate("INSERT INTO Accomodations (price, location, title, surface, description, specialFonctionalities, energicReport, photos) VALUES (300000000, 'Université de Montpellier, Pl. Eugène Bataillon, 34090 Montpellier', 'Polytech Montpellier', 35, 'school', 'wifi', '0', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS594D5fYC3ogCVbFVVY9zff7tM2z0_cZrf5FA65pLI_y05Bofbcxd4TFfT6NaXnASpRng&usqp=CAU')");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -380,6 +403,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the accommodation in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedAccommodationAlertTable(Connection connection) {
@@ -392,6 +416,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the category in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedCategoryTable(Connection connection) {
@@ -408,6 +433,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the tables related to the category and the accommodation in the database.
+     *
      * @param connection The connection to the database.
      */
     private void CreateCategoryAccommodationTable(Connection connection) {
@@ -420,6 +446,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the tables related to the notifs in the database.
+     *
      * @param connection The connection to the database.
      */
     private void CreateNotificationTable(Connection connection) {
@@ -432,6 +459,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the category and the accommodation in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedCategoryAccommodationTable(Connection connection) {
@@ -448,18 +476,20 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables related to the notifs in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedNotificationTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("INSERT INTO Notifs (userID, newItemID) VALUES (1, 1)");
         } catch (SQLException e) {
-                e.printStackTrace();
+            e.printStackTrace();
         }
     }
 
     /**
      * Seeds the tables related to the abuses in the database.
+     *
      * @param connection The connection to the database.
      */
     private void SeedAbusesTable(Connection connection) {
@@ -478,6 +508,7 @@ public abstract class DAOFactory {
 
     /**
      * Creates the tables in the database.
+     *
      * @param connection The connection to the database.
      */
     protected void CreateTables(Connection connection) {
@@ -499,6 +530,7 @@ public abstract class DAOFactory {
 
     /**
      * Seeds the tables in the database.
+     *
      * @param connection The connection to the database.
      */
     protected void SeedTables(Connection connection) {
@@ -515,12 +547,12 @@ public abstract class DAOFactory {
         SeedAbusesTable(connection);
     }
 
-    protected void printAllInfo(Connection connection){
+    protected void printAllInfo(Connection connection) {
         //print the ids and email of all users
         System.out.println("Users:");
-        try(Statement statement = connection.createStatement()){
+        try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT id, email FROM Users");
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 System.out.println("id: " + resultSet.getInt("id") + " email: " + resultSet.getString("email"));
             }
         } catch (SQLException e) {
@@ -529,18 +561,18 @@ public abstract class DAOFactory {
         System.out.println();
         //print the ids and messages of all chats
         System.out.println("Chats:");
-        try(Statement statement = connection.createStatement()){
+        try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT id, message FROM Chats");
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 System.out.println("id: " + resultSet.getInt("id") + " message: " + resultSet.getString("message"));
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
         System.out.println("Accommodations:");
-        try(Statement statement = connection.createStatement()){
+        try (Statement statement = connection.createStatement()) {
             ResultSet resultSet = statement.executeQuery("SELECT id, title FROM Accomodations");
-            while(resultSet.next()){
+            while (resultSet.next()) {
                 System.out.println("id: " + resultSet.getInt("id") + " title: " + resultSet.getString("title"));
             }
         } catch (SQLException e) {

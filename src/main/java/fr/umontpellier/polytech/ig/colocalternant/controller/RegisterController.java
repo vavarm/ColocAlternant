@@ -57,17 +57,18 @@ public class RegisterController {
      * Method called when the register button is clicked. Call the register method of the user facade.
      * if the register is successful, go to the login page
      * else display an error message
+     *
      * @param firstName of the user
-     * @param lastName of the user
-     * @param age of the user
-     * @param email of the user
-     * @param password of the user
-     * @param photo of the user
+     * @param lastName  of the user
+     * @param age       of the user
+     * @param email     of the user
+     * @param password  of the user
+     * @param photo     of the user
      */
     public void handleRegister(String firstName, String lastName, int age, String email, String password, String photo) {
         try {
             UserFacade.getInstance().register(firstName, lastName, age, email, password, photo);
-        } catch(CredentialException credentialException) {
+        } catch (CredentialException credentialException) {
             if (credentialException.getType() == CredentialExceptionType.EMAIL_ALREADY_USED) {
                 errorLabel.setText("Email already used");
             }
@@ -85,6 +86,7 @@ public class RegisterController {
      * Method called when the register button is clicked.
      * if all the fields are filled with good information, call the handleRegister method
      * else display an error message
+     *
      * @param actionEvent the event of the click
      */
     public void register(ActionEvent actionEvent) {

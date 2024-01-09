@@ -55,11 +55,11 @@ public class LoginController {
     private Parent root;
 
 
-
     /**
      * Method called when the login button is clicked. Call the login method of the user facade.
      * if the login is successful, open the main window
      * else display an error message
+     *
      * @param actionEvent the event of the click
      */
     @FXML
@@ -71,7 +71,7 @@ public class LoginController {
         }
         try {
             UserFacade.getInstance().login(email.getText(), password.getText());
-        } catch(CredentialException credentialException) {
+        } catch (CredentialException credentialException) {
             if (credentialException.getType() == CredentialExceptionType.INVALID_EMAIL) {
                 errorLabel.setText("Login failed : Invalid email");
             } else if (credentialException.getType() == CredentialExceptionType.INVALID_PASSWORD) {

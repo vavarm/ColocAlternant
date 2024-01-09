@@ -32,6 +32,7 @@ public class NotificationFacade {
 
     /**
      * Delete a notification from the database.
+     *
      * @param id The ID of the notification to be deleted.
      */
     public void deleteNotif(int id) {
@@ -49,8 +50,8 @@ public class NotificationFacade {
 
         ArrayList<Notification> myNotifs = new ArrayList<>();
 
-        for (Notification notif: notifs) {
-            for (AccommodationAlert alert: alerts) {
+        for (Notification notif : notifs) {
+            for (AccommodationAlert alert : alerts) {
                 String location = acc.getAccommodation(notif.getNewItemID()).getLocation();
                 float price = acc.getAccommodation(notif.getNewItemID()).getPrice();
 
@@ -66,6 +67,7 @@ public class NotificationFacade {
     public static NotificationFacade getInstance() {
         return NotificationFacade.NotificationFacadeHolder.instance;
     }
+
     private static class NotificationFacadeHolder {
         private final static NotificationFacade instance = new NotificationFacade();
     }

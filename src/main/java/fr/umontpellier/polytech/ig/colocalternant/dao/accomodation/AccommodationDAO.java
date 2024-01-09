@@ -174,8 +174,8 @@ public abstract class AccommodationDAO {
     /**
      * Retrieve information about whether the current user owns a specific accommodation.
      *
-     * @param user_id           The ID of the user.
-     * @param accommodation_id  The ID of the accommodation.
+     * @param user_id          The ID of the user.
+     * @param accommodation_id The ID of the accommodation.
      * @return ResultSet containing the corresponding line of the owns table if the current accommodation is owned by the current user; null otherwise.
      */
     public ResultSet getOwns(int user_id, int accommodation_id) {

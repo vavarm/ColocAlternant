@@ -11,12 +11,14 @@
     <fx:include source="header.fxml"/>
 
     <VBox spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets bottom="30" top="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Register" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets bottom="30" top="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Register"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <HBox spacing="50" alignment="TOP_CENTER">
-            <VBox spacing="10" >
+            <VBox spacing="10">
                 <Label text="First Name"/>
                 <TextField fx:id="firstName"/>
                 <Label text="Last Name"/>

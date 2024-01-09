@@ -12,19 +12,21 @@
     <fx:include source="../header.fxml"/>
 
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="List of all alerts" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="List of all alerts"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <TableView fx:id="alertTable">
             <columns>
-                <TableColumn fx:id="idCol" text="ID" />
-                <TableColumn fx:id="locationCol" text="Location" />
-                <TableColumn fx:id="surfaceCol" text="Surface" />
-                <TableColumn fx:id="minPriceCol" text="Minimum price" />
-                <TableColumn fx:id="maxPriceCol" text="Maximum price" />
-                <TableColumn fx:id="deleteCol" text="Delete" />
-                <TableColumn fx:id="updateCol" text="Update" />
+                <TableColumn fx:id="idCol" text="ID"/>
+                <TableColumn fx:id="locationCol" text="Location"/>
+                <TableColumn fx:id="surfaceCol" text="Surface"/>
+                <TableColumn fx:id="minPriceCol" text="Minimum price"/>
+                <TableColumn fx:id="maxPriceCol" text="Maximum price"/>
+                <TableColumn fx:id="deleteCol" text="Delete"/>
+                <TableColumn fx:id="updateCol" text="Update"/>
             </columns>
         </TableView>
 
@@ -38,7 +40,7 @@
                         -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#handleBackButtonClick"
-                    text="Back" />
+                    text="Back"/>
 
             <Button fx:id="alertButton"
                     style=
@@ -49,7 +51,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#handleCreateAlterButtonClick"
-                    text="Create your alert" />
+                    text="Create your alert"/>
         </HBox>
 
     </VBox>

@@ -15,14 +15,14 @@ public class Accommodation {
     /**
      * Default constructor for creating an `Accommodation` object.
      *
-     * @param id                   The ID of the accommodation.
-     * @param title                The title of the accommodation.
-     * @param location             The location of the accommodation.
-     * @param description          The description of the accommodation.
-     * @param price                The price of the accommodation.
+     * @param id                     The ID of the accommodation.
+     * @param title                  The title of the accommodation.
+     * @param location               The location of the accommodation.
+     * @param description            The description of the accommodation.
+     * @param price                  The price of the accommodation.
      * @param specialFonctionalities The special functionalities of the accommodation.
-     * @param energicReport        The energetic report of the accommodation.
-     * @param photos               The photos of the accommodation.
+     * @param energicReport          The energetic report of the accommodation.
+     * @param photos                 The photos of the accommodation.
      */
     public Accommodation(int id, String title, String location, String description,
                          float price, String specialFonctionalities, float energicReport, String photos) {
@@ -227,6 +227,7 @@ public class Accommodation {
 
     /**
      * Get the categories of the accommodation.
+     *
      * @return The categories of the accommodation.
      */
     public ArrayList<Category> getCategories() {
@@ -235,6 +236,7 @@ public class Accommodation {
 
     /**
      * Add a category to the accommodation.
+     *
      * @param category The new category to set.
      */
     public void addCategories(Category category) {

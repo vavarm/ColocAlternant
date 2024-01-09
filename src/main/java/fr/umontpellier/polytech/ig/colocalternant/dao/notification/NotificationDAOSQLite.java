@@ -1,4 +1,5 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao.notification;
+
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 
@@ -15,9 +16,10 @@ public class NotificationDAOSQLite extends NotificationDAO {
 
     /**
      * Retrieves the unique instance of the profile DAO.
+     *
      * @return The profile DAO.
      */
-    public static NotificationDAOSQLite getInstance()  {
+    public static NotificationDAOSQLite getInstance() {
         return NotificationDAOSQLite.NotificationDAOSQLiteHolder.instance;
     }
 

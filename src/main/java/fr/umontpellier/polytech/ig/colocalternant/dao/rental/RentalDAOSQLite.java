@@ -15,9 +15,10 @@ public class RentalDAOSQLite extends RentalDAO {
 
     /**
      * Retrieves the unique instance of the rental DAO.
+     *
      * @return The rental DAO.
      */
-    public static RentalDAOSQLite getInstance()  {
+    public static RentalDAOSQLite getInstance() {
         return RentalDAOSQLite.RentalDAOSQLiteHolder.instance;
     }
 

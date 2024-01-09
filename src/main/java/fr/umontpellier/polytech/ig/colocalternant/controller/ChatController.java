@@ -44,29 +44,28 @@ public class ChatController {
         List<User> users = new ArrayList<>();
         List<Integer> ids = new ArrayList<>();
         // get all the users who talk with the current user once
-        for(Chat chat : chats) {
+        for (Chat chat : chats) {
             // System.out.println("Sender: " + chat.getSender().getId() + " " + chat.getSender().getFirstName() + " " + chat.getSender().getLastName());
             // System.out.println("Dest: " + chat.getDest().getId() + " " + chat.getDest().getFirstName() + " " + chat.getDest().getLastName());
             User user1 = chat.getSender();
             User user2 = chat.getDest();
-            if(user1.getId() == UserFacade.getInstance().getCurrentUser().getId()) {
+            if (user1.getId() == UserFacade.getInstance().getCurrentUser().getId()) {
                 // user1 is the current user
                 // if the user2 is not already in the list, add it
-                if(!ids.contains(user2.getId())){
+                if (!ids.contains(user2.getId())) {
                     users.add(user2);
                     ids.add(user2.getId());
                 }
-            }
-            else {
+            } else {
                 // user2 is the current user
                 // if the user1 is not already in the list, add it
-                if(!ids.contains(user1.getId())){
+                if (!ids.contains(user1.getId())) {
                     users.add(user1);
                     ids.add(user1.getId());
                 }
             }
         }
-        for(User user : users) {
+        for (User user : users) {
             System.out.println(user.getFirstName());
         }
         // Create TableView
@@ -80,7 +79,7 @@ public class ChatController {
         emailColumn.setCellValueFactory(cell -> new SimpleObjectProperty<>(cell.getValue().getEmail()));
         TableColumn<User, Button> goToChatColumn = new TableColumn<>("Go to chat");
         goToChatColumn.setCellValueFactory(cell ->
-            new SimpleObjectProperty<>(createChatMessageButton(cell.getValue()))
+                new SimpleObjectProperty<>(createChatMessageButton(cell.getValue()))
         );
 
         // Set columns width
@@ -95,6 +94,7 @@ public class ChatController {
 
     /**
      * Creates a button to open the chat window with the related user
+     *
      * @param user
      * @return the button
      */
@@ -125,6 +125,7 @@ public class ChatController {
 
     /**
      * Get the profile id from the data passed by FXRouter.
+     *
      * @return the user's profile id
      */
     private int getProfileID() {

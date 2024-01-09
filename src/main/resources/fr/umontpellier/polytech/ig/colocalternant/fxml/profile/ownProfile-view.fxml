@@ -16,9 +16,11 @@
     <fx:include source="../header.fxml"/>
 
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="My profile" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="My profile"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <HBox alignment="TOP_CENTER" HBox.hgrow="ALWAYS" spacing="80">
             <ImageView fx:id="photo" fitWidth="200" fitHeight="200" preserveRatio="true">
@@ -30,27 +32,28 @@
             <VBox spacing="30">
                 <HBox>
                     <Label fx:id="firstName" text="firstName" style="-fx-font-size: 15;-fx-font-weight: bold;"/>
-                    <Label text=" " />
-                    <Label fx:id="name" text="name" style="-fx-font-size: 15;-fx-font-weight: bold;" />
-                    <Label text=", " style="-fx-font-size: 15;-fx-font-weight: bold;" />
-                    <Label fx:id="age" text="age" style="-fx-font-size: 15;-fx-font-weight: bold;" />
+                    <Label text=" "/>
+                    <Label fx:id="name" text="name" style="-fx-font-size: 15;-fx-font-weight: bold;"/>
+                    <Label text=", " style="-fx-font-size: 15;-fx-font-weight: bold;"/>
+                    <Label fx:id="age" text="age" style="-fx-font-size: 15;-fx-font-weight: bold;"/>
                 </HBox>
 
                 <HBox spacing="8">
-                    <Label style="-fx-font-size: 15;-fx-font-weight: bold;" text="E-mail :" />
-                    <Label fx:id="email" style="-fx-font-size: 15;" text="email address" />
+                    <Label style="-fx-font-size: 15;-fx-font-weight: bold;" text="E-mail :"/>
+                    <Label fx:id="email" style="-fx-font-size: 15;" text="email address"/>
                 </HBox>
 
                 <HBox spacing="12">
-                    <Label style="-fx-font-size: 15;-fx-font-weight: bold;" text="Public profile : " />
-                    <Label fx:id="visibility" style="-fx-font-size: 15;" text="False" />
+                    <Label style="-fx-font-size: 15;-fx-font-weight: bold;" text="Public profile : "/>
+                    <Label fx:id="visibility" style="-fx-font-size: 15;" text="False"/>
                 </HBox>
             </VBox>
         </HBox>
 
         <VBox spacing="12" alignment="CENTER">
-            <Label style="-fx-font-size: 15;-fx-font-weight: bold;" text="Description :" />
-            <Label fx:id="description" style="-fx-font-size: 15;-fx-padding: 0 100 0 100;" wrapText="true" text="description" />
+            <Label style="-fx-font-size: 15;-fx-font-weight: bold;" text="Description :"/>
+            <Label fx:id="description" style="-fx-font-size: 15;-fx-padding: 0 100 0 100;" wrapText="true"
+                   text="description"/>
         </VBox>
 
 
@@ -74,7 +77,6 @@
                     text="See all profiles"
             />
         </HBox>
-
 
 
     </VBox>

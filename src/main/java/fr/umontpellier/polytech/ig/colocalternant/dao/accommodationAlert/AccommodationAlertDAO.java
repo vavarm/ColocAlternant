@@ -25,11 +25,12 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Inserts an accommodationAlert into the database.
-     * @param profileID         The ID of the profile.
-     * @param location          The location of the accommodation.
-     * @param surface           The surface of the accommodation.
-     * @param minPrice          The minimum price of the accommodation.
-     * @param maxPrice          The maximum price of the accommodation.
+     *
+     * @param profileID The ID of the profile.
+     * @param location  The location of the accommodation.
+     * @param surface   The surface of the accommodation.
+     * @param minPrice  The minimum price of the accommodation.
+     * @param maxPrice  The maximum price of the accommodation.
      */
     public void insertAccommodationAlert(int profileID, String location, float surface, float minPrice, float maxPrice) {
         Connection connection = null;
@@ -52,6 +53,7 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Retrieve all accommodationAlerts from the database.
+     *
      * @return List of all accommodationAlerts.
      */
     public ArrayList<AccommodationAlert> getAllAccommodationAlert() {
@@ -74,8 +76,7 @@ public abstract class AccommodationAlertDAO {
                     }
                 }
             }
-        }
-         catch (SQLException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         return accommodationAlerts;
@@ -83,6 +84,7 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Retrieves the AccommodationAlert owned by a specific profile from the database.
+     *
      * @param profileID The profile for whom to retrieve the AccommodationAlerts.
      * @return List of AccommodationAlerts owned by the profile.
      */
@@ -115,6 +117,7 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Retrieve a specific accommodationAlert from the database based on its ID.
+     *
      * @param id The ID of the accommodationAlert to retrieve.
      * @return The accommodationAlert with the specified ID.
      */
@@ -146,12 +149,13 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Update an existing accommodationAlert in the database.
-     * @param id                The ID of the accommodation.
-     * @param profileID         The ID of the profile.
-     * @param location          The location of the accommodation.
-     * @param surface           The surface of the accommodation.
-     * @param minPrice          The minimum price of the accommodation.
-     * @param maxPrice          The maximum price of the accommodation.
+     *
+     * @param id        The ID of the accommodation.
+     * @param profileID The ID of the profile.
+     * @param location  The location of the accommodation.
+     * @param surface   The surface of the accommodation.
+     * @param minPrice  The minimum price of the accommodation.
+     * @param maxPrice  The maximum price of the accommodation.
      */
     public void updateAccommodationAlert(int id, int profileID, String location, float surface, float minPrice, float maxPrice) {
         Connection connection = null;
@@ -173,6 +177,7 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Delete an accommodationAlert from the database.
+     *
      * @param id The ID of the accommodationAlert to be deleted.
      */
     public void deleteAccommodationAlert(int id) {
@@ -191,6 +196,7 @@ public abstract class AccommodationAlertDAO {
 
     /**
      * Close the database connection, prepared statement, and result set.
+     *
      * @param connection        The database connection.
      * @param preparedStatement The prepared statement.
      * @param resultSet         The result set.

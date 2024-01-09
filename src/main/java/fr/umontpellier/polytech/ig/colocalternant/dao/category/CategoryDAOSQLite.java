@@ -16,6 +16,7 @@ public class CategoryDAOSQLite extends CategoryDAO {
 
     /**
      * Retrieves the unique instance of the category DAO.
+     *
      * @return The category DAO.
      */
     public static CategoryDAOSQLite getInstance() {

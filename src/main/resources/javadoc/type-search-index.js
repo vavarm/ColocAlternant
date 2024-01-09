@@ -1,1 +1,242 @@
-typeSearchIndex = [{"l":"All Classes and Interfaces","u":"allclasses-index.html"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","l":"CredentialException"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions","l":"CredentialExceptionType"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","l":"DAOFactory"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao","l":"DAOSQLiteFactory"},{"p":"fr.umontpellier.polytech.ig.colocalternant","l":"HelloApplication"},{"p":"fr.umontpellier.polytech.ig.colocalternant","l":"HelloController"},{"p":"fr.umontpellier.polytech.ig.colocalternant","l":"LoginApplication"},{"p":"fr.umontpellier.polytech.ig.colocalternant","l":"LoginController"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","l":"User"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user","l":"UserDAO"},{"p":"fr.umontpellier.polytech.ig.colocalternant.dao.user","l":"UserDAOSQLite"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","l":"UserFacade"},{"p":"fr.umontpellier.polytech.ig.colocalternant.user","l":"UserFacadeTest"}];updateSearchResults();
+typeSearchIndex = [{
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "l": "Abuse"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "AbuseController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "l": "AbuseDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.abuse",
+    "l": "AbuseDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "l": "AbuseFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "AbusesListController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "l": "Accommodation"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "l": "AccommodationAlert"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "l": "AccommodationAlertDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert",
+    "l": "AccommodationAlertDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accommodationAlert",
+    "l": "AccommodationAlertFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "l": "AccommodationDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.accomodation",
+    "l": "AccommodationDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.accomodation",
+    "l": "AccommodationFacade"
+}, {
+    "l": "All Classes and Interfaces",
+    "u": "allclasses-index.html"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "l": "App"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "l": "Category"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "CategoryController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "l": "CategoryDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.category",
+    "l": "CategoryDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.category",
+    "l": "CategoryFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "l": "Chat"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "ChatController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "l": "ChatDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.chat",
+    "l": "ChatDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.chat",
+    "l": "ChatFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "ChatMessageController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "l": "CombinedModel"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.notification",
+    "l": "CreateAlertController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "l": "CreateProfileController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "l": "CredentialException"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user.exceptions",
+    "l": "CredentialExceptionType"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "l": "DAOFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao",
+    "l": "DAOSQLiteFactory"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.notification",
+    "l": "DeleteAlertController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "l": "DeleteController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "l": "EnumRole"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "l": "FXRouter"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "HelloController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "l": "InfoController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "l": "InsertController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "l": "insertUpdateAccommodationAlertController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "l": "listAccommodationAlertController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "l": "ListController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert",
+    "l": "listNotificationController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "LoginController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant",
+    "l": "Main"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "MainController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "l": "Notification"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "l": "NotificationDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.notification",
+    "l": "NotificationDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification",
+    "l": "NotificationFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "l": "NotificationObservable"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "l": "NotificationObserver"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.notification.observer",
+    "l": "Observer"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "OptionsController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "l": "OwnProfileController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "l": "Profile"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "l": "ProfileDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.profile",
+    "l": "ProfileDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "l": "ProfileFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "l": "ProfilesListController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.notification",
+    "l": "ReceiveNotificationController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "RegisterController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "l": "Rental"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "l": "RentalDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.rental",
+    "l": "RentalDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.rental",
+    "l": "RentalFacade"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "l": "RentalListController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "l": "RentalRequestFormController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.rental",
+    "l": "RentalRequestListController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.profile",
+    "l": "Role"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller",
+    "l": "SettingsController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.abuse",
+    "l": "StatusEnum"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.accommodation",
+    "l": "UpdateController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.controller.profile",
+    "l": "UpdateProfileController"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "l": "User"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "l": "UserDAO"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.dao.user",
+    "l": "UserDAOSQLite"
+}, {
+    "p": "fr.umontpellier.polytech.ig.colocalternant.user",
+    "l": "UserFacade"
+}, {"p": "fr.umontpellier.polytech.ig.colocalternant.controller", "l": "UserListController"}];
+updateSearchResults();

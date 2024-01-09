@@ -27,7 +27,7 @@ module fr.umontpellier.polytech.ig.colocalternant {
     exports fr.umontpellier.polytech.ig.colocalternant.controller.profile;
 
     opens fr.umontpellier.polytech.ig.colocalternant.profile to javafx.base;
-    exports fr.umontpellier.polytech.ig.colocalternant.profile;    
+    exports fr.umontpellier.polytech.ig.colocalternant.profile;
 
     opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert;

@@ -4,8 +4,8 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.CategoryController">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.CategoryController">
 
     <HBox spacing="10" VBox.vgrow="ALWAYS" alignment="CENTER">
         <VBox spacing="10" alignment="CENTER">

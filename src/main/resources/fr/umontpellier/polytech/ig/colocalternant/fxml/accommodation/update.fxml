@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.*?>
 
 <VBox xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.accommodation.UpdateController"
-            prefHeight="400.0" prefWidth="600.0">
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.accommodation.UpdateController"
+      prefHeight="400.0" prefWidth="600.0">
 
     <fx:include source="../header.fxml"/>
     <TextField fx:id="newTitle" layoutX="150.0" layoutY="30.0" promptText="New Title"/>

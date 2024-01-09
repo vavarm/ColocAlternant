@@ -19,7 +19,7 @@ public class NotificationObservable {
 
     public void notifyObservers() {
         for (Observer observer : observers) {
-            observer.update(userID,newItemID);
+            observer.update(userID, newItemID);
         }
     }
 

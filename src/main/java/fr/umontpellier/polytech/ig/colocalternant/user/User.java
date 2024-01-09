@@ -43,13 +43,14 @@ public class User {
 
     /**
      * Constructor of the user
-     * @param id the id of the user
+     *
+     * @param id        the id of the user
      * @param firstName the first name of the user
-     * @param lastName the last name of the user
-     * @param age the age of the user
-     * @param email the email of the user
-     * @param password the password of the user
-     * @param photo the path to the photo of the user
+     * @param lastName  the last name of the user
+     * @param age       the age of the user
+     * @param email     the email of the user
+     * @param password  the password of the user
+     * @param photo     the path to the photo of the user
      */
     public User(int id, String firstName, String lastName, int age, String email, String password, String photo) {
         this.id = id;
@@ -63,6 +64,7 @@ public class User {
 
     /**
      * Retrieves the unique identifier of the user.
+     *
      * @return The user's identifier.
      */
     public int getId() {
@@ -71,6 +73,7 @@ public class User {
 
     /**
      * Defines the unique identifier of the user.
+     *
      * @param id The user's identifier.
      */
     public void setId(int id) {
@@ -79,6 +82,7 @@ public class User {
 
     /**
      * Retrieves the first name of the user.
+     *
      * @return The user's first name.
      */
     public String getFirstName() {
@@ -87,6 +91,7 @@ public class User {
 
     /**
      * Defines the first name of the user.
+     *
      * @param firstName The user's first name.
      */
     public void setFirstName(String firstName) {
@@ -95,6 +100,7 @@ public class User {
 
     /**
      * Retrieves the last name of the user.
+     *
      * @return The user's last name.
      */
     public String getLastName() {
@@ -103,6 +109,7 @@ public class User {
 
     /**
      * Defines the last name of the user.
+     *
      * @param lastName The user's last name.
      */
     public void setLastName(String lastName) {
@@ -111,6 +118,7 @@ public class User {
 
     /**
      * Retrieves the age of the user.
+     *
      * @return The user's age.
      */
     public int getAge() {
@@ -119,6 +127,7 @@ public class User {
 
     /**
      * Defines the age of the user.
+     *
      * @param age The user's age.
      */
     public void setAge(int age) {
@@ -127,6 +136,7 @@ public class User {
 
     /**
      * Retrieves the email of the user.
+     *
      * @return The user's email.
      */
     public String getEmail() {
@@ -135,6 +145,7 @@ public class User {
 
     /**
      * Defines the email of the user.
+     *
      * @param email The user's email.
      */
     public void setEmail(String email) {
@@ -143,6 +154,7 @@ public class User {
 
     /**
      * Retrieves the password of the user.
+     *
      * @return The user's password.
      */
     public String getPassword() {
@@ -151,6 +163,7 @@ public class User {
 
     /**
      * Defines the password of the user.
+     *
      * @param password The user's password.
      */
     public void setPassword(String password) {
@@ -159,6 +172,7 @@ public class User {
 
     /**
      * Retrieves the photo of the user.
+     *
      * @return The user's photo path.
      */
     public String getPhoto() {
@@ -167,6 +181,7 @@ public class User {
 
     /**
      * Defines the photo of the user.
+     *
      * @param photo The user's photo path.
      */
     public void setPhoto(String photo) {
@@ -175,6 +190,7 @@ public class User {
 
     /**
      * Retrieves the ban status of the user.
+     *
      * @return The user's ban status.
      */
     public boolean getIsBanned() {
@@ -183,6 +199,7 @@ public class User {
 
     /**
      * Defines the ban status of the user.
+     *
      * @param isBanned The user's ban status.
      */
     public void setIsBanned(boolean isBanned) {
@@ -191,6 +208,7 @@ public class User {
 
     /**
      * Returns a string representation of the user.
+     *
      * @return The user's string representation.
      */
     public String toString() {

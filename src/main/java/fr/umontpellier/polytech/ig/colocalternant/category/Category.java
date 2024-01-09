@@ -8,6 +8,7 @@ public class Category {
 
     /**
      * Constructor of the category
+     *
      * @param name
      */
     public Category(String name) {
@@ -16,6 +17,7 @@ public class Category {
 
     /**
      * Retrieves the unique name of the category.
+     *
      * @return The category's name.
      */
     public String getName() {
@@ -24,6 +26,7 @@ public class Category {
 
     /**
      * Sets the unique name of the category.
+     *
      * @param newName The category's nae.
      */
     public void setName(String newName) {
@@ -32,6 +35,7 @@ public class Category {
 
     /**
      * Returns a string representation of the category.
+     *
      * @return The string representation of the category.
      */
     @Override

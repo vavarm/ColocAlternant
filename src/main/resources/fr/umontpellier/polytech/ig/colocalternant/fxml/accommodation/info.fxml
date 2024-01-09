@@ -14,13 +14,14 @@
     <HBox spacing="30" VBox.vgrow="ALWAYS" alignment="CENTER">
         <VBox spacing="30" alignment="CENTER">
 
-            <Label fx:id="titleLabel" text="Title" />
-            <Label fx:id="locationLabel" text="Location" />
-            <Label fx:id="descriptionLabel" text="Description" />
-            <Label fx:id="priceLabel" text="Price" />
-            <Label fx:id="specialFunctionalitiesLabel" text="Special Functionalities" />
-            <Label fx:id="energeticReportLabel" text="Energetic Report" />
-            <ImageView fx:id="photosImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+            <Label fx:id="titleLabel" text="Title"/>
+            <Label fx:id="locationLabel" text="Location"/>
+            <Label fx:id="descriptionLabel" text="Description"/>
+            <Label fx:id="priceLabel" text="Price"/>
+            <Label fx:id="specialFunctionalitiesLabel" text="Special Functionalities"/>
+            <Label fx:id="energeticReportLabel" text="Energetic Report"/>
+            <ImageView fx:id="photosImageView" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true"
+                       preserveRatio="true"/>
             <fx:include source="../category-view.fxml"/>
             <Button fx:id="deleteButton"/>
             <Button fx:id="updateButton"/>

@@ -14,32 +14,43 @@
     <fx:include source="header.fxml"/>
 
 
-
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="firstName" textFill="orange" style="-fx-font-size: 20;" text="My profile" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="firstName" textFill="orange" style="-fx-font-size: 20;" text="My profile"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <HBox spacing="50" alignment="TOP_CENTER">
             <VBox spacing="20">
-                <Button fx:id="list" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#accommodations" text="See the accommodations" />
-                <Button fx:id="rentalRequestListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Rental requests" onAction="#rentalRequestList"/>
-                <Button fx:id="rentalListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Rentals" onAction="#rentalList"/>
-                <Button fx:id="chatButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" onAction="#chats" text="Chats"/>
-                <Button fx:id="userListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="UserList" onAction="#userList"/>
+                <Button fx:id="list" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        onAction="#accommodations" text="See the accommodations"/>
+                <Button fx:id="rentalRequestListButton" style="-fx-padding: 10;-fx-min-width: 80;"
+                        mnemonicParsing="false" text="Rental requests" onAction="#rentalRequestList"/>
+                <Button fx:id="rentalListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        text="Rentals" onAction="#rentalList"/>
+                <Button fx:id="chatButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        onAction="#chats" text="Chats"/>
+                <Button fx:id="userListButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        text="UserList" onAction="#userList"/>
 
             </VBox>
 
             <VBox spacing="20">
-                <Button fx:id="settingsButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Settings" onAction="#settings"/>
-                <Button fx:id="notifButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Notifications" onAction="#notifications"/>
-                <Button fx:id="profileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="My Profile" onAction="#profile"/>
-                <Button fx:id="abusesButton" text="Abuses" onAction="#abusesList" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"/>
+                <Button fx:id="settingsButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        text="Settings" onAction="#settings"/>
+                <Button fx:id="notifButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        text="Notifications" onAction="#notifications"/>
+                <Button fx:id="profileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                        text="My Profile" onAction="#profile"/>
+                <Button fx:id="abusesButton" text="Abuses" onAction="#abusesList"
+                        style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"/>
 
             </VBox>
         </HBox>
 
-        <Button fx:id="changeProfileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Change profile" onAction="#changeProfile"/>
+        <Button fx:id="changeProfileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"
+                text="Change profile" onAction="#changeProfile"/>
 
     </VBox>
     <fx:include source="footer.fxml"/>

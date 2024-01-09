@@ -12,6 +12,7 @@ import java.lang.*;
 public class App extends Application {
     /**
      * Main method of the application. Launches the javafx application.
+     *
      * @param args arguments of the application
      */
     public static void main(String[] args) {
@@ -20,6 +21,7 @@ public class App extends Application {
 
     /**
      * Starts the javafx application
+     *
      * @param stage the stage of the application
      * @throws IOException if the fxml file is not found
      */
@@ -50,7 +52,7 @@ public class App extends Application {
         FXRouter.when("createAbuse", "fxml/create-abuse-view.fxml");
         FXRouter.when("updateAbuse", "fxml/update-abuse-view.fxml");
         FXRouter.when("deleteAbuse", "fxml/delete-abuse-view.fxml");
-        FXRouter.when("abusesList","fxml/abuses-list-view.fxml");
+        FXRouter.when("abusesList", "fxml/abuses-list-view.fxml");
 
         FXRouter.when("ownProfile", "fxml/profile/ownProfile-view.fxml");
         FXRouter.when("updateProfile", "fxml/profile/updateProfile-view.fxml");

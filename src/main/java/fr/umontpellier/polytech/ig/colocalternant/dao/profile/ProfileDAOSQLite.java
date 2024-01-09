@@ -16,9 +16,10 @@ public class ProfileDAOSQLite extends ProfileDAO {
 
     /**
      * Retrieves the unique instance of the profile DAO.
+     *
      * @return The profile DAO.
      */
-    public static ProfileDAOSQLite getInstance()  {
+    public static ProfileDAOSQLite getInstance() {
         return ProfileDAOSQLiteHolder.instance;
     }
 

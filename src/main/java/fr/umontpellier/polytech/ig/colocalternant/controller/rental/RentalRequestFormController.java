@@ -57,6 +57,7 @@ public class RentalRequestFormController {
 
     /**
      * Get the profile id from the data passed by FXRouter.
+     *
      * @return the user's profile id
      */
     private int getProfileID() {

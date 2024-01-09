@@ -22,6 +22,7 @@ public abstract class ChatDAO {
 
     /**
      * Retrieves all the chats of the given user (as sender or receiver) from the database.
+     *
      * @param user
      * @return The list of the chats corresponding to the given user.
      */
@@ -48,8 +49,7 @@ public abstract class ChatDAO {
                 }
             }
             return chats;
-        }
-        catch (SQLException sqlException) {
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
             return new ArrayList<>();
         }
@@ -57,6 +57,7 @@ public abstract class ChatDAO {
 
     /**
      * Retrieves all the chats between the two given users from the database.
+     *
      * @param user1
      * @param user2
      * @return
@@ -86,8 +87,7 @@ public abstract class ChatDAO {
                 }
             }
             return chats;
-        }
-        catch (SQLException sqlException) {
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
             return new ArrayList<>();
         }
@@ -95,12 +95,13 @@ public abstract class ChatDAO {
 
     /**
      * Insert the given chat into the database.
+     *
      * @param message
      * @param current
      * @param dest
      */
     public void send(String message, User current, User dest) {
-        try{
+        try {
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
             Connection connection = this.daoFactory.getConnection();
             try (PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO Chats (idSender, idDest, message, timestamp, isDeleted) VALUES (?, ?, ?, ?, ?);")) {
@@ -111,19 +112,19 @@ public abstract class ChatDAO {
                 preparedStatement.setBoolean(5, false);
                 preparedStatement.executeUpdate();
             }
-        }
-        catch (SQLException sqlException) {
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
     }
 
     /**
      * Deletes the given chat from the database.
+     *
      * @param chat
      */
     public void delete(Chat chat) {
         System.out.println("ChatDAO.delete: " + chat.getId());
-        try{
+        try {
             if (this.daoFactory == null) throw new NullPointerException("DAOFactory is null");
             Connection connection = this.daoFactory.getConnection();
             try (PreparedStatement preparedStatement = connection.prepareStatement("UPDATE Chats SET isDeleted = ? WHERE id LIKE ?;")) {
@@ -131,8 +132,7 @@ public abstract class ChatDAO {
                 preparedStatement.setInt(2, chat.getId());
                 preparedStatement.executeUpdate();
             }
-        }
-        catch (SQLException sqlException) {
+        } catch (SQLException sqlException) {
             sqlException.printStackTrace();
         }
     }

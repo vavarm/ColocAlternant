@@ -8,7 +8,8 @@ public class NotificationObserver implements Observer {
 
     private NotificationFacade nf = NotificationFacade.getInstance();
 
-    public NotificationObserver() {}
+    public NotificationObserver() {
+    }
 
     @Override
     public void update(int userID2, int newItemID2) {
@@ -17,7 +18,6 @@ public class NotificationObserver implements Observer {
         setNewItem((int) newItemID2);
         nf.insertNotif(userID2, newItemID2);
     }
-
 
 
     public int getUserID() {

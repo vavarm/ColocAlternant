@@ -15,6 +15,7 @@ public class ChatDAOSQLite extends ChatDAO {
 
     /**
      * Retrieves the unique instance of the chat DAO.
+     *
      * @return The chat DAO.
      */
     public static ChatDAOSQLite getInstance() {

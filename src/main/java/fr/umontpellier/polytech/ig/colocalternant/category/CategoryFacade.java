@@ -18,6 +18,7 @@ public class CategoryFacade {
 
     /**
      * Retrieves the unique instance of the category facade.
+     *
      * @return The category facade.
      */
     public static CategoryFacade getInstance() {
@@ -40,6 +41,7 @@ public class CategoryFacade {
 
     /**
      * Retrieves all the categories.
+     *
      * @return a list of categories
      */
     public ArrayList<Category> getAllCategories() {
@@ -48,6 +50,7 @@ public class CategoryFacade {
 
     /**
      * Add a category by its name.
+     *
      * @param name The name of the category.
      * @return A message to inform the user of the result of the operation.
      */
@@ -62,6 +65,7 @@ public class CategoryFacade {
 
     /**
      * Deletes a category by its name.
+     *
      * @param name The name of the category.
      * @return A message to inform the user of the result of the operation.
      */
@@ -76,8 +80,9 @@ public class CategoryFacade {
 
     /**
      * Add category to accommodation.
+     *
      * @param accommodationID The id of the accommodation.
-     * @param categoryName The name of the category.
+     * @param categoryName    The name of the category.
      */
     public void addCategoryToAccommodation(int accommodationID, String categoryName) {
         daoFactory.getCategoryDAO().addCategoryToAccommodation(accommodationID, categoryName);
@@ -85,8 +90,9 @@ public class CategoryFacade {
 
     /**
      * Remove category from accommodation.
+     *
      * @param accommodationID The id of the accommodation.
-     * @param categoryName The name of the category.
+     * @param categoryName    The name of the category.
      */
     public void removeCategoryFromAccommodation(int accommodationID, String categoryName) {
         daoFactory.getCategoryDAO().removeCategoryFromAccommodation(accommodationID, categoryName);

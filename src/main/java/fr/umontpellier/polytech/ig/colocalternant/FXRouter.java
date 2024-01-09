@@ -14,10 +14,12 @@ package fr.umontpellier.polytech.ig.colocalternant;
  You should have received a copy of the GNU General Public License
  along with this program.  If not, see <http://www.gnu.org/licenses/>.
  */
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.AbstractMap;
 import java.util.HashMap;
+
 import javafx.fxml.FXMLLoader;
 import javafx.stage.Stage;
 import javafx.scene.Scene;
@@ -29,6 +31,7 @@ import javafx.animation.FadeTransition;
 /**
  * FXRouter allows to manage scenes switching on JavaFX Application with an easy API
  * Inspired by Angular JS $routeProvider
+ *
  * @author Marco Trombino
  * @version 1.0.0
  */
@@ -86,10 +89,12 @@ public final class FXRouter {
             this(scenePath, getWindowTitle(), sceneWidth, sceneHeight);
         }
 
-        /** Route scene constructor
-         * @param scenePath: .FXML scene file
+        /**
+         * Route scene constructor
+         *
+         * @param scenePath:   .FXML scene file
          * @param windowTitle: Scene (Stage) title
-         * @param sceneWidth: Scene Width
+         * @param sceneWidth:  Scene Width
          * @param sceneHeight: Scene Height
          */
         private RouteScene(String scenePath, String windowTitle, double sceneWidth, double sceneHeight) {
@@ -126,7 +131,8 @@ public final class FXRouter {
     /**
      * FXRouter constructor kept private to apply Singleton pattern
      */
-    private FXRouter() {}
+    private FXRouter() {
+    }
 
     public static void bind(Object ref, Stage win) {
         checkInstances(ref, win);
@@ -143,11 +149,13 @@ public final class FXRouter {
         windowHeight = winHeight;
     }
 
-    /** FXRouter binder with Application Stage and main package
-     * @param ref: Main Class reference
-     * @param win: Application Stage
-     * @param winTitle: Application Stage title
-     * @param winWidth: Application Stage width
+    /**
+     * FXRouter binder with Application Stage and main package
+     *
+     * @param ref:       Main Class reference
+     * @param win:       Application Stage
+     * @param winTitle:  Application Stage title
+     * @param winWidth:  Application Stage width
      * @param winHeight: Application Stage height
      */
     public static void bind(Object ref, Stage win, String winTitle, double winWidth, double winHeight) {
@@ -157,16 +165,18 @@ public final class FXRouter {
         windowHeight = winHeight;
     }
 
-    /** set FXRouter references only if they are not set yet
+    /**
+     * set FXRouter references only if they are not set yet
+     *
      * @param ref: Main Class reference
      * @param win: Application Stage
      */
     private static void checkInstances(Object ref, Stage win) {
-        if(mainRef == null)
+        if (mainRef == null)
             mainRef = ref;
-        if(router == null)
+        if (router == null)
             router = new FXRouter();
-        if(window == null)
+        if (window == null)
             window = win;
     }
 
@@ -185,11 +195,13 @@ public final class FXRouter {
         routes.put(routeLabel, routeScene);
     }
 
-    /** Define a FXRouter route
-     * @param routeLabel: Route label identifier
-     * @param scenePath: .FXML scene file
-     * @param winTitle: Scene (Stage) title
-     * @param sceneWidth: Scene Width
+    /**
+     * Define a FXRouter route
+     *
+     * @param routeLabel:  Route label identifier
+     * @param scenePath:   .FXML scene file
+     * @param winTitle:    Scene (Stage) title
+     * @param sceneWidth:  Scene Width
      * @param sceneHeight: Scene Height
      */
     public static void when(String routeLabel, String scenePath, String winTitle, double sceneWidth, double sceneHeight) {
@@ -202,8 +214,7 @@ public final class FXRouter {
         RouteScene route = routes.get(routeLabel);
         if (route.scenePath.substring(0, 3).equals("/fr")) {
             goToOld(routeLabel);
-        }
-        else {
+        } else {
             loadNewRoute(route);
         }
     }
@@ -213,31 +224,33 @@ public final class FXRouter {
         RouteScene route = routes.get(routeLabel);
         if (route.scenePath.substring(0, 3).equals("/fr")) {
             goToOld(routeLabel, id, cond);
-        }
-        else {
+        } else {
             route.data = id;
             route.data2 = cond;
             loadNewRoute(route);
         }
     }
 
-    /** Switch between FXRouter route and show corresponding scenes
+    /**
+     * Switch between FXRouter route and show corresponding scenes
+     *
      * @param routeLabel: Route label identifier
-     * @param data: Data passed to route
+     * @param data:       Data passed to route
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
     public static void goTo(String routeLabel, Object data) throws IOException {
         RouteScene route = routes.get(routeLabel);
         if (route.scenePath.substring(0, 3).equals("/fr")) {
             goToOld(routeLabel);
-        }
-        else {
+        } else {
             route.data = data;
             loadNewRoute(route);
         }
     }
 
-    /** Helper method of goTo() which load and show new scene
+    /**
+     * Helper method of goTo() which load and show new scene
+     *
      * @throws Exception: throw FXMLLoader exception if file is not loaded correctly
      */
     private static void loadNewRoute(RouteScene route) throws IOException {
@@ -249,7 +262,7 @@ public final class FXRouter {
         currentRoute = route;
 
         // if the scene path is not absolute
-        if(!route.scenePath.startsWith("/"))
+        if (!route.scenePath.startsWith("/"))
             // add package name to scene path
             route.scenePath = "/" + pathRef.replace(".", "/") + "/" + route.scenePath;
 
@@ -280,15 +293,19 @@ public final class FXRouter {
         goTo(routeLabel, data);
     }
 
-    /** set FXRouter switching animation
+    /**
+     * set FXRouter switching animation
+     *
      * @param anType: Animation type
      */
     public static void setAnimationType(String anType) {
         animationType = anType;
     }
 
-    /** set FXRouter switching animation
-     * @param anType: Animation type
+    /**
+     * set FXRouter switching animation
+     *
+     * @param anType:     Animation type
      * @param anDuration: Animation duration
      */
     public static void setAnimationType(String anType, double anDuration) {
@@ -296,12 +313,14 @@ public final class FXRouter {
         animationDuration = anDuration;
     }
 
-    /** Animate routes switching based on animation type
+    /**
+     * Animate routes switching based on animation type
+     *
      * @param resource: .FXML scene file to animate
      */
     private static void routeAnimation(Parent node) {
         String anType = animationType != null ? animationType.toLowerCase() : "";
-        switch(anType) {
+        switch (anType) {
             case "fade":
                 Double fd = animationDuration != null ? animationDuration : FADE_ANIMATION_DURATION;
                 FadeTransition ftCurrent = new FadeTransition(Duration.millis(fd), node);
@@ -314,11 +333,13 @@ public final class FXRouter {
         }
     }
 
-    /** Get current route data
+    /**
+     * Get current route data
      */
     public static Object getData() {
         return currentRoute.data;
     }
+
     public static Object getData2() {
         return currentRoute.data2;
     }
@@ -333,11 +354,11 @@ public final class FXRouter {
             window.setScene(new Scene(resource, route.sceneWidth, route.sceneHeight));
             window.show();
             routeAnimation(resource);
-        }
-        else {
+        } else {
             System.out.println("Route not found: " + routeLabel);
         }
     }
+
     public static void goToOld(String routeLabel, int id, boolean cond) throws IOException {
         RouteScene route = routes.get(routeLabel);
 
@@ -350,16 +371,18 @@ public final class FXRouter {
             window.setScene(new Scene(resource, currentRoute.sceneWidth, currentRoute.sceneHeight));
             window.show();
             routeAnimation(resource);
-        }
-        else {
+        } else {
             System.out.println("Route not found: " + routeLabel);
         }
     }
 
     private static Parent routeAnimation(String scenePath) {
         URL resource = mainRef.getClass().getResource(scenePath);
-        try { return FXMLLoader.load(resource); }
-        catch (IOException e) { throw new RuntimeException("Failed to load route: " + e.getMessage()); }
+        try {
+            return FXMLLoader.load(resource);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to load route: " + e.getMessage());
+        }
     }
 
 

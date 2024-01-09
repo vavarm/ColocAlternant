@@ -31,10 +31,11 @@ public class Profile {
 
     /**
      * Constructor of the user
-     * @param isPublic the visibility of the profile
+     *
+     * @param isPublic    the visibility of the profile
      * @param description the description of the profile
-     * @param userID the id of the profile
-     * @param role the role of the profile
+     * @param userID      the id of the profile
+     * @param role        the role of the profile
      */
     public Profile(int id, boolean isPublic, String description, int userID, EnumRole role) {
         this.id = id;
@@ -46,48 +47,70 @@ public class Profile {
 
     /**
      * Retrieves the id of the profile.
+     *
      * @return The profile's role.
      */
-    public int getId() { return this.id; }
+    public int getId() {
+        return this.id;
+    }
 
     /**
      * Defines the id of the profile.
+     *
      * @param id The profile's role.
      */
-    public void setId(int id) { this.id = id; }
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Retrieves the role of the profile.
+     *
      * @return The profile's role.
      */
-    public EnumRole getRole() { return this.role; }
+    public EnumRole getRole() {
+        return this.role;
+    }
 
     /**
      * Defines the role of the profile.
+     *
      * @param role The profile's role.
      */
-    public void setRole(EnumRole role) { this.role = role; }
+    public void setRole(EnumRole role) {
+        this.role = role;
+    }
 
     /**
      * Retrieves the description of the profile.
+     *
      * @return The profile's description.
      */
-    public String getDescription() { return this.description; }
+    public String getDescription() {
+        return this.description;
+    }
 
     /**
      * Defines the description of the profile.
+     *
      * @param description The profile's description.
      */
-    public void setDescription(String description) { this.description = description; }
+    public void setDescription(String description) {
+        this.description = description;
+    }
 
     /**
      * Retrieves the unique id of the profile.
+     *
      * @return The profile's identifier.
      */
-    public int getUserID() { return this.userID; }
+    public int getUserID() {
+        return this.userID;
+    }
 
     /**
      * Defines the unique identifier of the user.
+     *
      * @param userID The profile's identifier.
      */
     public void setUserID(int userID) {
@@ -96,15 +119,21 @@ public class Profile {
 
     /**
      * Retrieves the visibility of the profile.
+     *
      * @return The profile's visibility.
      */
-    public boolean getIsPublic() { return this.isPublic; }
+    public boolean getIsPublic() {
+        return this.isPublic;
+    }
 
 
-    public void setIsPublic(boolean isPublic) { this.isPublic = isPublic; }
+    public void setIsPublic(boolean isPublic) {
+        this.isPublic = isPublic;
+    }
 
     /**
      * Returns a string representation of the profile.
+     *
      * @return The profile's string representation.
      */
     public String toString() {

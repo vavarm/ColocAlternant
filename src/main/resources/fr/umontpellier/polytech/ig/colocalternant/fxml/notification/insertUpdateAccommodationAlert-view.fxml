@@ -15,32 +15,42 @@
     <fx:include source="../header.fxml"/>
 
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
-        <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
-        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Create / update your alert" />
-        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;" />
+        <VBox.margin>
+            <Insets top="30" bottom="30"/>
+        </VBox.margin>
+        <Label fx:id="title" textFill="orange" style="-fx-font-size: 20;" text="Create / update your alert"/>
+        <Separator fx:id="separator" prefHeight="2" style="-fx-background-color: black;"/>
 
         <VBox spacing="12" alignment="TOP_CENTER">
-            <VBox.margin><Insets right="100" left="100"/></VBox.margin>
+            <VBox.margin>
+                <Insets right="100" left="100"/>
+            </VBox.margin>
             <Label style="-fx-font-size: 15;">Location</Label>
-            <TextArea fx:id="locationField" maxWidth="500" wrapText="true" />
+            <TextArea fx:id="locationField" maxWidth="500" wrapText="true"/>
         </VBox>
 
         <VBox spacing="12" alignment="TOP_CENTER">
-            <VBox.margin><Insets right="100" left="100"/></VBox.margin>
+            <VBox.margin>
+                <Insets right="100" left="100"/>
+            </VBox.margin>
             <Label style="-fx-font-size: 15;">Surface</Label>
-            <TextArea fx:id="surfaceField" maxWidth="500" wrapText="true" />
+            <TextArea fx:id="surfaceField" maxWidth="500" wrapText="true"/>
         </VBox>
 
         <VBox spacing="12" alignment="TOP_CENTER">
-            <VBox.margin><Insets right="100" left="100"/></VBox.margin>
+            <VBox.margin>
+                <Insets right="100" left="100"/>
+            </VBox.margin>
             <Label style="-fx-font-size: 15;">Minimum price</Label>
-            <TextArea fx:id="minPriceField" maxWidth="500" wrapText="true" />
+            <TextArea fx:id="minPriceField" maxWidth="500" wrapText="true"/>
         </VBox>
 
         <VBox spacing="12" alignment="TOP_CENTER">
-            <VBox.margin><Insets right="100" left="100"/></VBox.margin>
+            <VBox.margin>
+                <Insets right="100" left="100"/>
+            </VBox.margin>
             <Label style="-fx-font-size: 15;">Maximum price</Label>
-            <TextArea fx:id="maxPriceField" maxWidth="500" wrapText="true" />
+            <TextArea fx:id="maxPriceField" maxWidth="500" wrapText="true"/>
         </VBox>
 
         <HBox spacing="50" alignment="CENTER">
@@ -53,7 +63,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#handleBackButtonClick"
-                    text="Back" />
+                    text="Back"/>
 
             <Button fx:id="submitButton"
                     style=
@@ -64,7 +74,7 @@
                             -fx-font-weight: bold;"
                     mnemonicParsing="false"
                     onAction="#handleSubmitButtonClick"
-                    text="Create alert" />
+                    text="Create alert"/>
         </HBox>
 
     </VBox>
