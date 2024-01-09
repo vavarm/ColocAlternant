@@ -54,6 +54,10 @@ public class App extends Application {
         FXRouter.when("listProfiles", "fxml/profile/listProfiles-view.fxml");
         FXRouter.when("createProfile", "fxml/profile/createProfile-view.fxml");
 
+        FXRouter.when("listNotification", "fxml/notification/listNotification-view.fxml");
+        FXRouter.when("listAlert", "fxml/notification/listAccommodationAlert-view.fxml");
+        FXRouter.when("manageAlert", "fxml/notification/insertUpdateAccommodationAlert-view.fxml");
+
         FXRouter.goTo("hello");
     }
 }

@@ -215,7 +215,6 @@ public final class FXRouter {
             goToOld(routeLabel, id, cond);
         }
         else {
-            // set route data
             route.data = id;
             route.data2 = cond;
             loadNewRoute(route);

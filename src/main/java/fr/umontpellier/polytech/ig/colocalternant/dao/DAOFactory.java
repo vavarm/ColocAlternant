@@ -1,13 +1,13 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
 import fr.umontpellier.polytech.ig.colocalternant.category.CategoryFacade;
-import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
-
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
-import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
@@ -53,6 +53,12 @@ public abstract class DAOFactory {
     public abstract AccommodationDAO getAccommodationDAO();
 
     /**
+     * Retrieves the unique instance of the accommodationAlert DAO.
+     * @return The accommodation DAO.
+     */
+    public abstract AccommodationAlertDAO getAccommodationAlertDAO();
+
+    /**
      * Retrieves the unique instance of the profile DAO.
      * @return The profile DAO.
      */
@@ -69,6 +75,12 @@ public abstract class DAOFactory {
      * @return The Category DAO.
      */
     public abstract CategoryDAO getCategoryDAO();
+
+    /**
+     * Retrieves the unique instance of the DAO factory.
+     * @return The Notification DAO.
+     */
+    public abstract NotificationDAO getNotificationDAO();
 
     /**
      * Retrieves the unique instance of the abuse DAO
@@ -133,6 +145,14 @@ public abstract class DAOFactory {
         }
     }
 
+    private void DeleteAccommodationAlertTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("DROP TABLE IF EXISTS AccommodationAlerts");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     /*        
      * Creates the tables related to the chat in the database.
      * @param connection The connection to the database.
@@ -153,6 +173,19 @@ public abstract class DAOFactory {
     private void CreateAccomodationTable(Connection connection){
         try (Statement statement = connection.createStatement()) {
             statement.executeUpdate("CREATE TABLE IF NOT EXISTS Accomodations (id INTEGER PRIMARY KEY AUTOINCREMENT, price FLOAT , location TEXT, title TEXT, surface FLOAT, description TEXT, specialFonctionalities TEXT, energicReport FLOAT, photos TEXT )");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
+     * Creates the table related to the accomodationAlert in the database.
+     * @param connection The connection to the database.
+     *
+     */
+    private void CreateAccomodationAlertTable(Connection connection){
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS AccomodationAlerts (id INTEGER PRIMARY KEY AUTOINCREMENT, profileID INTEGER, location TEXT, surface FLOAT, minPrice FLOAT, maxPrice FLOAT)");
         } catch (SQLException e) {
             e.printStackTrace();
         }
@@ -315,6 +348,18 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Seeds the tables related to the accommodation in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedAccommodationAlertTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO AccomodationAlerts (profileID, location, surface, minPrice, maxprice) VALUES (1, 'Université de Montpellier, Pl. Eugène Bataillon, 34090 Montpellier', 35, 300, 500)");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Seeds the tables related to the category in the database.
      * @param connection The connection to the database.
      */
@@ -343,6 +388,18 @@ public abstract class DAOFactory {
     }
 
     /**
+     * Creates the tables related to the notifs in the database.
+     * @param connection The connection to the database.
+     */
+    private void CreateNotificationTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Notifs (id INTEGER PRIMARY KEY AUTOINCREMENT, userID INTEGER, newItemID INTEGER)");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    /**
      * Seeds the tables related to the category and the accommodation in the database.
      * @param connection The connection to the database.
      */
@@ -355,6 +412,18 @@ public abstract class DAOFactory {
             } else {
                 e.printStackTrace();
             }
+        }
+    }
+
+    /**
+     * Seeds the tables related to the notifs in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedNotificationTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("INSERT INTO Notifs (userID, newItemID) VALUES (1, 1)");
+        } catch (SQLException e) {
+                e.printStackTrace();
         }
     }
 
@@ -383,12 +452,15 @@ public abstract class DAOFactory {
     protected void CreateTables(Connection connection) {
         CreateUserTable(connection);
         CreateAccomodationTable(connection);
+        DeleteAccommodationAlertTable(connection);
+        CreateAccomodationAlertTable(connection);
         CreateOwnsTable(connection);
         CreateChatTable(connection);
         DeleteProfileTable(connection);
         CreateProfileTable(connection);
         CreateCategoryTable(connection);
         CreateCategoryAccommodationTable(connection);
+        CreateNotificationTable(connection);
         createAbusesTable(connection);
     }
 
@@ -405,6 +477,8 @@ public abstract class DAOFactory {
         SeedProfileTable(connection);
         SeedCategoryTable(connection);
         SeedCategoryAccommodationTable(connection);
+        SeedAccommodationAlertTable(connection);
+        SeedNotificationTable(connection);
         SeedAbusesTable(connection);
     }
 
