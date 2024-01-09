@@ -35,7 +35,7 @@
                 <Button fx:id="notifButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Notifications" onAction="#notifications"/>
                 <Button fx:id="profileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="My Profile" onAction="#profile"/>
                 <Button fx:id="abusesButton" text="Abuses" onAction="#abusesList" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"/>
-
+                <Button fx:id="categoriesButton" text="Categories" onAction="#categoriesList" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"/>
             </VBox>
         </HBox>
 

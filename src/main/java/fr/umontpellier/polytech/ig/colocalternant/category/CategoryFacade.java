@@ -1,11 +1,15 @@
 package fr.umontpellier.polytech.ig.colocalternant.category;
 
+import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
+import fr.umontpellier.polytech.ig.colocalternant.profile.EnumRole;
+import fr.umontpellier.polytech.ig.colocalternant.profile.Profile;
 import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Facade for the category management.
@@ -51,13 +55,16 @@ public class CategoryFacade {
      * @param name The name of the category.
      * @return A message to inform the user of the result of the operation.
      */
-    public String addCategory(String name) {
+    public void addCategory(String name) {
+        List<Profile> profiles = ProfileFacade.getInstance().getAllProfiles();
+        Profile profile = profiles.stream().filter(p -> p.getId() == getProfileID()).findFirst().orElse(null);
         // Only the admin can delete a category
-        if (ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())) {
+        if (profile != null && profile.getRole() == (EnumRole.Admin)) {
             daoFactory.getCategoryDAO().insertCategory(new Category(name));
-            return "Category added";
+            System.out.println("Category added");
+            return;
         }
-        return "You are not allowed to add a category";
+        System.out.println("You are not allowed to add a category");
     }
 
     /**
@@ -65,13 +72,16 @@ public class CategoryFacade {
      * @param name The name of the category.
      * @return A message to inform the user of the result of the operation.
      */
-    public String deleteCategory(String name) {
+    public void deleteCategory(String name) {
+        List<Profile> profiles = ProfileFacade.getInstance().getAllProfiles();
+        Profile profile = profiles.stream().filter(p -> p.getId() == getProfileID()).findFirst().orElse(null);
         // Only the admin can delete a category
-        if (ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())) {
+        if (profile != null && profile.getRole() == (EnumRole.Admin)) {
             daoFactory.getCategoryDAO().deleteCategory(new Category(name));
-            return "Category deleted";
+            System.out.println("Category deleted");
+            return;
         }
-        return "You are not allowed to delete a category";
+        System.out.println("You are not allowed to delete a category");
     }
 
     /**
@@ -90,6 +100,16 @@ public class CategoryFacade {
      */
     public void removeCategoryFromAccommodation(int accommodationID, String categoryName) {
         daoFactory.getCategoryDAO().removeCategoryFromAccommodation(accommodationID, categoryName);
+    }
+
+    /**
+     * Get the profile id from the data passed by FXRouter.
+     * @return the user's profile id
+     */
+    private int getProfileID() {
+        Object data = FXRouter.getData();
+        int profileId = (int) data;
+        return profileId;
     }
 
 }
