@@ -44,6 +44,12 @@ public class App extends Application {
 
         FXRouter.when("categoryList", "fxml/category-view.fxml");
 
+        FXRouter.when("createAbuse", "fxml/create-abuse-view.fxml");
+        FXRouter.when("updateAbuse", "fxml/update-abuse-view.fxml");
+        FXRouter.when("deleteAbuse", "fxml/delete-abuse-view.fxml");
+        FXRouter.when("abusesList","fxml/abuses-list-view.fxml");
+
+
         FXRouter.goTo("hello");
     }
 }

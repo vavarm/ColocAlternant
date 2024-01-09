@@ -17,6 +17,7 @@
         <Button fx:id="settingsButton" text="Settings" onAction="#settings"/>
         <Button fx:id="userListButton" text="UserList" onAction="#userList"/>
         <Button fx:id="optionsButton" text="Options" onAction="#options"/>
+        <Button fx:id="abusesButton" text="Abuses" onAction="#abusesList"/>
     </HBox>
 
     <fx:include source="footer.fxml"/>

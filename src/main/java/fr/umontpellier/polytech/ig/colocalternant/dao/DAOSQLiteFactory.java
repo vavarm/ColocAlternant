@@ -1,5 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAOSQLite;
 
@@ -100,6 +102,14 @@ public class DAOSQLiteFactory extends DAOFactory {
      */
     public CategoryDAO getCategoryDAO() {
         return CategoryDAOSQLite.getInstance();
+    }
+
+    /**
+     * Retrieves the abuse DAO.
+     * @return The abuse DAO.
+     */
+    public AbuseDAO getAbuseDAO() {
+        return AbuseDAOSQLite.getInstance();
     }
 
     /**

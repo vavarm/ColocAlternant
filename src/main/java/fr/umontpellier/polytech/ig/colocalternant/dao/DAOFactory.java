@@ -1,6 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
 import fr.umontpellier.polytech.ig.colocalternant.category.CategoryFacade;
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
 
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
@@ -66,6 +67,12 @@ public abstract class DAOFactory {
      * @return The Category DAO.
      */
     public abstract CategoryDAO getCategoryDAO();
+
+    /**
+     * Retrieves the unique instance of the abuse DAO
+     * @return the abuse DAO
+     */
+    public abstract AbuseDAO getAbuseDAO();
 
     /**
      * Initializes the database. Creates the tables and seeds them.
@@ -145,6 +152,19 @@ public abstract class DAOFactory {
             e.printStackTrace();
         }
     }
+
+    /**
+     * Creates the table related to the abuses in the database.
+     * @param connection The connection to the database.
+     */
+    private void createAbusesTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Abuses ( id INTEGER PRIMARY KEY AUTOINCREMENT,  message TEXT,  user_id INT,  status TEXT,  FOREIGN KEY (user_id) REFERENCES user(id))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
 
 
     /**
@@ -307,10 +327,27 @@ public abstract class DAOFactory {
      */
     private void SeedCategoryAccommodationTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO AccommodationCategories (category_id, accommodation_id) VALUES (1, 1)");
+            statement.executeUpdate("INSERT INTO CategoryAccommodation (category_id, accommodation_id) VALUES (1, 1)");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: CategoryAccommodation already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
+    /**
+     * Seeds the tables related to the abuses in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedAbusesTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("Delete from abuses");
+            statement.executeUpdate("INSERT INTO Abuses (message,user_id,status) VALUES ('inappropriate behavior',1,'PENDING')");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Abuse already exists");
             } else {
                 e.printStackTrace();
             }
@@ -331,6 +368,7 @@ public abstract class DAOFactory {
         CreateProfileTable(connection);
         CreateCategoryTable(connection);
         CreateCategoryAccommodationTable(connection);
+        createAbusesTable(connection);
     }
 
     /**
@@ -345,6 +383,7 @@ public abstract class DAOFactory {
         SeedProfileTable(connection);
         SeedCategoryTable(connection);
         SeedCategoryAccommodationTable(connection);
+        SeedAbusesTable(connection);
     }
 
     protected void printAllInfo(Connection connection){

@@ -20,6 +20,7 @@
         <ScrollPane fx:id="scrollPane" fitToWidth="true" fitToHeight="true">
             <content>
                 <VBox fx:id="chatBox" fillWidth="true"/>
+                <Button fx:id="reportButton"/>
             </content>
         </ScrollPane>
         <HBox spacing="10" alignment="CENTER">

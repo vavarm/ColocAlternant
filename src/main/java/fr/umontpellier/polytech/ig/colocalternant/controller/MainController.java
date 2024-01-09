@@ -1,6 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.controller;
 
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
+import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -27,6 +28,9 @@ public class MainController {
 
     @FXML
     public Button optionsButton;
+
+    @FXML
+    public Button abusesButton;
 
     public void initialize() {
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
@@ -76,4 +80,20 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
+    /**
+     * Method called when the abuses button is clicked. Opens the abuses list window.
+     * @param actionEvent the event of the click
+     */
+
+    public void abusesList(ActionEvent actionEvent) {
+
+        try {
+            FXRouter.goTo("abusesList");
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 }
