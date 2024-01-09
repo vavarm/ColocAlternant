@@ -8,7 +8,13 @@ import java.util.List;
 
 import static org.testng.AssertJUnit.*;
 
+/**
+ * Test class of the profile facade
+ */
 public class ProfileFacadeTest {
+    /**
+     * Test if getting the profiles of a user works same as getting the profiles of this user with each role
+     */
     @Test
     public void profilesExist() {
         UserFacade userFacade = UserFacade.getInstance();

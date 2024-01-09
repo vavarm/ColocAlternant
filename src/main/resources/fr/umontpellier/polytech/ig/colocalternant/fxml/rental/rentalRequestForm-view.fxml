@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="fr.umontpellier.polytech.ig.colocalternant.controller.rental.RentalRequestFormController"
+            >
+    <fx:include source="../header.fxml"/>
+
+    <GridPane hgap="10" vgap="10" fx:id="gridPane">
+
+        <Label text="Period" GridPane.columnSpan="2"/>
+
+        <HBox GridPane.rowIndex="1">
+            <Label text="From"/>
+            <DatePicker fx:id="startDatePicker" />
+        </HBox>
+
+        <HBox GridPane.rowIndex="2">
+            <Label text="To"/>
+            <DatePicker fx:id="endDatePicker" />
+        </HBox>
+
+        <Button fx:id="submitButton" text="Submit" onAction="#handleSubmitButtonClick" GridPane.rowIndex="3" GridPane.columnSpan="2"/>
+
+        <Button fx:id="backButton"
+                style="-fx-padding: 10; -fx-min-width: 80; -fx-background-color: orange; -fx-text-fill: white; -fx-font-weight: bold;"
+                mnemonicParsing="false"
+                onAction="#handleBackButtonClick"
+                text="Cancel"
+                GridPane.rowIndex="4" GridPane.columnSpan="2"/>
+    </GridPane>
+
+    <fx:include source="../footer.fxml"/>
+
+</VBox>

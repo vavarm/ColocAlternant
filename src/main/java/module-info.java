@@ -19,11 +19,14 @@ module fr.umontpellier.polytech.ig.colocalternant {
     exports fr.umontpellier.polytech.ig.colocalternant.controller;
     exports fr.umontpellier.polytech.ig.colocalternant.accomodation;
     exports fr.umontpellier.polytech.ig.colocalternant.profile;
+    exports fr.umontpellier.polytech.ig.colocalternant.rental;
     opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
     opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodation to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.profile;
     opens fr.umontpellier.polytech.ig.colocalternant.controller.profile to javafx.fxml;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller.rental;
+    opens fr.umontpellier.polytech.ig.colocalternant.controller.rental to javafx.fxml;
 
     exports fr.umontpellier.polytech.ig.colocalternant.chat;
 }

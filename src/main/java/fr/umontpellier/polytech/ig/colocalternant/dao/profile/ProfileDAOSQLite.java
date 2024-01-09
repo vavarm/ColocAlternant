@@ -23,7 +23,7 @@ public class ProfileDAOSQLite extends ProfileDAO {
     }
 
     /**
-     * Holder of the unique instance of the user DAO
+     * Holder of the unique instance of the profile DAO
      */
     private static class ProfileDAOSQLiteHolder {
         private final static ProfileDAOSQLite instance = new ProfileDAOSQLite();

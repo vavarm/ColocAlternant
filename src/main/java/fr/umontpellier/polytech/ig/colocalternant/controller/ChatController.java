@@ -93,6 +93,11 @@ public class ChatController {
         tableView.getColumns().addAll(firstNameColumn, lastNameColumn, emailColumn, goToChatColumn);
     }
 
+    /**
+     * Creates a button to open the chat window with the related user
+     * @param user
+     * @return the button
+     */
     private Button createChatMessageButton(User user) {
         Button button = new Button("Chat");
         button.setOnAction(event -> {
@@ -107,6 +112,9 @@ public class ChatController {
         return button;
     }
 
+    /**
+     * Handles when the user clicks on the "Back" button.
+     */
     public void handleBackButtonClick(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("main", getProfileID(), false);
@@ -115,6 +123,10 @@ public class ChatController {
         }
     }
 
+    /**
+     * Get the profile id from the data passed by FXRouter.
+     * @return the user's profile id
+     */
     private int getProfileID() {
         Object data = FXRouter.getData();
         int profileId = (int) data;

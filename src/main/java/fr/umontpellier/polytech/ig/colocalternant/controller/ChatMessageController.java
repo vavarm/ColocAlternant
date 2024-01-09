@@ -116,6 +116,11 @@ public class ChatMessageController {
         Platform.runLater(() -> scrollPane.setVvalue(1.0));
     }
 
+    /**
+     * Create an item for a chat message.
+     * @param chat
+     * @return the HBox
+     */
     private HBox createItem(Chat chat) {
         HBox hBox = new HBox();
         // if the current user is the sender, then the message box is grey
@@ -189,6 +194,10 @@ public class ChatMessageController {
         }
     }
 
+    /**
+     * Get the profile id from the data passed by FXRouter.
+     * @return the user's profile id
+     */
     private int getProfileID() {
         Object data = FXRouter.getData();
         int profileId = (int) data;

@@ -38,7 +38,6 @@ public class AccommodationFacade {
      * @param id The ID of the accommodation to be deleted.
      */
     public void delete(int id) {
-        // TODO: Implement the logic for deleting an accommodation.
         daoFactory.getAccommodationDAO().deleteAccommodation(id);
     }
 
@@ -56,7 +55,6 @@ public class AccommodationFacade {
     public void insertAccommodation(String title, String location, String description,
                                     float price, String specialFonctionalities,
                                     float energicReport, String photos) {
-        // TODO: Implement the logic for inserting a new accommodation.
         daoFactory.getAccommodationDAO().insertAccommodation(new Accommodation(-1, title, location, description, price, specialFonctionalities, energicReport, photos));
     }
 
@@ -75,7 +73,6 @@ public class AccommodationFacade {
     public void updateAccommodation(int userId, String title, String location,
                                     String description, float price,
                                     String specialFonctionalities, float energicReport, String photos) {
-        // TODO: Implement the logic for updating an existing accommodation.
         daoFactory.getAccommodationDAO().updateAccommodation(new Accommodation(userId, title, location, description, price, specialFonctionalities, energicReport, photos));
     }
 
