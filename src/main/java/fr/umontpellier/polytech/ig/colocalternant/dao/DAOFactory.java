@@ -1,14 +1,13 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
 import fr.umontpellier.polytech.ig.colocalternant.category.CategoryFacade;
-import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
-
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.category.CategoryDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.user.UserDAO;
-import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.dao.chat.ChatDAO;
 
@@ -82,6 +81,12 @@ public abstract class DAOFactory {
      * @return The Notification DAO.
      */
     public abstract NotificationDAO getNotificationDAO();
+
+    /**
+     * Retrieves the unique instance of the abuse DAO
+     * @return the abuse DAO
+     */
+    public abstract AbuseDAO getAbuseDAO();
 
     /**
      * Initializes the database. Creates the tables and seeds them.
@@ -211,6 +216,19 @@ public abstract class DAOFactory {
         }
     }
 
+    /**
+     * Creates the table related to the abuses in the database.
+     * @param connection The connection to the database.
+     */
+    private void createAbusesTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("CREATE TABLE IF NOT EXISTS Abuses ( id INTEGER PRIMARY KEY AUTOINCREMENT,  message TEXT,  user_id INT,  status TEXT,  FOREIGN KEY (user_id) REFERENCES user(id))");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+
 
     /**
      * Seeds the tables related to the user in the database.
@@ -306,7 +324,7 @@ public abstract class DAOFactory {
      */
     private void SeedProfileTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (1, 'The first description', 'Owner', 'TRUE')");
+            statement.executeUpdate("INSERT INTO Profiles (userID, description, role, isPublic) VALUES (1, 'The first description', 'Admin', 'TRUE')");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: Profile already exists");
@@ -387,7 +405,7 @@ public abstract class DAOFactory {
      */
     private void SeedCategoryAccommodationTable(Connection connection) {
         try (Statement statement = connection.createStatement()) {
-            statement.executeUpdate("INSERT INTO AccommodationCategories (category_id, accommodation_id) VALUES (1, 1)");
+            statement.executeUpdate("INSERT INTO CategoryAccommodation (category_id, accommodation_id) VALUES (1, 1)");
         } catch (SQLException e) {
             if (e.getErrorCode() == 19) {
                 System.err.println("DAOFactory: CategoryAccommodation already exists");
@@ -409,6 +427,23 @@ public abstract class DAOFactory {
         }
     }
 
+    /**
+     * Seeds the tables related to the abuses in the database.
+     * @param connection The connection to the database.
+     */
+    private void SeedAbusesTable(Connection connection) {
+        try (Statement statement = connection.createStatement()) {
+            statement.executeUpdate("Delete from abuses");
+            statement.executeUpdate("INSERT INTO Abuses (message,user_id,status) VALUES ('inappropriate behavior',1,'PENDING')");
+        } catch (SQLException e) {
+            if (e.getErrorCode() == 19) {
+                System.err.println("DAOFactory: Abuse already exists");
+            } else {
+                e.printStackTrace();
+            }
+        }
+    }
+
 
     /**
      * Creates the tables in the database.
@@ -426,6 +461,7 @@ public abstract class DAOFactory {
         CreateCategoryTable(connection);
         CreateCategoryAccommodationTable(connection);
         CreateNotificationTable(connection);
+        createAbusesTable(connection);
     }
 
 
@@ -443,6 +479,7 @@ public abstract class DAOFactory {
         SeedCategoryAccommodationTable(connection);
         SeedAccommodationAlertTable(connection);
         SeedNotificationTable(connection);
+        SeedAbusesTable(connection);
     }
 
     protected void printAllInfo(Connection connection){

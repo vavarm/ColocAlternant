@@ -71,8 +71,9 @@ public class InfoController {
         photosImageView.setImage(image);
 
         // Configure delete and update buttons for the accommodation owner
-        if (AccommodationFacade.getInstance().isOwner()){
+
             deleteButton.setText("Delete");
+            deleteButton.setVisible(AccommodationFacade.getInstance().isOwner());
             deleteButton.setOnAction(event -> {
                 try {
                     FXRouter.goTo("deleteAccommodation", getProfileID(), false);
@@ -81,6 +82,7 @@ public class InfoController {
                 }
             });
             updateButton.setText("Update");
+            updateButton.setVisible(AccommodationFacade.getInstance().isOwner());
             updateButton.setOnAction(event -> {
                 try {
                     FXRouter.goTo("updateAccommodation", getProfileID(), false);
@@ -88,7 +90,7 @@ public class InfoController {
                     throw new RuntimeException(e);
                 }
             });
-        }
+
 
         this.back.setText("Back");
         this.back.setOnAction(event -> {try {

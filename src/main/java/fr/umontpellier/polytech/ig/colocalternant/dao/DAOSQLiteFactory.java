@@ -4,6 +4,8 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.Accommo
 import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 
@@ -128,6 +130,13 @@ public class DAOSQLiteFactory extends DAOFactory {
         return NotificationDAOSQLite.getInstance();
     }
 
+    
+    /** Retrieves the abuse DAO.
+     * @return The abuse DAO.
+     */
+    public AbuseDAO getAbuseDAO() {
+        return AbuseDAOSQLite.getInstance();
+    }
 
     /**
      * Holder of the unique instance of the DAO factory

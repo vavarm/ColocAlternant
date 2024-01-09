@@ -1,6 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.controller;
 
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
+import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -31,6 +32,7 @@ public class MainController {
     public Button notifButton;
 
     @FXML
+    public Button abusesButton;
     public Button profileButton;
 
     @FXML
@@ -39,6 +41,7 @@ public class MainController {
     public void initialize() {
         profileID = getProfileID();
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
+
     }
 
     private int getProfileID() {
@@ -92,6 +95,24 @@ public class MainController {
         }
     }
 
+
+    /**
+     * Method called when the abuses button is clicked. Opens the abuses list window.
+     * @param actionEvent the event of the click
+     */
+    public void abusesList(ActionEvent actionEvent) {
+
+        if (!ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())){
+            try {
+                FXRouter.goTo("abusesList", profileID, false);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
+    }
+
     public void profile(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("ownProfile", profileID, false);
@@ -99,6 +120,7 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
 
     public void changeProfile(ActionEvent actionEvent) {
         try {
