@@ -13,6 +13,8 @@
       prefHeight="400.0" prefWidth="600.0">
     <fx:include source="header.fxml"/>
 
+
+
     <VBox fx:id="textBox" spacing="30" alignment="TOP_CENTER" VBox.vgrow="ALWAYS">
         <VBox.margin><Insets top="30" bottom="30"/></VBox.margin>
         <Label fx:id="firstName" textFill="orange" style="-fx-font-size: 20;" text="My profile" />
@@ -30,6 +32,8 @@
                 <Button fx:id="settingsButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Settings" onAction="#settings"/>
                 <!--<Button fx:id="optionsButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="Options" onAction="#options"/>-->
                 <Button fx:id="profileButton" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false" text="My Profile" onAction="#profile"/>
+                <Button fx:id="abusesButton" text="Abuses" onAction="#abusesList" style="-fx-padding: 10;-fx-min-width: 80;" mnemonicParsing="false"/>
+
             </VBox>
         </HBox>
 

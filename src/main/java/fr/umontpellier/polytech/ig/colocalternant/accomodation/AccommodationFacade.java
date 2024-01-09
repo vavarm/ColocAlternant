@@ -5,6 +5,7 @@ import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 
+import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -131,7 +132,11 @@ public class AccommodationFacade {
      * @return True if the current user owns the current accommodation, false otherwise.
      */
     public boolean isOwner() {
-        return daoFactory.getAccommodationDAO().getOwns(UserFacade.getInstance().getCurrentUser().getId(), getInstance().getCurrentAccommodation().getId()) != null;
+        try {
+            return daoFactory.getAccommodationDAO().getOwns(UserFacade.getInstance().getCurrentUser().getId(), getInstance().getCurrentAccommodation().getId()).next();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**
