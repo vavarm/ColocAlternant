@@ -1,10 +1,13 @@
 package fr.umontpellier.polytech.ig.colocalternant.controller;
 
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
+import fr.umontpellier.polytech.ig.colocalternant.abuse.AbuseFacade;
 import fr.umontpellier.polytech.ig.colocalternant.chat.Chat;
 import fr.umontpellier.polytech.ig.colocalternant.chat.ChatFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.User;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
+
+
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -15,6 +18,7 @@ import javafx.scene.layout.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+
 
 /**
  * The controller of the list of chats
@@ -43,6 +47,9 @@ public class ChatMessageController {
 
     @FXML
     Button backButton;
+
+    @FXML
+    Button reportButton;
 
     /**
      * Deletes a chat
@@ -89,6 +96,8 @@ public class ChatMessageController {
     private void onCreation() {
         // set the title
         title.setText("Chat with " + personToChatWith.getFirstName() + " " + personToChatWith.getLastName());
+        reportButton.setText("Report");
+        reportButton.setOnAction(this::report);
         updateChatBox();
     }
 
@@ -192,6 +201,19 @@ public class ChatMessageController {
         } catch (IOException e){
             System.out.println("Error while going back to the list of chats");
         }
+    }
+
+    /**
+     * Handles when the user clicks on the report button.
+     */
+    public void report(ActionEvent e){
+        AbuseFacade.getInstance().setAbuser(personToChatWith);
+        try {
+            FXRouter.goTo("createAbuse", getProfileID(), false);
+        } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+
     }
 
     /**

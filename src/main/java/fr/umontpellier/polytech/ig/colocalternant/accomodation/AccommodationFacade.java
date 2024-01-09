@@ -3,8 +3,11 @@ package fr.umontpellier.polytech.ig.colocalternant.accomodation;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.DAOSQLiteFactory;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
+import fr.umontpellier.polytech.ig.colocalternant.notification.observer.NotificationObservable;
+import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 
+import java.sql.SQLException;
 import java.util.*;
 
 /**
@@ -22,6 +25,12 @@ public class AccommodationFacade {
      * The accommodation that is currently seen by the user.
      */
     private Accommodation currentAccommodation;
+
+    private NotificationObservable notificationObservable = new NotificationObservable();
+
+    public NotificationObservable getNotificationObservable() {
+        return notificationObservable;
+    }
 
     /**
      * Default constructor for creating an `AccommodationFacade` instance.
@@ -55,7 +64,9 @@ public class AccommodationFacade {
     public void insertAccommodation(String title, String location, String description,
                                     float price, String specialFonctionalities,
                                     float energicReport, String photos) {
-        daoFactory.getAccommodationDAO().insertAccommodation(new Accommodation(-1, title, location, description, price, specialFonctionalities, energicReport, photos));
+        Accommodation newAccommodation = new Accommodation(-1, title, location, description, price, specialFonctionalities, energicReport, photos);
+        daoFactory.getAccommodationDAO().insertAccommodation(newAccommodation);
+        notificationObservable.setNotification(-1, newAccommodation.getId());
     }
 
     /**
@@ -70,10 +81,11 @@ public class AccommodationFacade {
      * @param energicReport        The energetic report of the accommodation.
      * @param photos               The photos of the accommodation.
      */
-    public void updateAccommodation(int userId, String title, String location,
-                                    String description, float price,
-                                    String specialFonctionalities, float energicReport, String photos) {
-        daoFactory.getAccommodationDAO().updateAccommodation(new Accommodation(userId, title, location, description, price, specialFonctionalities, energicReport, photos));
+
+    public void updateAccommodation(int userId, String title, String location, String description, float price, String specialFonctionalities, float energicReport, String photos) {
+        Accommodation newAccommodation = new Accommodation(userId, title, location, description, price, specialFonctionalities, energicReport, photos);
+        notificationObservable.setNotification(userId, newAccommodation.getId());
+        daoFactory.getAccommodationDAO().updateAccommodation(newAccommodation);
     }
 
     /**
@@ -128,7 +140,11 @@ public class AccommodationFacade {
      * @return True if the current user owns the current accommodation, false otherwise.
      */
     public boolean isOwner() {
-        return daoFactory.getAccommodationDAO().getOwns(UserFacade.getInstance().getCurrentUser().getId(), getInstance().getCurrentAccommodation().getId()) != null;
+        try {
+            return daoFactory.getAccommodationDAO().getOwns(UserFacade.getInstance().getCurrentUser().getId(), getInstance().getCurrentAccommodation().getId()).next();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     /**

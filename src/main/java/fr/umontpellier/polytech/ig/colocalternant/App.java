@@ -47,10 +47,19 @@ public class App extends Application {
 
         FXRouter.when("categoryList", "fxml/category-view.fxml");
 
+        FXRouter.when("createAbuse", "fxml/create-abuse-view.fxml");
+        FXRouter.when("updateAbuse", "fxml/update-abuse-view.fxml");
+        FXRouter.when("deleteAbuse", "fxml/delete-abuse-view.fxml");
+        FXRouter.when("abusesList","fxml/abuses-list-view.fxml");
+
         FXRouter.when("ownProfile", "fxml/profile/ownProfile-view.fxml");
         FXRouter.when("updateProfile", "fxml/profile/updateProfile-view.fxml");
         FXRouter.when("listProfiles", "fxml/profile/listProfiles-view.fxml");
         FXRouter.when("createProfile", "fxml/profile/createProfile-view.fxml");
+
+        FXRouter.when("listNotification", "fxml/notification/listNotification-view.fxml");
+        FXRouter.when("listAlert", "fxml/notification/listAccommodationAlert-view.fxml");
+        FXRouter.when("manageAlert", "fxml/notification/insertUpdateAccommodationAlert-view.fxml");
 
         FXRouter.goTo("hello");
     }

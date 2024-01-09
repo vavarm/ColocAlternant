@@ -11,22 +11,33 @@ module fr.umontpellier.polytech.ig.colocalternant {
     requires java.sql;
     requires org.testng;
     requires junit;
+    requires java.desktop;
 
     opens fr.umontpellier.polytech.ig.colocalternant to javafx.fxml;
-    opens fr.umontpellier.polytech.ig.colocalternant.profile to javafx.base;
-    exports fr.umontpellier.polytech.ig.colocalternant;
-    exports fr.umontpellier.polytech.ig.colocalternant.user;
+        opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller;
-    exports fr.umontpellier.polytech.ig.colocalternant.accomodation;
-    exports fr.umontpellier.polytech.ig.colocalternant.profile;
     exports fr.umontpellier.polytech.ig.colocalternant.rental;
-    opens fr.umontpellier.polytech.ig.colocalternant.controller to javafx.fxml;
-    exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
-    opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodation to javafx.fxml;
-    exports fr.umontpellier.polytech.ig.colocalternant.controller.profile;
-    opens fr.umontpellier.polytech.ig.colocalternant.controller.profile to javafx.fxml;
     exports fr.umontpellier.polytech.ig.colocalternant.controller.rental;
     opens fr.umontpellier.polytech.ig.colocalternant.controller.rental to javafx.fxml;
 
+    opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodation to javafx.fxml;
+    exports fr.umontpellier.polytech.ig.colocalternant.accomodation;
+
+    opens fr.umontpellier.polytech.ig.colocalternant.controller.profile to javafx.fxml;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller.profile;
+
+    opens fr.umontpellier.polytech.ig.colocalternant.profile to javafx.base;
+    exports fr.umontpellier.polytech.ig.colocalternant.profile;    
+
+    opens fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert to javafx.fxml;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodationAlert;
+
+    opens fr.umontpellier.polytech.ig.colocalternant.accommodationAlert to javafx.base;
+    exports fr.umontpellier.polytech.ig.colocalternant.accommodationAlert;
+
+    exports fr.umontpellier.polytech.ig.colocalternant.notification;
+    exports fr.umontpellier.polytech.ig.colocalternant.user;
+    exports fr.umontpellier.polytech.ig.colocalternant.controller.accommodation;
     exports fr.umontpellier.polytech.ig.colocalternant.chat;
+    exports fr.umontpellier.polytech.ig.colocalternant;
 }

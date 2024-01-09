@@ -1,5 +1,11 @@
 package fr.umontpellier.polytech.ig.colocalternant.dao;
 
+import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.accommodationAlert.AccommodationAlertDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.notification.NotificationDAOSQLite;
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAO;
+import fr.umontpellier.polytech.ig.colocalternant.dao.abuse.AbuseDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAO;
 import fr.umontpellier.polytech.ig.colocalternant.dao.profile.ProfileDAOSQLite;
 import fr.umontpellier.polytech.ig.colocalternant.dao.accomodation.AccommodationDAO;
@@ -95,6 +101,15 @@ public class DAOSQLiteFactory extends DAOFactory {
 
 
     /**
+     * Retrieves the accommodationAlert DAO.
+     * @return The accommodationAlert DAO.
+     */
+    public AccommodationAlertDAO getAccommodationAlertDAO() {
+        return AccommodationAlertDAOSQLite.getInstance();
+    }
+
+
+    /**
      * Retrieves the chat DAO.
      * @return The chat DAO.
      */
@@ -111,6 +126,22 @@ public class DAOSQLiteFactory extends DAOFactory {
         return CategoryDAOSQLite.getInstance();
     }
 
+
+    /**
+     * Retrieves the category DAO.
+     * @return The category DAO.
+     */
+    public NotificationDAO getNotificationDAO() {
+        return NotificationDAOSQLite.getInstance();
+    }
+
+    
+    /** Retrieves the abuse DAO.
+     * @return The abuse DAO.
+     */
+    public AbuseDAO getAbuseDAO() {
+        return AbuseDAOSQLite.getInstance();
+    }
 
     /**
      * Holder of the unique instance of the DAO factory

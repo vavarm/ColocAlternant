@@ -1,6 +1,7 @@
 package fr.umontpellier.polytech.ig.colocalternant.controller;
 
 import fr.umontpellier.polytech.ig.colocalternant.FXRouter;
+import fr.umontpellier.polytech.ig.colocalternant.profile.ProfileFacade;
 import fr.umontpellier.polytech.ig.colocalternant.user.UserFacade;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -28,9 +29,10 @@ public class MainController {
     public Button userListButton;
 
     @FXML
-    public Button optionsButton;
+    public Button notifButton;
 
     @FXML
+    public Button abusesButton;
     public Button profileButton;
 
     @FXML
@@ -45,6 +47,7 @@ public class MainController {
     public void initialize() {
         profileID = getProfileID();
         firstName.setText("Hello " + UserFacade.getInstance().getCurrentUser().getFirstName());
+
     }
 
     private int getProfileID() {
@@ -68,6 +71,7 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
     public void settings(ActionEvent actionEvent) {
         try {
             FXRouter.goTo("settings", profileID, false);
@@ -89,12 +93,30 @@ public class MainController {
      * @param actionEvent the event of the click
      */
 
-    public void options(ActionEvent actionEvent) {
+    public void notifications(ActionEvent actionEvent) {
         try {
-            FXRouter.goTo("options");
+            FXRouter.goTo("listNotification", profileID, false);
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+
+    /**
+     * Method called when the abuses button is clicked. Opens the abuses list window.
+     * @param actionEvent the event of the click
+     */
+    public void abusesList(ActionEvent actionEvent) {
+
+        if (!ProfileFacade.getInstance().isAdmin(UserFacade.getInstance().getCurrentUser())){
+            try {
+                FXRouter.goTo("abusesList", profileID, false);
+
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
+        }
+
     }
 
     public void profile(ActionEvent actionEvent) {
@@ -104,6 +126,7 @@ public class MainController {
             throw new RuntimeException(e);
         }
     }
+
 
     public void changeProfile(ActionEvent actionEvent) {
         try {
